@@ -1,0 +1,89 @@
+﻿mos_military_reforms_major = {
+	default = mos_mil_m1
+	cumulative = no
+
+	mos_mil_m1 = {
+		modifier = {
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+
+	mos_mil_m2 = {
+		modifier = {
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+
+	mos_mil_m3 = {
+		modifier = {
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+
+	mos_mil_m4 = {
+		modifier = {
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+
+	mos_mil_m5 = {
+		modifier = {
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+}
