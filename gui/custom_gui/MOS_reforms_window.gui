@@ -57,7 +57,7 @@ window = {
 				}
 
 
-				hbox = {
+				hbox = {	#Page tabs
 					layoutpolicy_horizontal = expanding
 
 					button_tab = {
@@ -75,11 +75,31 @@ window = {
 						down = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'economy' )]"
 						onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'economy' )]"
 					}
+
+					button_tab = {
+						layoutpolicy_horizontal = expanding
+						text = "MOS_REFORMS_ADMINISTRATIVE"
+
+						down = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'administration' )]"
+						onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'administration' )]"
+					}
+				}
+
+				hbox = {
+					visible = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'military' )]"
+					layoutpolicy_horizontal = expanding
+					
+					MOS_reform_button = {
+						enabled = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'military' )]"
+						visible = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'military' )]"
+						texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+						
+						onclick = ""
+						tooltip = ""
+					}
 				}
 				expand = {}
 			}
-			
-
 		}
 	}
 }

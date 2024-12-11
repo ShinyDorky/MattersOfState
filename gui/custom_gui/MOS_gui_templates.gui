@@ -1,0 +1,7 @@
+types MOS_gui_templates {
+type MOS_reform_button = button_normal
+	{
+			size = { 160 120 }
+			using = tooltip_nw
+		}
+}
