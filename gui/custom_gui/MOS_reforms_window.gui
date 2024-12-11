@@ -1,0 +1,62 @@
+window = {
+	name = "MOS_reforms_window"
+	datacontext = "[GetVariableSystem]"
+	datacontext = "[GetPlayer]"
+	parentanchor = center
+    layer = hud_layer
+	size = { 1100 1100 }
+	visible = "[And(GetPlayer.IsValid,GetVariableSystem.HasValue('MOS_reforms_open', 'yes')))]"
+	using = Window_Background
+	using = Window_Decoration_Flat
+
+	state = {
+		name = _show
+		position = { -165 0 }
+		using = Animation_FadeIn_Quick
+        using = Sound_WindowShow_Standard
+		on_start = "[GetVariableSystem.Set('MOS_reforms_open', 'yes')]"
+	}
+
+	state = {
+		name = _hide
+		position = { 600 0 }
+		using = Animation_FadeOut_Quick
+        using = Sound_WindowHide_Standard
+		on_start = "[GetVariableSystem.Set('MOS_reforms_open', 'no')]"
+	}
+
+	container = {
+		widget = {
+			size = { 1050 1060 }
+			position = { 25 20 }
+			background = {
+				texture = "gfx/interface/illustrations/council/bg_council_chancellor.dds"
+				spriteborder = { 6 6 }
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				alpha = 0.4
+			}
+
+			vbox = {	# TITLE OF THE WHOLE PAGE
+				position = { 0 0 }
+				header_pattern = {
+					layoutpolicy_horizontal = expanding
+					
+					minimumsize = { 100% 0 }
+
+					blockoverride "header_text"
+					{
+						text = "MOS_reforms_window"
+					}
+
+					
+					blockoverride "button_close"
+					{
+						onclick = "[GetVariableSystem.Set('MOS_reforms_open', 'no')]"
+					}
+				}
+				expand = {}
+			}
+
+		}
+	}
+}
