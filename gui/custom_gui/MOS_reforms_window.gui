@@ -15,6 +15,7 @@ window = {
 		using = Animation_FadeIn_Quick
         using = Sound_WindowShow_Standard
 		on_start = "[GetVariableSystem.Set('MOS_reforms_open', 'yes')]"
+		on_start = "[GetVariableSystem.Set( 'mos_reform_tab', 'military' )]"
 	}
 
 	state = {
@@ -54,8 +55,30 @@ window = {
 						onclick = "[GetVariableSystem.Set('MOS_reforms_open', 'no')]"
 					}
 				}
+
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+
+					button_tab = {
+						layoutpolicy_horizontal = expanding
+						text = "MOS_REFORMS_MILITARY"
+
+						down = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'military' )]"
+						onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'military' )]"
+					}
+
+					button_tab = {
+						layoutpolicy_horizontal = expanding
+						text = "MOS_REFORMS_ECONOMIC"
+
+						down = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'economy' )]"
+						onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'economy' )]"
+					}
+				}
 				expand = {}
 			}
+			
 
 		}
 	}
