@@ -1,2 +1,1 @@
 ﻿gui/custom_gui/MOS_reforms_button.gui = MOS_reforms_button
-gui/custom_gui/MOS_reforms_window.gui = MOS_reforms_window

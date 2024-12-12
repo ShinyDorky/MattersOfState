@@ -88,31 +88,19 @@ types mos_reformwindows {
 			
 					vbox = {#MILITARY REFORMS
 						visible = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'military' )]"
-						hbox = { 
-							name = "mos_military_reforms_major"
-							spacing = 10
-				
-							layoutpolicy_horizontal = expanding
-							# MOS_reform_button = {
-							# 	datacontext = "[GuiLaw.GetLaw]"
-							# 	enabled = "[Or(GuiLaw.CanEnact, GuiLaw.IsEnacted)]"
-							# 	visible = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'military' )]"
-							# 	texture = "gfx/interface/illustrations/loading_screens/castle.dds"
-							# 	down = "[GuiLaw.IsEnacted]"
-							# 	onclick = "[GuiLaw.Enact]"
-							# 	tooltip = ""
-							# }
-						}
+						layoutpolicy_horizontal = expanding	
 			
-						hbox = {
+						vbox = {
 							name = "mos_military_reforms_major"
 							datamodel = "[MyRealmWindow.GetRealmLaws]"
-							ignoreinvisible = yes			
+							ignoreinvisible = yes		
+							layoutpolicy_horizontal = expanding		
 							item = {
 								vbox = {								
 									datacontext = "[GuiLawGroup.GetLawGroup]"
 									visible = "[And( GuiLawGroup.GetLawGroup.HasFlag( 'mos_military_reform' ), GuiLawGroup.IsAvailable )]"
 									ignoreinvisible = yes
+									layoutpolicy_horizontal = expanding	
 						
 									text_label_center = {											
 										text = "[LawGroup.GetName]"
@@ -124,13 +112,13 @@ types mos_reformwindows {
 									}
 						
 									hbox = {
+										layoutpolicy_horizontal = expanding	
 										datamodel = "[GuiLawGroup.GetLaws]"		
 										item = {
 											hbox = {
 												layoutpolicy_horizontal = expanding	
-												button = {
+												MOS_reform_button = {
 													datacontext = "[GuiLaw.GetLaw]"
-													size = { 60 60 }
 													enabled = "[Or(GuiLaw.CanEnact, GuiLaw.IsEnacted)]"
 													down = "[GuiLaw.IsEnacted]"
 													alwaystransparent = "[GuiLaw.IsEnacted]"
@@ -140,19 +128,18 @@ types mos_reformwindows {
 										
 										
 										
-													button = {
+													MOS_reform_button = {
 														visible = "[Not(GuiLaw.IsEnacted)]"
 														texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
 														parentanchor = center
-														size = { 42 42 }
 														alwaystransparent = yes
 													}
 										
-													icon = {
+													MOS_reform_icon = {
+														# TODO: Swap for textures when you have them
 														visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
 														texture = "gfx/interface/illustrations/loading_screens/castle.dds"
 														parentanchor = center
-														size = { 42 42 }
 														alwaystransparent = yes
 											
 														blockoverride "master_color_frame" {
