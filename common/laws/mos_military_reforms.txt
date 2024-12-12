@@ -22,15 +22,7 @@
 		}
 		
 		on_pass = { 
-			IF = {
-				limit = {
-					OR = {
-						has_realm_law = mos_military_reforms_1_header_5
-						has_realm_law = mos_military_reforms_1_minor_1_5
-					}
-				}
-				add_realm_law = mos_military_reforms_1_header_1
-			}
+			mos_major_mil_reform_change_cleanup_effect_1 = yes
 		}
 	}
 
@@ -48,7 +40,9 @@
 			gold = 0
 		}
 		
-		on_pass = { }
+		on_pass = { 
+			mos_major_mil_reform_change_cleanup_effect_2 = yes
+		}
 	}
 
 	mos_military_reforms_major_3 = {
@@ -65,7 +59,9 @@
 			gold = 0
 		}
 		
-		on_pass = { }
+		on_pass = { 
+			mos_major_mil_reform_change_cleanup_effect_3 = yes
+		}
 	}
 
 	mos_military_reforms_major_4 = {
@@ -81,7 +77,9 @@
 		pass_cost = {
 		}
 		
-		on_pass = { }
+		on_pass = { 
+			mos_major_mil_reform_change_cleanup_effect_4 = yes
+		}
 	}
 
 	mos_military_reforms_major_5 = {
@@ -98,7 +96,9 @@
 			gold = 0
 		}
 		
-		on_pass = { }
+		on_pass = { 
+			mos_major_mil_reform_change_cleanup_effect_5 = yes
+		}
 	}
 }
 
