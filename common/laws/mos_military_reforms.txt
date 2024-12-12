@@ -1,9 +1,15 @@
 ﻿mos_military_reforms_major = {
 	default = mos_mil_m1
+
+	flag = mos_military_reform
+	flag = mos_major_reform
+	flag = mos_law
+
 	cumulative = no
 
 	mos_mil_m1 = {
 		modifier = {
+			domain_limit = 20
 		}
 
 		can_keep = { 
@@ -72,6 +78,34 @@
 
 	mos_mil_m5 = {
 		modifier = {
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+}
+
+mos_military_reforms_minor_1 = {
+	default = mos_mil_mi_1
+
+	flag = mos_military_reform
+	flag = mos_minor_reform
+	flag = mos_law
+	
+	cumulative = no
+
+	mos_mil_mi_1 = {
+		modifier = {
+			domain_limit = 20
 		}
 
 		can_keep = { 

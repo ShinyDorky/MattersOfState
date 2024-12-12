@@ -1,104 +1,175 @@
-window = {
-	name = "MOS_reforms_window"
-	datacontext = "[GetVariableSystem]"
-	datacontext = "[GetPlayer]"
-	parentanchor = center
-    layer = hud_layer
-	size = { 1100 1100 }
-	visible = "[And(GetPlayer.IsValid,GetVariableSystem.HasValue('MOS_reforms_open', 'yes')))]"
-	using = Window_Background
-	using = Window_Decoration_Flat
-
-	state = {
-		name = _show
-		position = { -165 0 }
-		using = Animation_FadeIn_Quick
-        using = Sound_WindowShow_Standard
-		on_start = "[GetVariableSystem.Set('MOS_reforms_open', 'yes')]"
-		on_start = "[GetVariableSystem.Set( 'mos_reform_tab', 'military' )]"
-	}
-
-	state = {
-		name = _hide
-		position = { 600 0 }
-		using = Animation_FadeOut_Quick
-        using = Sound_WindowHide_Standard
-		on_start = "[GetVariableSystem.Set('MOS_reforms_open', 'no')]"
-	}
-
-	container = {
-		widget = {
-			size = { 1050 1060 }
-			position = { 25 20 }
-			background = {
-				texture = "gfx/interface/illustrations/council/bg_council_chancellor.dds"
-				spriteborder = { 6 6 }
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				alpha = 0.4
-			}
-
-			vbox = {	# TITLE OF THE WHOLE PAGE
-				position = { 0 0 }
-				header_pattern = {
-					layoutpolicy_horizontal = expanding
-					
-					minimumsize = { 100% 0 }
-
-					blockoverride "header_text"
-					{
-						text = "MOS_reforms_window"
-					}
-
-					
-					blockoverride "button_close"
-					{
-						onclick = "[GetVariableSystem.Set('MOS_reforms_open', 'no')]"
-					}
+types mos_reformwindows {
+	type MOS_reforms_window = window = {
+		name = "MOS_reforms_window"
+		datacontext = "[GetVariableSystem]"
+		datacontext = "[GetPlayer]"
+		parentanchor = vcenter|left
+		layer = middle
+		size = { 1100 1000 }
+		visible = "[And(GetPlayer.IsValid,GetVariableSystem.HasValue('MOS_reforms_open', 'yes')))]"
+		using = Window_Background
+		using = Window_Decoration_Flat
+		
+		state = {
+			name = _show
+			position = { -1040 0 }
+			using = Animation_FadeIn_Quick
+			using = Sound_WindowShow_Standard
+			on_start = "[GetVariableSystem.Set('MOS_reforms_open', 'yes')]"
+			on_start = "[GetVariableSystem.Set( 'mos_reform_tab', 'military' )]"
+		}
+		
+		state = {
+			name = _hide
+			position = { 600 0 }
+			using = Animation_FadeOut_Quick
+			using = Sound_WindowHide_Standard
+			on_start = "[GetVariableSystem.Set('MOS_reforms_open', 'no')]"
+		}
+		
+		container = {
+			widget = {
+				size = { 1050 960 }
+				position = { 25 20 }
+				background = {
+					texture = "gfx/interface/illustrations/council/bg_council_chancellor.dds"
+					spriteborder = { 6 6 }
+					shaderfile = "gfx/FX/pdxgui_default.shader"
+					alpha = 0.4
 				}
-
-
-				hbox = {	#Page tabs
-					layoutpolicy_horizontal = expanding
-
-					button_tab = {
+				
+				vbox = {	# TITLE OF THE WHOLE PAGE
+					position = { 0 0 }
+					header_pattern = {
 						layoutpolicy_horizontal = expanding
-						text = "MOS_REFORMS_MILITARY"
-
-						down = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'military' )]"
-						onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'military' )]"
-					}
-
-					button_tab = {
-						layoutpolicy_horizontal = expanding
-						text = "MOS_REFORMS_ECONOMIC"
-
-						down = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'economy' )]"
-						onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'economy' )]"
-					}
-
-					button_tab = {
-						layoutpolicy_horizontal = expanding
-						text = "MOS_REFORMS_ADMINISTRATIVE"
-
-						down = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'administration' )]"
-						onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'administration' )]"
-					}
-				}
-
-				hbox = {
-					visible = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'military' )]"
-					layoutpolicy_horizontal = expanding
 					
-					MOS_reform_button = {
-						enabled = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'military' )]"
+						minimumsize = { 100% 0 }
+					
+						blockoverride "header_text"
+						{
+							text = "MOS_reforms_window"
+						}
+					
+					
+						blockoverride "button_close"
+						{
+							onclick = "[GetVariableSystem.Set('MOS_reforms_open', 'no')]"
+						}
+					}
+				
+				
+					hbox = {	#Page tabs
+						layoutpolicy_horizontal = expanding
+				
+						button_tab = {
+							layoutpolicy_horizontal = expanding
+							text = "MOS_REFORMS_MILITARY"
+					
+							down = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'military' )]"
+							onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'military' )]"
+						}
+				
+						button_tab = {
+							layoutpolicy_horizontal = expanding
+							text = "MOS_REFORMS_ECONOMIC"
+					
+							down = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'economy' )]"
+							onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'economy' )]"
+						}
+				
+						button_tab = {
+							layoutpolicy_horizontal = expanding
+							text = "MOS_REFORMS_ADMINISTRATIVE"
+					
+							down = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'administration' )]"
+							onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'administration' )]"
+						}
+					}
+			
+					vbox = {#MILITARY REFORMS
 						visible = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'military' )]"
-						texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+						hbox = { 
+							name = "mos_military_reforms_major"
+							spacing = 10
+				
+							layoutpolicy_horizontal = expanding
+							# MOS_reform_button = {
+							# 	datacontext = "[GuiLaw.GetLaw]"
+							# 	enabled = "[Or(GuiLaw.CanEnact, GuiLaw.IsEnacted)]"
+							# 	visible = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'military' )]"
+							# 	texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+							# 	down = "[GuiLaw.IsEnacted]"
+							# 	onclick = "[GuiLaw.Enact]"
+							# 	tooltip = ""
+							# }
+						}
+			
+						hbox = {
+							name = "mos_military_reforms_major"
+							datamodel = "[MyRealmWindow.GetRealmLaws]"
+							ignoreinvisible = yes			
+							item = {
+								vbox = {								
+									datacontext = "[GuiLawGroup.GetLawGroup]"
+									visible = "[And( GuiLawGroup.GetLawGroup.HasFlag( 'mos_military_reform' ), GuiLawGroup.IsAvailable )]"
+									ignoreinvisible = yes
 						
-						onclick = ""
-						tooltip = ""
+									text_label_center = {											
+										text = "[LawGroup.GetName]"
+									}
+						
+									spacer = {
+										visible = "[GetPlayer.HasLiege]"
+										size = { 5 8 }
+									}
+						
+									hbox = {
+										datamodel = "[GuiLawGroup.GetLaws]"		
+										item = {
+											hbox = {
+												layoutpolicy_horizontal = expanding	
+												button = {
+													datacontext = "[GuiLaw.GetLaw]"
+													size = { 60 60 }
+													enabled = "[Or(GuiLaw.CanEnact, GuiLaw.IsEnacted)]"
+													down = "[GuiLaw.IsEnacted]"
+													alwaystransparent = "[GuiLaw.IsEnacted]"
+													onclick = "[GuiLaw.Enact]"
+													tooltipwidget = { pass_law_tooltip = {} }
+													using = tooltip_below
+										
+										
+										
+													button = {
+														visible = "[Not(GuiLaw.IsEnacted)]"
+														texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
+														parentanchor = center
+														size = { 42 42 }
+														alwaystransparent = yes
+													}
+										
+													icon = {
+														visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
+														texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+														parentanchor = center
+														size = { 42 42 }
+														alwaystransparent = yes
+											
+														blockoverride "master_color_frame" {
+															frame = 2
+														}
+													}
+												}
+											}
+										}
+									}											
+								}
+							}
+						}
 					}
+		
+					expand = {}
 				}
-				expand = {}
 			}
 		}
 	}
