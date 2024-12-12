@@ -116,9 +116,14 @@ types mos_reformwindows {
 										datamodel = "[GuiLawGroup.GetLaws]"		
 										item = {
 											hbox = {
+												MOS_reform_spacer = {
+													datacontext = "[GuiLaw.GetLaw]"
+													visible = "[EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW'))]"
+												}
 												layoutpolicy_horizontal = expanding	
 												MOS_reform_button = {
 													datacontext = "[GuiLaw.GetLaw]"
+													visible = "[Not( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')) )]"
 													enabled = "[Or(GuiLaw.CanEnact, GuiLaw.IsEnacted)]"
 													down = "[GuiLaw.IsEnacted]"
 													alwaystransparent = "[GuiLaw.IsEnacted]"

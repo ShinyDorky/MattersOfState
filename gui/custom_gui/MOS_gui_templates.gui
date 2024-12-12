@@ -10,4 +10,9 @@ type MOS_reform_icon = icon
 			size = { 160 120 }
 			using = tooltip_nw
 		}
+
+type MOS_reform_spacer = spacer
+	{
+			size = { 160 120 }
+		}
 }

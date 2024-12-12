@@ -120,4 +120,78 @@ mos_military_reforms_minor_1 = {
 		
 		on_pass = { }
 	}
+
+	mos_mil_mi_2 = {
+		flag = mos_law_empty
+		modifier = {
+			domain_limit = 20
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+
+	mos_mil_mi_3 = {
+		flag = mos_law_empty
+		modifier = {
+			domain_limit = 20
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+
+	mos_mil_mi_4 = {
+		modifier = {
+			domain_limit = 20
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+
+	mos_mil_mi_5 = {
+		modifier = {
+			domain_limit = 20
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
 }
