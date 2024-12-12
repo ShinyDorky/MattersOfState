@@ -12,5 +12,6 @@ If you want to write your own policies here are some pointers/pieces of info:
         Namely, I will separate law groups into Major, Header and Minor groups.
         Major reforms are the ones placed at the top of their respective tabs. They determine what reforms can be picked among others.
         Header and Minor groups are technically the same - headers just begin an informal inter-group of LawGroups. They are useful only for GUI to determine which style to use for what.
-        Minor and Major groups which are in one inter-group should have all their laws specify in can_keep trigger, that having any law in another group automatically invalidates them.
-        TODO: CHECK IF YOU NEED TO CREATE SOME HIDDEN EMPTY LAWS, FOR GROUPS TO DEFAULT TO
+        Minor and Major groups which are in one inter-group should have all their laws specify in on_pass action, that they reset all other groups to their hidden, default states
+
+3. CK3 engine at the moment seems to totally ignore 'default' law setting when assigning laws at world generation. As such you need to manually set should_start_with and can_keep triggers.

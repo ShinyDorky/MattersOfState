@@ -1,5 +1,5 @@
 ﻿mos_military_reforms_major = {
-	default = mos_mil_m1
+	default = mos_mil_m2
 
 	flag = mos_military_reform
 	flag = mos_major_reform
@@ -9,7 +9,6 @@
 
 	mos_mil_m1 = {
 		modifier = {
-			domain_limit = 20
 		}
 
 		can_keep = { 
@@ -94,17 +93,138 @@
 }
 
 mos_military_reforms_minor_1 = {
-	default = mos_mil_mi_1
+	default = mos_military_reforms_minor_1_1
+
+	flag = mos_military_reform
+	flag = mos_header_reform
+	flag = mos_law
+	
+	cumulative = no
+
+
+	mos_military_reforms_minor_1_1 = {
+		modifier = {
+			domain_limit = 20
+		}
+
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_minor_2_0
+			}
+		}
+	}
+
+	mos_military_reforms_minor_1_2 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+
+		can_keep = { 
+			NOT = {has_realm_law = mos_military_reforms_minor_1_2}
+		}
+
+		can_pass = { 
+			has_realm_law = mos_military_reforms_minor_1_2
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+
+	mos_military_reforms_minor_1_3 = {
+		flag = mos_law_empty
+		modifier = {
+			domain_limit = 20
+		}
+
+		can_keep = { 
+			NOT = {has_realm_law = mos_military_reforms_minor_1_3}
+		}
+
+		can_pass = { 
+			has_realm_law = mos_military_reforms_minor_1_3
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+
+	mos_military_reforms_minor_1_4 = {
+		modifier = {
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_minor_2_0
+			}
+		}
+	}
+
+	mos_military_reforms_minor_1_5 = {
+		modifier = {
+			domain_limit = 20
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_minor_2_0
+			}
+		}
+	}
+	
+	mos_military_reforms_minor_1_0 = {
+		modifier = {
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+}
+
+mos_military_reforms_minor_2 = {
+	default = mos_military_reforms_minor_2_0
 
 	flag = mos_military_reform
 	flag = mos_minor_reform
 	flag = mos_law
 	
 	cumulative = no
-
-	mos_mil_mi_1 = {
+	mos_military_reforms_minor_2_0 = {
 		modifier = {
-			domain_limit = 20
 		}
 
 		can_keep = { 
@@ -120,38 +240,83 @@ mos_military_reforms_minor_1 = {
 		on_pass = { }
 	}
 
-	mos_mil_mi_2 = {
+	mos_military_reforms_minor_2_1 = {
+		modifier = {
+			domain_limit = 20
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_minor_1_0
+			}
+		}
+	}
+
+	mos_military_reforms_minor_2_2 = {
+		modifier = {
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_minor_1_0
+			}
+		}
+	}
+
+	mos_military_reforms_minor_2_3 = {
+		modifier = {
+			domain_limit = 20
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_minor_1_0
+			}
+		}
+	}
+
+	mos_military_reforms_minor_2_4 = {
 		flag = mos_law_empty
 		modifier = {
-		}
-
-		can_keep = { 
-			has_realm_law = mos_mil_m3
-		}
-
-		can_pass = { 
-			has_realm_law = mos_mil_m2
-		}
-		
-		pass_cost = {
-			gold = 0
-		}
-		
-		on_pass = { }
-	}
-
-	mos_mil_mi_3 = {
-		flag = mos_law_empty
-		modifier = {
 			domain_limit = 20
 		}
 
 		can_keep = { 
-			has_realm_law = mos_mil_m2
+			NOT = {has_realm_law = mos_military_reforms_minor_2_4}
 		}
 
 		can_pass = { 
-			has_realm_law = mos_mil_m3
+			has_realm_law = mos_military_reforms_minor_2_4
 		}
 		
 		pass_cost = {
@@ -161,7 +326,7 @@ mos_military_reforms_minor_1 = {
 		on_pass = { }
 	}
 
-	mos_mil_mi_4 = {
+	mos_military_reforms_minor_2_5 = {
 		modifier = {
 			domain_limit = 20
 		}
@@ -176,24 +341,10 @@ mos_military_reforms_minor_1 = {
 			gold = 0
 		}
 		
-		on_pass = { }
-	}
-
-	mos_mil_mi_5 = {
-		modifier = {
-			domain_limit = 20
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_minor_1_0
+			}
 		}
-
-		can_keep = { 
-		}
-
-		can_pass = { 
-		}
-		
-		pass_cost = {
-			gold = 0
-		}
-		
-		on_pass = { }
 	}
 }

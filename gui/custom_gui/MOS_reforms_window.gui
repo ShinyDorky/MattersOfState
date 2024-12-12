@@ -102,13 +102,14 @@ types mos_reformwindows {
 									ignoreinvisible = yes
 									layoutpolicy_horizontal = expanding	
 						
-									text_label_center = {											
+									text_label_center = {		
+										visible = "[Not( GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' ))]"									
 										text = "[LawGroup.GetName]"
 									}
-						
-									spacer = {
-										visible = "[GetPlayer.HasLiege]"
-										size = { 5 8 }
+
+									spacer = {		
+										visible = "[GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' )]"									
+										size = { 0 10 }
 									}
 						
 									hbox = {
@@ -116,6 +117,8 @@ types mos_reformwindows {
 										datamodel = "[GuiLawGroup.GetLaws]"		
 										item = {
 											hbox = {
+												datacontext = "[GuiLaw.GetLaw]"
+												visible = "[Not( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER')) )]"
 												MOS_reform_spacer = {
 													datacontext = "[GuiLaw.GetLaw]"
 													visible = "[EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW'))]"
@@ -123,7 +126,8 @@ types mos_reformwindows {
 												layoutpolicy_horizontal = expanding	
 												MOS_reform_button = {
 													datacontext = "[GuiLaw.GetLaw]"
-													visible = "[Not( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')) )]"
+													visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+													#visible = "[Not( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')) )]"
 													enabled = "[Or(GuiLaw.CanEnact, GuiLaw.IsEnacted)]"
 													down = "[GuiLaw.IsEnacted]"
 													alwaystransparent = "[GuiLaw.IsEnacted]"
