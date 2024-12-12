@@ -1,11 +1,16 @@
-Okay, ShinyDorky here!
+If you want to write your own policies here are some pointers/pieces of info:
 
-If you want to write your own policies here are some pointers:
+1. GUI is configured for width of 5 policies. There is nothing stopping you from adding more, but i wouldnt recommend it.
 
-1. GUI is configured for width of 5 policies. There is nothing stopping you from adding more or less, but i wouldnt recommend it.
 2. At the moment game has no way to check flags at the level of individual laws. This is upsetting, as it forced me to employ some hacks:
-    2.1. You cannot really check for whether there should be a gap in between laws as far as i can see - thus you may have to create some dummy laws to avoid spacing issues
+
+    2.1. You cannot really check for whether there should be a gap in between laws as far as I can see - thus you may have to create some dummy laws to avoid spacing issues
         in your lawsets. In order to make them hidden, in localization put their names as "$MOS_NULL_LAW$", which CAN be detected by gui script
+
     2.2. Originally I've envisioned having multiple laws available at the same x and y axis of lawGroup, so to speak, but it has proven... difficult. 
         For now it will be solved by some creative application of IF instruction, but if anyone has better ideas, I'm all ears
-        
+        Namely, I will separate law groups into Major, Header and Minor groups.
+        Major reforms are the ones placed at the top of their respective tabs. They determine what reforms can be picked among others.
+        Header and Minor groups are technically the same - headers just begin an informal inter-group of LawGroups. They are useful only for GUI to determine which style to use for what.
+        Minor and Major groups which are in one inter-group should have all their laws specify in can_keep trigger, that having any law in another group automatically invalidates them.
+        TODO: CHECK IF YOU NEED TO CREATE SOME HIDDEN EMPTY LAWS, FOR GROUPS TO DEFAULT TO
