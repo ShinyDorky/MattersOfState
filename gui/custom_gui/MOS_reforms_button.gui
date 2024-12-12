@@ -1,0 +1,57 @@
+widget = {
+	name = "MOS_reforms_button"
+	datacontext = "[GetVariableSystem]"
+	datacontext = "[GetPlayer]"
+	visible = "[And( GetPlayer.IsValid, And(IsInGame,And(IsDefaultGUIMode,IsGameViewOpen('my_realm'))) )]"
+	parentanchor = top|right
+	allow_outside = yes
+	layer = middle
+	using = Window_Size_MainTab
+
+	state = {
+		name = _show
+		position_y = -20
+		using = Animation_FadeIn_Quick
+		using = Window_Position_MainTab
+	}
+
+	state = {
+		name = _hide
+		using = Animation_FadeOut_Quick
+		using = Window_Position_MainTab_Hide
+	}
+
+	button = {
+		visible = "[IsInGame]"
+		name = "MOS_reforms_open_button"
+		size = { 40 40 }
+		position = { 613 795 }
+		using = tooltip_sw
+		texture = "gfx/interface/icons/icon_gold.dds"
+		glow = {
+			glow_radius = 3
+			using = Glow_Standard
+			using = Color_Bright_Yellow
+		}
+
+		onclick = "[GetVariableSystem.Set('MOS_reforms_open', 'yes')]"
+		tooltip = "MOS_reforms_button_tt"
+	}
+
+	button = {
+		name = "MOS_reforms_close_button"
+		visible = "[And(GetVariableSystem.HasValue('MOS_reforms_open', 'yes'),IsInGame)]"
+		size = { 40 40 }
+		position = { 613 795 }
+		using = tooltip_sw
+		texture = "gfx/interface/icons/icon_gold.dds"
+		glow = {
+			glow_radius = 5
+			using = Glow_Standard
+			using = Color_Bright_Yellow
+		}
+
+		onclick = "[GetVariableSystem.Set('MOS_reforms_open', 'no')]"
+		tooltip = "MOS_reforms_button_tt"
+	}
+}

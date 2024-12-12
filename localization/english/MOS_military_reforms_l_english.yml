@@ -1,0 +1,24 @@
+﻿l_english:
+
+ mos_military_reforms_major:0 "Major Military Reforms"
+ mos_mil_m1:0 ""
+ mos_mil_m2:0 ""
+ mos_mil_m3:0 ""
+ mos_mil_m4:0 ""
+ mos_mil_m5:0 ""
+
+ mos_military_reforms_minor_1:0 "TEST"
+ mos_military_reforms_minor_1_0:0 "$MOS_NULL_LAW_NO_SPACER$"
+ mos_military_reforms_minor_1_1:0 "Military Minor Reform 1_1"
+ mos_military_reforms_minor_1_2:0 "$MOS_NULL_LAW$"
+ mos_military_reforms_minor_1_3:0 "$MOS_NULL_LAW$"
+ mos_military_reforms_minor_1_4:0 ""
+ mos_military_reforms_minor_1_5:0 ""
+
+ mos_military_reforms_minor_2:0 "SHOULD NOT BE SEEING THIS"
+ mos_military_reforms_minor_2_0:0 "$MOS_NULL_LAW_NO_SPACER$"
+ mos_military_reforms_minor_2_1:0 ""
+ mos_military_reforms_minor_2_2:0 ""
+ mos_military_reforms_minor_2_3:0 ""
+ mos_military_reforms_minor_2_4:0 "$MOS_NULL_LAW$"
+ mos_military_reforms_minor_2_5:0 ""
