@@ -70,7 +70,6 @@
 		}
 		
 		pass_cost = {
-			gold = 0
 		}
 		
 		on_pass = { }
@@ -124,13 +123,14 @@ mos_military_reforms_minor_1 = {
 	mos_mil_mi_2 = {
 		flag = mos_law_empty
 		modifier = {
-			domain_limit = 20
 		}
 
 		can_keep = { 
+			has_realm_law = mos_mil_m3
 		}
 
 		can_pass = { 
+			has_realm_law = mos_mil_m2
 		}
 		
 		pass_cost = {
@@ -147,9 +147,11 @@ mos_military_reforms_minor_1 = {
 		}
 
 		can_keep = { 
+			has_realm_law = mos_mil_m2
 		}
 
 		can_pass = { 
+			has_realm_law = mos_mil_m3
 		}
 		
 		pass_cost = {

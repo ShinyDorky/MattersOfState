@@ -1,0 +1,11 @@
+Okay, ShinyDorky here!
+
+If you want to write your own policies here are some pointers:
+
+1. GUI is configured for width of 5 policies. There is nothing stopping you from adding more or less, but i wouldnt recommend it.
+2. At the moment game has no way to check flags at the level of individual laws. This is upsetting, as it forced me to employ some hacks:
+    2.1. You cannot really check for whether there should be a gap in between laws as far as i can see - thus you may have to create some dummy laws to avoid spacing issues
+        in your lawsets. In order to make them hidden, in localization put their names as "$MOS_NULL_LAW$", which CAN be detected by gui script
+    2.2. Originally I've envisioned having multiple laws available at the same x and y axis of lawGroup, so to speak, but it has proven... difficult. 
+        For now it will be solved by some creative application of IF instruction, but if anyone has better ideas, I'm all ears
+        
