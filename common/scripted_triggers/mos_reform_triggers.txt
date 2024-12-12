@@ -1,0 +1,29 @@
+﻿military_2_and_above = {
+	OR = {
+		has_realm_law = mos_military_reforms_major_2
+		has_realm_law = mos_military_reforms_major_3
+		has_realm_law = mos_military_reforms_major_4
+		has_realm_law = mos_military_reforms_major_5
+	}
+}
+
+military_3_and_above = {
+	OR = {
+		has_realm_law = mos_military_reforms_major_3
+		has_realm_law = mos_military_reforms_major_4
+		has_realm_law = mos_military_reforms_major_5
+	}
+}
+
+military_4_and_above = {
+	OR = {
+		has_realm_law = mos_military_reforms_major_4
+		has_realm_law = mos_military_reforms_major_5
+	}
+}
+
+military_5_and_above = {
+	OR = {
+		has_realm_law = mos_military_reforms_major_5
+	}
+}
