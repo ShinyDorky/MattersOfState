@@ -102,6 +102,10 @@ types mos_reformwindows {
 										visible = "[And( GuiLawGroup.GetLawGroup.HasFlag( 'mos_military_reform' ), GuiLawGroup.IsAvailable )]"
 										ignoreinvisible = yes
 										layoutpolicy_horizontal = expanding	
+										spacer = {
+											visible = "[Not( GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' ))]"
+											size = { 0 30}
+										}		
 							
 										text_label_center = {		
 											visible = "[Not( GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' ))]"									
@@ -164,11 +168,11 @@ types mos_reformwindows {
 													}
 												}
 											}
-										}											
+										}									
 									}
 								}
 							}
-					}
+						}
 					}
 		
 					expand = {}
