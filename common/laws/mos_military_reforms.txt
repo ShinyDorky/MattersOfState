@@ -102,6 +102,7 @@
 	}
 }
 
+#RECRUITMENT
 mos_military_reforms_1_header = {
 	default = mos_military_reforms_1_header_1
 
@@ -361,6 +362,7 @@ mos_military_reforms_1_minor_1 = {
 	}
 }
 
+#LEADERSHIP
 mos_military_reforms_2_header = {
 	default = mos_military_reforms_2_header_1
 
@@ -614,6 +616,104 @@ mos_military_reforms_2_minor_1 = {
 			hidden_effect = {
 				add_realm_law = mos_military_reforms_2_header_0
 			}
+		}
+	}
+}
+
+#EQUIPMENT
+mos_military_reforms_3_header = {
+	default = mos_military_reforms_3_header_1
+
+	flag = mos_military_reform
+	flag = mos_header_reform
+	flag = mos_law
+	
+	cumulative = no
+
+
+	mos_military_reforms_3_header_1 = {
+		modifier = {
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+		}
+	}
+
+	mos_military_reforms_3_header_2 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+
+		can_keep = { 
+			NOT = {has_realm_law = mos_military_reforms_3_header_4}
+		}
+
+		can_pass = { 
+			has_realm_law = mos_military_reforms_3_header_4
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+		}
+	}
+
+	mos_military_reforms_3_header_3 = {
+		modifier = {
+			domain_limit = 20
+		}
+
+		can_keep = { 
+			military_3_and_above = yes
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+		}
+	}
+
+	mos_military_reforms_3_header_4 = {
+		modifier = {
+		}
+
+		can_keep = { 
+			military_4_and_above = yes
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+		}
+	}
+
+	mos_military_reforms_3_header_5 = {
+		modifier = {
+			domain_limit = 20
+		}
+
+		can_keep = { 
+			military_5_and_above = yes
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
 		}
 	}
 }
