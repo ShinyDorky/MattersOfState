@@ -159,11 +159,6 @@ mos_military_reforms_1_header = {
 			
 			military_3_and_above = yes
 		}
-
-		
-		can_pass = {
-			military_3_and_above = yes
-		}
 		
 		pass_cost = {
 			gold = 0
@@ -177,10 +172,6 @@ mos_military_reforms_1_header = {
 		}
 
 		can_keep = { 
-			military_4_and_above = yes
-		}
-
-		can_pass = { 
 			military_4_and_above = yes
 		}
 		
@@ -201,10 +192,6 @@ mos_military_reforms_1_header = {
 		}
 
 		can_keep = { 
-			military_5_and_above = yes
-		}
-
-		can_pass = { 
 			military_5_and_above = yes
 		}
 		
@@ -269,9 +256,6 @@ mos_military_reforms_1_minor_1 = {
 			military_1_and_above = yes
 		}
 
-		can_pass = { 
-			military_1_and_above = yes
-		}
 		
 		pass_cost = {
 			gold = 0
@@ -291,10 +275,6 @@ mos_military_reforms_1_minor_1 = {
 
 		can_keep = { 
 			NOT = {has_realm_law = mos_military_reforms_1_minor_1_2}
-		}
-
-		can_pass = { 
-			has_realm_law = mos_military_reforms_1_minor_1_2
 		}
 		
 		pass_cost = {
@@ -362,9 +342,6 @@ mos_military_reforms_1_minor_1 = {
 			military_5_and_above = yes
 		}
 
-		can_pass = { 
-			military_5_and_above = yes
-		}
 		
 		pass_cost = {
 			gold = 0

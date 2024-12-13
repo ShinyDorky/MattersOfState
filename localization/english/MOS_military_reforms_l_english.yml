@@ -1,5 +1,7 @@
 ﻿l_english:
 
+ mos_reforms_too_low_mil:0 "Your military has not achieved sufficient level of complexity"
+
  mos_military_reforms_major:0 "Major Military Reforms"
  mos_military_reforms_major_1:0 "Tribal Warriors"
  mos_military_reforms_major_2:0 "Chiefs Retinue"

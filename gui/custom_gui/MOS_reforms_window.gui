@@ -116,7 +116,7 @@ types mos_reformwindows {
 										layoutpolicy_horizontal = expanding	
 										datamodel = "[GuiLawGroup.GetLaws]"		
 										item = {
-											hbox = {
+											vbox = {
 												datacontext = "[GuiLaw.GetLaw]"
 												visible = "[Not( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER')) )]"
 												MOS_reform_spacer = {
@@ -154,6 +154,11 @@ types mos_reformwindows {
 														blockoverride "master_color_frame" {
 															frame = 2
 														}
+													}
+													text_label_center = {
+														parentanchor = center
+														visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+														text = "[GuiLaw.GetLaw.GetName]"
 													}
 												}
 											}
