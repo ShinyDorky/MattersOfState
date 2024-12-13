@@ -640,6 +640,7 @@ mos_military_reforms_3_header = {
 		}
 		
 		on_pass = {
+			mos_major_mil_reform_invalidate_doctrine_effect = yes
 		}
 	}
 
@@ -661,6 +662,7 @@ mos_military_reforms_3_header = {
 		}
 		
 		on_pass = {
+			mos_major_mil_reform_invalidate_doctrine_effect = yes
 		}
 	}
 
@@ -681,6 +683,7 @@ mos_military_reforms_3_header = {
 		}
 		
 		on_pass = {
+			mos_major_mil_reform_invalidate_doctrine_effect = yes
 		}
 	}
 
@@ -697,6 +700,7 @@ mos_military_reforms_3_header = {
 		}
 		
 		on_pass = {
+			mos_major_mil_reform_invalidate_doctrine_effect = yes
 		}
 	}
 
