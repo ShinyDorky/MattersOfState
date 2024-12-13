@@ -1,5 +1,5 @@
 ﻿mos_military_reforms_major = {
-	default = mos_mil_m2
+	default = mos_military_reforms_major_1
 
 	flag = mos_military_reform
 	flag = mos_major_reform
