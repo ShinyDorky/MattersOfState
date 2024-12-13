@@ -24,3 +24,20 @@
  mos_military_reforms_1_minor_1_3:0 "$MOS_NULL_LAW$"
  mos_military_reforms_1_minor_1_4:0 "$MOS_NULL_LAW$"
  mos_military_reforms_1_minor_1_5:0 "Local Militia"
+
+
+ mos_military_reforms_2_header:0 "LEADERSHIP"
+ mos_military_reforms_2_header_0:0 "$MOS_NULL_LAW_NO_SPACER$"
+ mos_military_reforms_2_header_1:0 "Tribal Chieftains"
+ mos_military_reforms_2_header_2:0 "Centralized Command"
+ mos_military_reforms_2_header_3:0 "Noble Leadership"
+ mos_military_reforms_2_header_4:0 "$MOS_NULL_LAW$"
+ mos_military_reforms_2_header_5:0 "Career Officers"
+
+ mos_military_reforms_2_minor_1:0 "SHOULD NOT BE SEEING THIS"
+ mos_military_reforms_2_minor_1_0:0 "$MOS_NULL_LAW_NO_SPACER$"
+ mos_military_reforms_2_minor_1_1:0 "$MOS_NULL_LAW$"
+ mos_military_reforms_2_minor_1_2:0 "$MOS_NULL_LAW$"
+ mos_military_reforms_2_minor_1_3:0 "$MOS_NULL_LAW$"
+ mos_military_reforms_2_minor_1_4:0 "$MOS_NULL_LAW$"
+ mos_military_reforms_2_minor_1_5:0 "Military Governors"

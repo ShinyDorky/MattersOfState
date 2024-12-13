@@ -1,5 +1,5 @@
 ﻿mos_major_mil_reform_change_cleanup_effect_1 = {
-	IF = {
+	IF = { #RECRUITMENT
 		limit = {
 			OR = {
 				has_realm_law = mos_military_reforms_1_header_3
@@ -9,6 +9,18 @@
 			}
 		}
 		add_realm_law = mos_military_reforms_1_header_1
+	}
+
+	IF = { # LEADERSHIP
+		limit = {
+			OR = {
+				has_realm_law = mos_military_reforms_2_header_2
+				has_realm_law = mos_military_reforms_2_header_3
+				has_realm_law = mos_military_reforms_2_header_5
+				has_realm_law = mos_military_reforms_2_minor_1_5
+			}
+		}
+		add_realm_law = mos_military_reforms_2_header_1
 	}
 }
 
@@ -24,6 +36,16 @@ mos_major_mil_reform_change_cleanup_effect_2 = {
 		}
 		add_realm_law = mos_military_reforms_1_header_1
 	}
+	IF = {
+		limit = {
+			OR = {
+				has_realm_law = mos_military_reforms_2_header_3
+				has_realm_law = mos_military_reforms_2_header_5
+				has_realm_law = mos_military_reforms_2_minor_1_5
+			}
+		}
+		add_realm_law = mos_military_reforms_2_header_2
+	}
 }
 
 mos_major_mil_reform_change_cleanup_effect_3 = {
@@ -37,6 +59,15 @@ mos_major_mil_reform_change_cleanup_effect_3 = {
 		}
 		add_realm_law = mos_military_reforms_1_header_3
 	}
+	IF = {
+		limit = {
+			OR = {
+				has_realm_law = mos_military_reforms_2_header_5
+				has_realm_law = mos_military_reforms_2_minor_1_5
+			}
+		}
+		add_realm_law = mos_military_reforms_2_header_3
+	}
 }
 
 mos_major_mil_reform_change_cleanup_effect_4 = {
@@ -48,6 +79,15 @@ mos_major_mil_reform_change_cleanup_effect_4 = {
 			}
 		}
 		add_realm_law = mos_military_reforms_1_header_4
+	}
+	IF = {
+		limit = {
+			OR = {
+				has_realm_law = mos_military_reforms_2_header_5
+				has_realm_law = mos_military_reforms_2_minor_1_5
+			}
+		}
+		add_realm_law = mos_military_reforms_2_header_3
 	}
 }
 
