@@ -717,3 +717,95 @@ mos_military_reforms_3_header = {
 		}
 	}
 }
+
+#ARMY DOCTRINE
+mos_military_reforms_4_header = {
+	default = mos_military_reforms_4_header_1
+
+	flag = mos_military_reform
+	flag = mos_header_reform
+	flag = mos_law
+	
+	cumulative = no
+
+
+	mos_military_reforms_4_header_1 = {
+		modifier = {
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+		}
+	}
+
+	mos_military_reforms_4_header_2 = {
+		modifier = {
+		}
+
+		can_have = {
+			has_realm_law = mos_military_reforms_3_header_5
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+		}
+	}
+
+	mos_military_reforms_4_header_3 = {
+		modifier = {
+		}
+		
+		can_have = {
+			has_realm_law = mos_military_reforms_3_header_5
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+		}
+	}
+
+	mos_military_reforms_4_header_4 = {
+		modifier = {
+		}
+		
+		can_have = {
+			has_realm_law = mos_military_reforms_3_header_5
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+		}
+	}
+
+	mos_military_reforms_4_header_5 = {
+		modifier = {
+		}
+		
+		can_have = {
+			has_realm_law = mos_military_reforms_3_header_5
+		}
+
+		can_keep = {
+			
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+		}
+	}
+}
