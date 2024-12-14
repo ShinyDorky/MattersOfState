@@ -1,5 +1,5 @@
 types mos_reformwindows {
-	type MOS_reforms_window = window = {
+	type MOS_reforms_window = window {
 		name = "MOS_reforms_window"
 		datacontext = "[GetVariableSystem]"
 		datacontext = "[GetPlayer]"
@@ -7,7 +7,7 @@ types mos_reformwindows {
 		layer = middle
 		position = { -1040 0 }
 		size = { 1100 1000 }
-		visible = "[And(GetPlayer.IsValid,GetVariableSystem.HasValue('MOS_reforms_open', 'yes')))]"
+		visible = "[And(GetPlayer.IsValid,GetVariableSystem.HasValue('MOS_reforms_open', 'yes'))]"
 		using = Window_Background
 		using = Window_Decoration_Flat
 		
