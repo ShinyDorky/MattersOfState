@@ -61,16 +61,25 @@
 
  mos_military_reforms_3_header:0 "EQUIPMENT"
  mos_military_reforms_3_header_1:0 "Personal Choice"
+ mos_military_reforms_3_header_1_effects:0 "Equipment of our warriors is not our concern."
  mos_military_reforms_3_header_2:0 "$MOS_NULL_LAW$"
  mos_military_reforms_3_header_3:0 "Requirement of Rank"
+ mos_military_reforms_3_header_3_effects:0 "People are expected to possess weapons and armor in quality proportional to their wealth."
  mos_military_reforms_3_header_4:0 "Subsidized Gear"
+ mos_military_reforms_3_header_4_effects:0 "By ensuring that every soldier is equipped on at least a certain level, we drastically raise their chances of survival. And lower the enemies'."
  mos_military_reforms_3_header_5:0 "State Provided Gear"
+ mos_military_reforms_3_header_5_effects:0 "As soldiers are employees of state, it is state's responsibility to ensure they have the tools to perform their duties."
 
 
 
  mos_military_reforms_4_header:0 "ARMY DOCTRINE"
  mos_military_reforms_4_header_1:0 "No Particular Focus"
+ mos_military_reforms_4_header_1_effects:0 ""
  mos_military_reforms_4_header_2:0 "Siege Warfare Doctrine"
+ mos_military_reforms_4_header_2_effects:0 ""
  mos_military_reforms_4_header_3:0 "Offensive Doctrine"
+ mos_military_reforms_4_header_3_effects:0 ""
  mos_military_reforms_4_header_4:0 "Mobile Army Doctrine"
+ mos_military_reforms_4_header_4_effects:0 ""
  mos_military_reforms_4_header_5:0 "Defensive Tactics Doctrine"
+ mos_military_reforms_4_header_5_effects:0 ""
