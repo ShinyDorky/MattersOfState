@@ -40,10 +40,14 @@
  mos_military_reforms_2_header:0 "LEADERSHIP"
  mos_military_reforms_2_header_0:0 "$MOS_NULL_LAW_NO_SPACER$"
  mos_military_reforms_2_header_1:0 "Tribal Chieftains"
+ mos_military_reforms_2_header_1_effects:0 "Many tribes are united under our [GetPlayer.GetTitleAsNameNoTooltip]. While they follow [GetPlayer.GetHerHim], their allegiance ultimately lies with their tribe."
  mos_military_reforms_2_header_2:0 "Centralized Command"
+ mos_military_reforms_2_header_2_effects:0 "Even if our people are not as united as one might hope, battlefield is no place for hesitation. It must be ensured that eeryone is certain who makes the final decisions in the middle of chaos."
  mos_military_reforms_2_header_3:0 "Noble Leadership"
+ mos_military_reforms_2_header_3_effects:0 "Nobles of [GetPlayer.GetPrimaryTitle.GetNameNoTooltip] are expected to lead troops into battle and serve as commanders under their liege."
  mos_military_reforms_2_header_4:0 "$MOS_NULL_LAW$"
  mos_military_reforms_2_header_5:0 "Career Officers"
+ mos_military_reforms_2_header_5_effects:0 "Armies of [GetPlayer.GetPrimaryTitle.GetNameNoTooltip] are led by professional officers, who are expected to have gained significant experience before assuming command. Be it through observation or study."
 
  mos_military_reforms_2_minor_1:0 "SHOULD NOT BE SEEING THIS"
  mos_military_reforms_2_minor_1_0:0 "$MOS_NULL_LAW_NO_SPACER$"
@@ -52,6 +56,7 @@
  mos_military_reforms_2_minor_1_3:0 "$MOS_NULL_LAW$"
  mos_military_reforms_2_minor_1_4:0 "$MOS_NULL_LAW$"
  mos_military_reforms_2_minor_1_5:0 "Military Governors"
+ mos_military_reforms_2_minor_1_5_effects:0 "Administrators of [GetPlayer.GetPrimaryTitle.GetNameNoTooltip] are also embedded in military organization. By putting them in charge of both, we enable them to personally ensure that logistics of their units are properly seen to."
 
 
  mos_military_reforms_3_header:0 "EQUIPMENT"
