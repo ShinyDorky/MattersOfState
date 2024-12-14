@@ -38,7 +38,7 @@ widget = {
 		onclick = "[ToggleGameView('my_realm')]"
 		onclick = "[GetVariableSystem.Set('MOS_reforms_open', 'yes')]"
 		onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'military' )]"
-		tooltip = "MOS_reforms_button_tt1"
+		tooltip = "MOS_reforms_button_tt"
 	}
 
 	button = {
@@ -56,7 +56,7 @@ widget = {
 
 		onclick = "[GetVariableSystem.Set('MOS_reforms_open', 'yes')]"
 		onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'military' )]"
-		tooltip = "MOS_reforms_button_tt2"
+		tooltip = "MOS_reforms_button_tt"
 	}
 
 	
@@ -76,7 +76,7 @@ widget = {
 
 		onclick = "[GetVariableSystem.Set('MOS_reforms_open', 'no')]"
 		onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'military' )]"
-		tooltip = "MOS_reforms_button_tt3"
+		tooltip = "MOS_reforms_button_tt"
 	}
 
 	button = {
@@ -94,6 +94,6 @@ widget = {
 
 		onclick = "[GetVariableSystem.Set('MOS_reforms_open', 'no')]"
 		onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'military' )]"
-		tooltip = "MOS_reforms_button_tt4"
+		tooltip = "MOS_reforms_button_tt"
 	}
 }
