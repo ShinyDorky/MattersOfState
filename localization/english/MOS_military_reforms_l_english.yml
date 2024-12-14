@@ -4,6 +4,7 @@
 
  mos_military_reforms_major:0 "Major Military Reforms"
  mos_military_reforms_major_1:0 "Tribal Warriors"
+ mos_military_reforms_major_1_effects:1 "Our warriors fight for their tribes. As long as we maintain loyalty and respect of their chiefs, we can count on their people joining us in battle."
  mos_military_reforms_major_2:0 "Chiefs Retinue"
  mos_military_reforms_major_3:0 "Men At Arms"
  mos_military_reforms_major_4:0 "Sovereign Guard"
@@ -12,8 +13,10 @@
  mos_military_reforms_1_header:0 "RECRUITMENT"
  mos_military_reforms_1_header_0:0 "$MOS_NULL_LAW_NO_SPACER$"
  mos_military_reforms_1_header_1:0 "Raiding Armies"
+ mos_military_reforms_1_header_1_desc:0 "Raiding Armies"
  mos_military_reforms_1_header_2:0 "$MOS_NULL_LAW$"
  mos_military_reforms_1_header_3:0 "Peasant Levies"
+ mos_military_reforms_1_header_3_effects:0 "Peasants and freemen of [GetPlayer.GetPrimaryTitle.GetNameNoTooltip] fight for their local lords, and those lords fight for Us."
  mos_military_reforms_1_header_4:0 "Mercenary Recruitment"
  mos_military_reforms_1_header_5:0 "Elite Forces"
 
