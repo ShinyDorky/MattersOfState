@@ -1,6 +1,7 @@
 ﻿l_english:
 
  mos_reforms_too_low_mil:0 "Your military has not achieved sufficient level of complexity"
+ mos_enabled_mil_doctrines_t:0 "You need to supply equipment for your army in order to effectively decide how it shall fight\nPASS STATE PROVIDED GEAR"
 
  mos_military_reforms_major:0 "Major Military Reforms"
  mos_military_reforms_major_1:0 "Tribal Warriors"
@@ -76,10 +77,10 @@
  mos_military_reforms_4_header_1:0 "No Particular Focus"
  mos_military_reforms_4_header_1_effects:0 ""
  mos_military_reforms_4_header_2:0 "Siege Warfare Doctrine"
- mos_military_reforms_4_header_2_effects:0 ""
+ mos_military_reforms_4_header_2_effects:0 "Our enemies hide behind strong walls. Our soldiers must becoming experts at getting inside of them."
  mos_military_reforms_4_header_3:0 "Offensive Doctrine"
- mos_military_reforms_4_header_3_effects:0 ""
+ mos_military_reforms_4_header_3_effects:0 "The best way to win a war is to ensure that enemy runs out of soldiers first."
  mos_military_reforms_4_header_4:0 "Mobile Army Doctrine"
- mos_military_reforms_4_header_4_effects:0 ""
+ mos_military_reforms_4_header_4_effects:0 "In order to fight in vast territories, our armies must quickly and efficiently cross great distances."
  mos_military_reforms_4_header_5:0 "Defensive Tactics Doctrine"
- mos_military_reforms_4_header_5_effects:0 ""
+ mos_military_reforms_4_header_5_effects:0 "It is best to fight on the battlefield of your choosing. Especially if said battlefield allows you to hide behind a thick wall."

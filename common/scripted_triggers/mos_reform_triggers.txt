@@ -1,4 +1,4 @@
-﻿military_2_and_above = {
+﻿mos_military_2_and_above = {
 	custom_tooltip = {
 		text = mos_reforms_too_low_mil
 		OR = {
@@ -10,7 +10,7 @@
 	}
 }
 
-military_3_and_above = {
+mos_military_3_and_above = {
 	custom_tooltip = {
 		text = mos_reforms_too_low_mil
 		OR = {
@@ -21,7 +21,7 @@ military_3_and_above = {
 	}
 }
 
-military_4_and_above = {
+mos_military_4_and_above = {
 	custom_tooltip = {
 		text = mos_reforms_too_low_mil
 		OR = {
@@ -31,11 +31,20 @@ military_4_and_above = {
 	}
 }
 
-military_5_and_above = {
+mos_military_5_and_above = {
 	custom_tooltip = {
 		text = mos_reforms_too_low_mil
 		OR = {
 			has_realm_law = mos_military_reforms_major_5
+		}
+	}
+}
+
+mos_enabled_mil_doctrines = {
+	custom_tooltip = {
+		text = mos_enabled_mil_doctrines_t
+		OR = {
+			has_realm_law = mos_military_reforms_3_header_5
 		}
 	}
 }

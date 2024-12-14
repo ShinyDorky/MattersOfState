@@ -158,7 +158,7 @@ mos_military_reforms_1_header = {
 
 		can_keep = { 
 			
-			military_3_and_above = yes
+			mos_military_3_and_above = yes
 		}
 		
 		pass_cost = {
@@ -173,7 +173,7 @@ mos_military_reforms_1_header = {
 		}
 
 		can_keep = { 
-			military_4_and_above = yes
+			mos_military_4_and_above = yes
 		}
 		
 		pass_cost = {
@@ -193,7 +193,7 @@ mos_military_reforms_1_header = {
 		}
 
 		can_keep = { 
-			military_5_and_above = yes
+			mos_military_5_and_above = yes
 		}
 		
 		pass_cost = {
@@ -254,7 +254,7 @@ mos_military_reforms_1_minor_1 = {
 		}
 
 		can_keep = { 
-			military_1_and_above = yes
+			mos_military_1_and_above = yes
 		}
 
 		
@@ -340,7 +340,7 @@ mos_military_reforms_1_minor_1 = {
 		}
 
 		can_keep = { 
-			military_5_and_above = yes
+			mos_military_5_and_above = yes
 		}
 
 		
@@ -393,7 +393,7 @@ mos_military_reforms_2_header = {
 		}
 
 		can_keep = { 
-			military_2_and_above = yes
+			mos_military_2_and_above = yes
 		}
 
 		can_pass = { 
@@ -416,7 +416,7 @@ mos_military_reforms_2_header = {
 		}
 
 		can_keep = { 
-			military_3_and_above = yes
+			mos_military_3_and_above = yes
 		}
 
 		can_pass = { 
@@ -460,7 +460,7 @@ mos_military_reforms_2_header = {
 		}
 
 		can_keep = { 
-			military_5_and_above = yes
+			mos_military_5_and_above = yes
 		}
 		
 		pass_cost = {
@@ -604,7 +604,7 @@ mos_military_reforms_2_minor_1 = {
 		}
 
 		can_keep = { 
-			military_5_and_above = yes
+			mos_military_5_and_above = yes
 		}
 
 		
@@ -672,7 +672,7 @@ mos_military_reforms_3_header = {
 		}
 
 		can_keep = { 
-			military_3_and_above = yes
+			mos_military_3_and_above = yes
 		}
 
 		can_pass = { 
@@ -692,7 +692,7 @@ mos_military_reforms_3_header = {
 		}
 
 		can_keep = { 
-			military_4_and_above = yes
+			mos_military_4_and_above = yes
 		}
 		
 		pass_cost = {
@@ -710,7 +710,7 @@ mos_military_reforms_3_header = {
 		}
 
 		can_keep = { 
-			military_5_and_above = yes
+			mos_military_5_and_above = yes
 		}
 		
 		pass_cost = {
@@ -749,8 +749,8 @@ mos_military_reforms_4_header = {
 		modifier = {
 		}
 
-		can_have = {
-			has_realm_law = mos_military_reforms_3_header_5
+		can_keep = {
+			mos_enabled_mil_doctrines = yes
 		}
 		
 		pass_cost = {
@@ -765,8 +765,8 @@ mos_military_reforms_4_header = {
 		modifier = {
 		}
 		
-		can_have = {
-			has_realm_law = mos_military_reforms_3_header_5
+		can_keep = {
+			mos_enabled_mil_doctrines = yes
 		}
 		
 		pass_cost = {
@@ -781,8 +781,8 @@ mos_military_reforms_4_header = {
 		modifier = {
 		}
 		
-		can_have = {
-			has_realm_law = mos_military_reforms_3_header_5
+		can_keep = {
+			mos_enabled_mil_doctrines = yes
 		}
 		
 		pass_cost = {
@@ -797,8 +797,8 @@ mos_military_reforms_4_header = {
 		modifier = {
 		}
 		
-		can_have = {
-			has_realm_law = mos_military_reforms_3_header_5
+		can_keep = {
+			mos_enabled_mil_doctrines = yes
 		}
 
 		can_keep = {
