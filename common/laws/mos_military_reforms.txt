@@ -17,6 +17,10 @@ mos_military_reforms_major = {
 			men_at_arms_maintenance = 0.2
 		}
 
+		should_start_with = {
+			has_government = tribal_government
+		}
+
 		can_keep = { 
 			trigger_if = {
 				limit = {
@@ -146,6 +150,14 @@ mos_military_reforms_major = {
 	mos_military_reforms_major_3 = {
 		modifier = {
 			levy_maintenance = -0.1
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = feudal_government
+				has_government = clan_government
+				has_government = theocracy_government
+			}
 		}
 
 		can_keep = { 
@@ -282,6 +294,13 @@ mos_military_reforms_major = {
 			men_at_arms_recruitment_cost = -0.1
 		}
 
+		should_start_with = {
+			OR = {
+				has_government = administrative_government
+				has_government = republican_government
+			}
+		}
+
 		can_keep = { 
 			trigger_if = {
 				limit = {
@@ -355,6 +374,18 @@ mos_military_reforms_1_header = {
 			raid_speed = 0.2
 			max_loot_mult = 0.5
 			attacker_advantage = 3
+		}
+
+		should_start_with = {
+			AND = {
+				has_government = tribal_government
+				OR = {
+					has_trait = wrathful
+					has_trait = vengeful
+					has_trait = sadistic
+					culture = { has_cultural_pillar = heritage_north_germanic }
+				}
+			}
 		}
 
 		can_keep = { 
@@ -436,6 +467,14 @@ mos_military_reforms_1_header = {
 		modifier = {
 			levy_size = 0.1
 		}
+
+		should_start_with = {
+			OR = {
+				has_government = feudal_government
+				has_government = clan_government
+				has_government = theocracy_government
+			}
+		}
 		
 
 		can_keep = { 
@@ -499,6 +538,13 @@ mos_military_reforms_1_header = {
 			maa_toughness_mult = 0.05
 			maa_pursuit_mult = 0.05
 			maa_screen_mult = 0.05
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = administrative_government
+				has_government = republican_government
+			}
 		}
 
 		can_keep = { 
@@ -620,6 +666,19 @@ mos_military_reforms_1_header = {
 	mos_military_reforms_1_header_0 = {
 		modifier = {
 		}
+		should_start_with = {
+			AND = {
+				has_government = tribal_government
+				NOT = {
+					OR = {
+						has_trait = wrathful
+						has_trait = vengeful
+						has_trait = sadistic
+						culture = { has_cultural_pillar = heritage_north_germanic }
+					}
+				}
+			}
+		}
 		can_keep = { 
 			trigger_if = {
 				limit = {
@@ -676,6 +735,17 @@ mos_military_reforms_1_minor_1 = {
 	mos_military_reforms_1_minor_1_0 = {
 		modifier = {
 		}
+		should_start_with = {
+			AND = {
+				has_government = tribal_government
+				OR = {
+					has_trait = wrathful
+					has_trait = vengeful
+					has_trait = sadistic
+					culture = { has_cultural_pillar = heritage_north_germanic }
+				}
+			}
+		}
 		can_keep = { 
 			trigger_if = {
 				limit = {
@@ -728,6 +798,19 @@ mos_military_reforms_1_minor_1 = {
 		modifier = {
 			hostile_raid_time = 0.2
 			defender_advantage = 3
+		}
+		should_start_with = {
+			AND = {
+				has_government = tribal_government
+				NOT = {
+					OR = {
+						has_trait = wrathful
+						has_trait = vengeful
+						has_trait = sadistic
+						culture = { has_cultural_pillar = heritage_north_germanic }
+					}
+				}
+			}
 		}
 
 		can_keep = { 

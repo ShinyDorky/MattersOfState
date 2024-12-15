@@ -1,4 +1,4 @@
-mos_reforms_cooldown_value = 1
+@mos_reforms_cooldown_value = 1
 
 mos_pass_reform_effect = {
 	set_variable = {
