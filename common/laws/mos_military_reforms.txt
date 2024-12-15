@@ -1046,6 +1046,10 @@ mos_military_reforms_2_header = {
 			advantage = -5
 		}
 
+		should_start_with = {
+			has_government = tribal_government
+		}
+
 		can_keep = { 
 			trigger_if = {
 				limit = {
@@ -1153,6 +1157,14 @@ mos_military_reforms_2_header = {
 		modifier = {
 			feudal_government_vassal_opinion = 10
 			glory_hound_opinion = 5
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = feudal_government
+				has_government = clan_government
+				has_government = theocracy_government
+			}
 		}
 
 		can_keep = { 
@@ -1293,6 +1305,13 @@ mos_military_reforms_2_header = {
 	
 	mos_military_reforms_2_header_0 = {
 		modifier = {
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = administrative_government
+				has_government = republican_government
+			}
 		}
 
 		can_keep = { 
@@ -1497,6 +1516,13 @@ mos_military_reforms_2_minor_1 = {
 			glory_hound_opinion = 5
 		}
 
+		should_start_with = {
+			OR = {
+				has_government = administrative_government
+				has_government = republican_government
+			}
+		}
+
 		can_keep = { 
 			trigger_if = {
 				limit = {
@@ -1566,6 +1592,10 @@ mos_military_reforms_3_header = {
 			maa_pursuit_mult = -0.05
 			maa_screen_mult = -0.05
 			men_at_arms_maintenance = -0.3
+		}
+
+		should_start_with = {
+			has_government = tribal_government
 		}
 
 		can_keep = { 
@@ -1646,6 +1676,14 @@ mos_military_reforms_3_header = {
 		modifier = {
 		}
 
+		should_start_with = {
+			OR = {
+				has_government = feudal_government
+				has_government = clan_government
+				has_government = theocracy_government
+			}
+		}
+
 		can_keep = { 
 			trigger_if = {
 				limit = {
@@ -1702,6 +1740,13 @@ mos_military_reforms_3_header = {
 			maa_pursuit_mult = 0.05
 			maa_screen_mult = 0.05
 			men_at_arms_maintenance = 0.1
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = administrative_government
+				has_government = republican_government
+			}
 		}
 
 		can_keep = { 
@@ -1822,6 +1867,10 @@ mos_military_reforms_4_header = {
 
 	mos_military_reforms_4_header_1 = {
 		modifier = {
+		}
+
+		should_start_with = {
+			always = yes
 		}
 
 		can_keep = { 
