@@ -71,6 +71,7 @@ mos_military_reforms_major = {
 		
 		on_pass = { 
 			mos_major_mil_reform_change_cleanup_effect_1 = yes
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -138,6 +139,7 @@ mos_military_reforms_major = {
 		
 		on_pass = { 
 			mos_major_mil_reform_change_cleanup_effect_2 = yes
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -202,6 +204,7 @@ mos_military_reforms_major = {
 		
 		on_pass = { 
 			mos_major_mil_reform_change_cleanup_effect_3 = yes
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -269,6 +272,7 @@ mos_military_reforms_major = {
 		
 		on_pass = { 
 			mos_major_mil_reform_change_cleanup_effect_4 = yes
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -330,6 +334,7 @@ mos_military_reforms_major = {
 		
 		on_pass = { 
 			mos_major_mil_reform_change_cleanup_effect_5 = yes
+			mos_pass_reform_effect = yes
 		}
 	}
 }
@@ -403,6 +408,7 @@ mos_military_reforms_1_header = {
 			hidden_effect = {
 				add_realm_law = mos_military_reforms_1_minor_1_0
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -482,6 +488,7 @@ mos_military_reforms_1_header = {
 			hidden_effect = {
 				add_realm_law = mos_military_reforms_1_minor_1_0
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -544,6 +551,7 @@ mos_military_reforms_1_header = {
 			hidden_effect = {
 				add_realm_law = mos_military_reforms_1_minor_1_0
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -605,6 +613,7 @@ mos_military_reforms_1_header = {
 			hidden_effect = {
 				add_realm_law = mos_military_reforms_1_minor_1_0
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 	
@@ -710,7 +719,9 @@ mos_military_reforms_1_minor_1 = {
 			gold = 0
 		}
 		
-		on_pass = { }
+		on_pass = {
+			mos_pass_reform_effect = yes 
+		}
 	}
 
 	mos_military_reforms_1_minor_1_1 = {
@@ -769,6 +780,7 @@ mos_military_reforms_1_minor_1 = {
 			hidden_effect = {
 				add_realm_law = mos_military_reforms_1_header_0
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -819,6 +831,7 @@ mos_military_reforms_1_minor_1 = {
 			hidden_effect = {
 				add_realm_law = mos_military_reforms_1_header_0
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -845,6 +858,7 @@ mos_military_reforms_1_minor_1 = {
 			hidden_effect = {
 				add_realm_law = mos_military_reforms_1_header_0
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -928,12 +942,7 @@ mos_military_reforms_1_minor_1 = {
 			hidden_effect = {
 				add_realm_law = mos_military_reforms_1_header_0
 			}
-		}
-
-		on_revoke = {
-			hidden_effect = {
-				add_realm_law = mos_military_reforms_1_header_0
-			}
+			mos_pass_reform_effect = yes
 		}
 	}
 }
@@ -999,6 +1008,7 @@ mos_military_reforms_2_header = {
 			hidden_effect = {
 				add_realm_law = mos_military_reforms_2_minor_1_0
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -1052,6 +1062,7 @@ mos_military_reforms_2_header = {
 			hidden_effect = {
 				add_realm_law = mos_military_reforms_2_minor_1_0
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -1106,6 +1117,7 @@ mos_military_reforms_2_header = {
 			hidden_effect = {
 				add_realm_law = mos_military_reforms_2_minor_1_0
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -1134,6 +1146,7 @@ mos_military_reforms_2_header = {
 		}
 		
 		on_pass = {
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -1191,6 +1204,7 @@ mos_military_reforms_2_header = {
 			hidden_effect = {
 				add_realm_law = mos_military_reforms_2_minor_1_0
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 	
@@ -1239,7 +1253,9 @@ mos_military_reforms_2_header = {
 			gold = 0
 		}
 		
-		on_pass = { }
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
 	}
 }
 
@@ -1302,7 +1318,9 @@ mos_military_reforms_2_minor_1 = {
 			gold = 0
 		}
 		
-		on_pass = { }
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
 	}
 
 	mos_military_reforms_2_minor_1_1 = {
@@ -1442,6 +1460,7 @@ mos_military_reforms_2_minor_1 = {
 			hidden_effect = {
 				add_realm_law = mos_military_reforms_2_header_0
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 }
@@ -1511,6 +1530,7 @@ mos_military_reforms_3_header = {
 			hidden_effect = {
 				mos_major_mil_reform_invalidate_doctrine_effect = yes
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -1535,6 +1555,7 @@ mos_military_reforms_3_header = {
 			hidden_effect = {
 				mos_major_mil_reform_invalidate_doctrine_effect = yes
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -1587,6 +1608,7 @@ mos_military_reforms_3_header = {
 			hidden_effect = {
 				mos_major_mil_reform_invalidate_doctrine_effect = yes
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -1644,6 +1666,7 @@ mos_military_reforms_3_header = {
 			hidden_effect = {
 				mos_major_mil_reform_invalidate_doctrine_effect = yes
 			}
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -1698,6 +1721,7 @@ mos_military_reforms_3_header = {
 		}
 		
 		on_pass = {
+			mos_pass_reform_effect = yes
 		}
 	}
 }
@@ -1759,6 +1783,7 @@ mos_military_reforms_4_header = {
 		}
 		
 		on_pass = {
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -1812,6 +1837,7 @@ mos_military_reforms_4_header = {
 		}
 		
 		on_pass = {
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -1866,6 +1892,7 @@ mos_military_reforms_4_header = {
 		}
 		
 		on_pass = {
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -1918,6 +1945,7 @@ mos_military_reforms_4_header = {
 		}
 		
 		on_pass = {
+			mos_pass_reform_effect = yes
 		}
 	}
 
@@ -1972,6 +2000,7 @@ mos_military_reforms_4_header = {
 		}
 		
 		on_pass = {
+			mos_pass_reform_effect = yes
 		}
 	}
 }
