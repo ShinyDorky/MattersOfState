@@ -1,5 +1,4 @@
-﻿#TODO: MAKE LAWS APPLY TO ALL IN REALM
-#TODO: MAKE MODIFIERS DIFFER DEPENDING ON OWNED DLC
+﻿#TODO: MAKE MODIFIERS DIFFER DEPENDING ON OWNED DLC
 
 mos_military_reforms_major = {
 	default = mos_military_reforms_major_1
