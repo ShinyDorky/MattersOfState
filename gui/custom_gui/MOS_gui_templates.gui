@@ -19,7 +19,7 @@ type MOS_reform_spacer = spacer
 type MOS_law_group_background_hbox = hbox
 	{
 		background = {
-			texture = "gfx/interface/_debug/pink_square_chill.png"
+			texture = "gfx/interface/mos_background_reforms_warfare.dds"
 			#spriteborder = { 6 6 }
 			shaderfile = "gfx/FX/pdxgui_default.shader"
 			alpha = 0.4
@@ -32,7 +32,7 @@ type MOS_colored_spacer = hbox
 		layoutpolicy_horizontal = expanding
 								
 		background = {
-			texture = "gfx/interface/_debug/pink_square_chill.png"
+			texture = "gfx/interface/mos_background_reforms_warfare_small.dds"
 			#spriteborder = { 6 6 }
 			shaderfile = "gfx/FX/pdxgui_default.shader"
 			alpha = 0.4

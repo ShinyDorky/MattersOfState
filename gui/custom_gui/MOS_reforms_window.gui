@@ -122,8 +122,9 @@ types mos_reformwindows {
 										MOS_colored_spacer = {}
 							
 										MOS_law_group_background_hbox = {
+											margin = {5 0}
 											layoutpolicy_horizontal = expanding	
-											datamodel = "[GuiLawGroup.GetLaws]"		
+											datamodel = "[GuiLawGroup.GetLaws]"
 											item = {
 												vbox = {
 													datacontext = "[GuiLaw.GetLaw]"
@@ -175,7 +176,7 @@ types mos_reformwindows {
 										}
 										
 										MOS_colored_spacer = {
-											visible = "[GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' )]"			
+											#visible = "[GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' )]"			
 										}
 									}
 								}
