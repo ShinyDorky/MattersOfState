@@ -24,9 +24,9 @@ types mos_reform_containers{
 				# 	visible = "[GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' )]"									
 				# 	size = { 0 10 }
 				# }
-				MOS_colored_spacer = {}
+				MOS_mil_reforms_colored_spacer = {}
 				
-				MOS_law_group_background_hbox = {
+				MOS_mil_reforms_background_hbox = {
 					margin = {5 0}
 					layoutpolicy_horizontal = expanding	
 					datamodel = "[GuiLawGroup.GetLaws]"
@@ -80,7 +80,95 @@ types mos_reform_containers{
 					}
 				}
 				
-				MOS_colored_spacer = {
+				MOS_mil_reforms_colored_spacer = {
+					#visible = "[GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' )]"			
+				}
+			}
+		}
+	}
+
+	type mos_economic_reforms_container = vbox {
+		name = "mos_economic_reforms_major"
+		datamodel = "[MyRealmWindow.GetRealmLaws]"
+		ignoreinvisible = yes		
+		layoutpolicy_horizontal = expanding		
+		item = {
+			vbox = {								
+				datacontext = "[GuiLawGroup.GetLawGroup]"
+				visible = "[And( GuiLawGroup.GetLawGroup.HasFlag( 'mos_economic_reform' ), GuiLawGroup.IsAvailable)]"
+				ignoreinvisible = yes
+				layoutpolicy_horizontal = expanding	
+				spacer = {
+					visible = "[Not( GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' ))]"
+					size = { 0 30}
+				}		
+				
+				text_label_center = {		
+					visible = "[Not( GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' ))]"									
+					text = "[LawGroup.GetName]"
+				}
+				
+				# spacer = {		
+				# 	visible = "[GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' )]"									
+				# 	size = { 0 10 }
+				# }
+				MOS_econ_reforms_colored_spacer = {}
+				
+				MOS_econ_reforms_background_hbox = {
+					margin = {5 0}
+					layoutpolicy_horizontal = expanding	
+					datamodel = "[GuiLawGroup.GetLaws]"
+					item = {
+						vbox = {
+							datacontext = "[GuiLaw.GetLaw]"
+							visible = "[Not( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER')) )]"
+							MOS_reform_spacer = {
+								datacontext = "[GuiLaw.GetLaw]"
+								visible = "[EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW'))]"
+							}
+							layoutpolicy_horizontal = expanding	
+							MOS_reform_button = {
+								datacontext = "[GuiLaw.GetLaw]"
+								visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+								#visible = "[Not( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')) )]"
+								enabled = "[Or(GuiLaw.CanEnact, GuiLaw.IsEnacted)]"
+								down = "[GuiLaw.IsEnacted]"
+								alwaystransparent = "[GuiLaw.IsEnacted]"
+								onclick = "[GuiLaw.Enact]"
+								tooltipwidget = { pass_law_tooltip = {} }
+								using = tooltip_below
+								
+								
+								
+								MOS_reform_button = {
+									visible = "[Not(GuiLaw.IsEnacted)]"
+									texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
+									parentanchor = center
+									alwaystransparent = yes
+								}
+								
+								MOS_reform_icon = {
+									# TODO: Swap for textures when you have them
+									visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
+									texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+									parentanchor = center
+									alwaystransparent = yes
+									
+									blockoverride "master_color_frame" {
+										frame = 2
+									}
+								}
+								text_label_center = {
+									parentanchor = center
+									visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+									text = "[GuiLaw.GetLaw.GetName]"
+								}
+							}
+						}
+					}
+				}
+				
+				MOS_econ_reforms_colored_spacer = {
 					#visible = "[GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' )]"			
 				}
 			}
