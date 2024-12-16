@@ -86,6 +86,8 @@ types mos_reformwindows {
 							onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'administration' )]"
 						}
 					}
+
+					
 			
 					scrollbox = {#MILITARY REFORMS
 						visible = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'military' )]"
@@ -113,12 +115,13 @@ types mos_reformwindows {
 											text = "[LawGroup.GetName]"
 										}
 
-										spacer = {		
-											visible = "[GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' )]"									
-											size = { 0 10 }
-										}
+										# spacer = {		
+										# 	visible = "[GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' )]"									
+										# 	size = { 0 10 }
+										# }
+										MOS_colored_spacer = {}
 							
-										hbox = {
+										MOS_law_group_background_hbox = {
 											layoutpolicy_horizontal = expanding	
 											datamodel = "[GuiLawGroup.GetLaws]"		
 											item = {
@@ -169,7 +172,11 @@ types mos_reformwindows {
 													}
 												}
 											}
-										}									
+										}
+										
+										MOS_colored_spacer = {
+											visible = "[GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' )]"			
+										}
 									}
 								}
 							}
