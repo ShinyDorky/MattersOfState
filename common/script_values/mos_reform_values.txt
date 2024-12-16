@@ -1,0 +1,8 @@
+﻿
+mos_military_doctrines_unlocked = {
+	value = 0
+	if = {
+		limit = { has_realm_law = mos_military_reforms_4_header_1 }
+		add = 1
+	}
+}

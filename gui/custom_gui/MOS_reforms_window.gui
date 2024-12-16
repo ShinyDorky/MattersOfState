@@ -1,12 +1,13 @@
 types mos_reformwindows {
-	type MOS_reforms_window = window = {
+	type MOS_reforms_window = window {
 		name = "MOS_reforms_window"
 		datacontext = "[GetVariableSystem]"
 		datacontext = "[GetPlayer]"
 		parentanchor = vcenter|left
-		layer = middle
+		layer = windows_layer
+		position = { -1040 0 }
 		size = { 1100 1000 }
-		visible = "[And(GetPlayer.IsValid,GetVariableSystem.HasValue('MOS_reforms_open', 'yes')))]"
+		visible = "[And(GetPlayer.IsValid,GetVariableSystem.HasValue('MOS_reforms_open', 'yes'))]"
 		using = Window_Background
 		using = Window_Decoration_Flat
 		
@@ -85,85 +86,19 @@ types mos_reformwindows {
 							onclick = "[GetVariableSystem.Set( 'mos_reform_tab', 'administration' )]"
 						}
 					}
+
+					
 			
-					vbox = {#MILITARY REFORMS
+					scrollbox = {#MILITARY REFORMS
 						visible = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'military' )]"
 						layoutpolicy_horizontal = expanding	
-			
-						vbox = {
-							name = "mos_military_reforms_major"
-							datamodel = "[MyRealmWindow.GetRealmLaws]"
-							ignoreinvisible = yes		
-							layoutpolicy_horizontal = expanding		
-							item = {
-								vbox = {								
-									datacontext = "[GuiLawGroup.GetLawGroup]"
-									visible = "[And( GuiLawGroup.GetLawGroup.HasFlag( 'mos_military_reform' ), GuiLawGroup.IsAvailable )]"
-									ignoreinvisible = yes
-									layoutpolicy_horizontal = expanding	
-						
-									text_label_center = {		
-										visible = "[Not( GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' ))]"									
-										text = "[LawGroup.GetName]"
-									}
-
-									spacer = {		
-										visible = "[GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' )]"									
-										size = { 0 10 }
-									}
-						
-									hbox = {
-										layoutpolicy_horizontal = expanding	
-										datamodel = "[GuiLawGroup.GetLaws]"		
-										item = {
-											hbox = {
-												datacontext = "[GuiLaw.GetLaw]"
-												visible = "[Not( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER')) )]"
-												MOS_reform_spacer = {
-													datacontext = "[GuiLaw.GetLaw]"
-													visible = "[EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW'))]"
-												}
-												layoutpolicy_horizontal = expanding	
-												MOS_reform_button = {
-													datacontext = "[GuiLaw.GetLaw]"
-													visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
-													#visible = "[Not( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')) )]"
-													enabled = "[Or(GuiLaw.CanEnact, GuiLaw.IsEnacted)]"
-													down = "[GuiLaw.IsEnacted]"
-													alwaystransparent = "[GuiLaw.IsEnacted]"
-													onclick = "[GuiLaw.Enact]"
-													tooltipwidget = { pass_law_tooltip = {} }
-													using = tooltip_below
-										
-										
-										
-													MOS_reform_button = {
-														visible = "[Not(GuiLaw.IsEnacted)]"
-														texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
-														parentanchor = center
-														alwaystransparent = yes
-													}
-										
-													MOS_reform_icon = {
-														# TODO: Swap for textures when you have them
-														visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
-														texture = "gfx/interface/illustrations/loading_screens/castle.dds"
-														parentanchor = center
-														alwaystransparent = yes
-											
-														blockoverride "master_color_frame" {
-															frame = 2
-														}
-													}
-												}
-											}
-										}
-									}											
-								}
-							}
+						layoutpolicy_vertical = expanding
+						blockoverride "scrollbox_content"{
+							mos_military_reforms_container = {}
 						}
 					}
 		
+					
 					expand = {}
 				}
 			}

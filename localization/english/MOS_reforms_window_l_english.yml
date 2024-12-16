@@ -1,4 +1,6 @@
 ﻿l_english:
+ MOS_reforms_button_tt:0 "Open Reforms Window"
+
  MOS_NULL_LAW:0 "MOS_NULL"
  MOS_NULL_LAW_NO_SPACER:0 "MOS_NULL_NO_SPACE"
 
@@ -7,3 +9,10 @@
  MOS_REFORMS_MILITARY:0 "MILITARY"
  MOS_REFORMS_ECONOMIC:0 "ECONOMY"
  MOS_REFORMS_ADMINISTRATIVE:0 "ADMINISTRATION"
+
+
+ mos_gov_any:0 "Every government is viable"
+ mos_gov_post_tribal:0 "Realms government needs to advance past tribal"
+ mos_gov_post_feudal:0 "Realms government needs to advance past feudalism or clan structures"
+
+ mos_reforms_cooldown_desc: "A reform was enacted recently - reforms can be changed again after [GetCurrentDateWithDiff( GetVarTimeRemaining( GetPlayer.MakeScope, 'mos_reforms_cooldown') )]"
