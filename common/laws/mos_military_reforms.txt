@@ -1860,6 +1860,8 @@ mos_military_reforms_4_header = {
 	flag = mos_military_reform
 	flag = mos_header_reform
 	flag = mos_law
+
+	flag = mos_no_order_reform
 	
 	cumulative = no
 
