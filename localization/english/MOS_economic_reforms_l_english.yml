@@ -23,9 +23,9 @@
  mos_economic_reforms_1_header_3:0 "Army Support"
  mos_economic_reforms_1_header_3_effects:0 "Brave soldiers of our state deserve to be rewarded for their loyal service - hopefully it will motivate them to keep standing between us and enemy weapons."
  mos_economic_reforms_1_header_4:0 "Promoting Culture"
- mos_economic_reforms_1_header_4_effects:0 "#bold PROMOTING CULTURE TWICE AS FAST FOR YOU AND VASSALS OF YOUR CULTURE #! \n\nIt is clear that our ways are superior. It's unfortunate that some have not seen it yet."
+ mos_economic_reforms_1_header_4_effects:0 "#bold PROMOTING CULTURE TWICE IS MUCH FASTER FOR YOU AND VASSALS OF YOUR CULTURE #! \n\nIt is clear that our ways are superior. It's unfortunate that some have not seen it yet."
  mos_economic_reforms_1_header_5:0 "Territory Consolidation"
- mos_economic_reforms_1_header_5_effects:0 "Money must be spent to ensure that territories we've fought so hard for do not rise up against us."
+ mos_economic_reforms_1_header_5_effects:0 "#bold INTEGRATING TERRITORIES IS MUCH FASTER #! \n\nMoney must be spent to ensure that territories we've fought so hard for do not rise up against us."
 
  mos_economic_reforms_1_minor_1:0 "SHOULD NOT BE SEEING THIS"
  mos_economic_reforms_1_minor_1_0:0 "$MOS_NULL_LAW_NO_SPACER$"
@@ -36,7 +36,7 @@
  mos_economic_reforms_1_minor_1_3:0 "Court Diplomacy"
  mos_economic_reforms_1_minor_1_3_effects:0 "Seeing is believing, thus showing our splendor to foreign dignitaries will surely make them believe in our greatness."
  mos_economic_reforms_1_minor_1_4:0 "Religious Donations"
- mos_economic_reforms_1_minor_1_4_effects:0 "#bold CONVERTING FAITH TWICE AS FAST FOR YOU AND VASSALS OF YOUR FAITH #! \n\nIt is clear that our faith is superior. It's unfortunate that some have not seen it yet."
+ mos_economic_reforms_1_minor_1_4_effects:0 "#bold CONVERTING FAITH TWICE IS MUCH FASTER FOR YOU AND VASSALS OF YOUR FAITH #! \n\nIt is clear that our faith is superior. It's unfortunate that some have not seen it yet."
  mos_economic_reforms_1_minor_1_5:0 "Popular Support"
  mos_economic_reforms_1_minor_1_5_effects:0 "Investing in wellbeing of our people may not always benefit the state directly, but it is surely preferable to rebellions."
 
