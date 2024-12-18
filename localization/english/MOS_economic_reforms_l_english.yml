@@ -12,7 +12,7 @@
  mos_economic_reforms_major_4:0 "Census"
  mos_economic_reforms_major_4_effects:1 "Knowing who lives in our territory and how much they possess is key to determining how much they can be taxed"
  mos_economic_reforms_major_5:0 "State Intervention"
- mos_economic_reforms_major_5_effects:1 "Our state's economic institutions are complex enough to play major role in economic activities of our subjects. Always to our benefit of course."
+ mos_economic_reforms_major_5_effects:1 "#bold UNLOCKS VASSAL TAXATION REFORMS #! \n\nOur state's economic institutions are complex enough to play major role in economic activities of our subjects. Always to our benefit of course."
 
  mos_economic_reforms_1_header:0 "SPENDING FOCUS"
  mos_economic_reforms_1_header_0:0 "$MOS_NULL_LAW_NO_SPACER$"
@@ -51,7 +51,7 @@
  mos_economic_reforms_2_header_4:0 "Increased Taxation"
  mos_economic_reforms_2_header_4_effects:0 "Our treasury has been looking dangerously bare lately."
  mos_economic_reforms_2_header_5:0 "Extreme Taxation"
- mos_economic_reforms_2_header_5_effects:0 "We need gold. #bold Now #! ."
+ mos_economic_reforms_2_header_5_effects:0 "We need gold. #bold Now#!."
 
  mos_economic_reforms_3_header:0 "TRADE REGULATIONS"
  mos_economic_reforms_3_header_0:0 "$MOS_NULL_LAW_NO_SPACER$"

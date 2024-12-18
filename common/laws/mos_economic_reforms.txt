@@ -9,6 +9,7 @@ mos_economic_reforms_major = {
 
 	mos_economic_reforms_major_1 = {
 		modifier = {
+			monthly_income_mult = -0.4
 		}
 
 		should_start_with = {
@@ -140,6 +141,7 @@ mos_economic_reforms_major = {
 
 	mos_economic_reforms_major_3 = {
 		modifier = {
+			monthly_income_mult = 0.05
 		}
 
 		should_start_with = {
@@ -212,6 +214,8 @@ mos_economic_reforms_major = {
 
 	mos_economic_reforms_major_4 = {
 		modifier = {
+			monthly_income_mult = 0.1
+			development_growth_factor = 0.05
 		}
 
 		can_keep = { 
@@ -278,6 +282,8 @@ mos_economic_reforms_major = {
 
 	mos_economic_reforms_major_5 = {
 		modifier = {
+			monthly_income_mult = 0.15
+			development_growth_factor = 0.1
 		}
 
 		should_start_with = {
@@ -424,6 +430,9 @@ mos_economic_reforms_1_header = {
 
 	mos_economic_reforms_1_header_2 = {
 		modifier = {
+			monthly_income_mult = -0.2
+			monthly_prestige_gain_mult = 0.2
+			monthly_dynasty_prestige_mult = 0.2
 		}
 
 		should_start_with = {
@@ -483,6 +492,10 @@ mos_economic_reforms_1_header = {
 
 	mos_economic_reforms_1_header_3 = {
 		modifier = {
+			monthly_income_mult = -0.2
+			advantage = 3
+			glory_hound_opinion = 20
+			maa_toughness_mult = 0.05
 		}
 
 		should_start_with = {
@@ -545,6 +558,9 @@ mos_economic_reforms_1_header = {
 
 	mos_economic_reforms_1_header_4 = {
 		modifier = {
+			monthly_income_mult = -0.2
+			opinion_of_same_culture = 20
+			#TODO - council task
 		}
 
 		should_start_with = {
@@ -605,6 +621,10 @@ mos_economic_reforms_1_header = {
 
 	mos_economic_reforms_1_header_5 = {
 		modifier = {
+			monthly_income_mult = -0.2
+			monthly_county_control_growth_factor = 0.25
+			cultural_head_acceptance_gain_mult = 0.2
+			#TODO - council task
 		}
 
 		can_keep = { 
@@ -783,6 +803,9 @@ mos_economic_reforms_1_minor_1 = {
 
 	mos_economic_reforms_1_minor_1_1 = {
 		modifier = {
+			vassal_opinion = -30
+			vassal_tax_mult = 0.1
+			domain_tax_mult = 0.2
 		}
 		should_start_with = {
 			AND = {
@@ -845,6 +868,9 @@ mos_economic_reforms_1_minor_1 = {
 
 	mos_economic_reforms_1_minor_1_2 = {
 		modifier = {
+			monthly_income_mult = -0.2
+			development_growth_factor = 0.1
+			build_speed = -0.25
 		}
 
 		can_keep = { 
@@ -899,6 +925,11 @@ mos_economic_reforms_1_minor_1 = {
 
 	mos_economic_reforms_1_minor_1_3 = {
 		modifier = {
+			monthly_income_mult = -0.2
+			courtly_opinion = 15
+			courtier_and_guest_opinion = 30
+			independent_ruler_opinion = 20
+			court_grandeur_baseline_add = 20
 		}
 
 		can_keep = { 
@@ -953,6 +984,9 @@ mos_economic_reforms_1_minor_1 = {
 
 	mos_economic_reforms_1_minor_1_4 = {
 		modifier = {
+			monthly_income_mult = -0.2
+			same_faith_opinion = 20
+			#TODO - council task
 		}
 
 		can_keep = { 
@@ -1007,6 +1041,10 @@ mos_economic_reforms_1_minor_1 = {
 
 	mos_economic_reforms_1_minor_1_5 = {
 		modifier = {
+			monthly_income_mult = -0.2
+			county_opinion_add = 40
+			general_opinion = 10
+			#TODO - council task
 		}
 
 		can_keep = { 
@@ -1073,6 +1111,8 @@ mos_economic_reforms_2_header = {
 
 	mos_economic_reforms_2_header_1 = {
 		modifier = {
+			vassal_opinion = -80
+			vassal_tax_mult = 0.6
 		}
 
 		should_start_with = {
@@ -1128,6 +1168,8 @@ mos_economic_reforms_2_header = {
 
 	mos_economic_reforms_2_header_2 = {
 		modifier = {
+			vassal_opinion = -40
+			vassal_tax_mult = 0.3
 		}
 
 		should_start_with = {
@@ -1247,6 +1289,8 @@ mos_economic_reforms_2_header = {
 
 	mos_economic_reforms_2_header_4 = {
 		modifier = {
+			vassal_opinion = 40
+			vassal_tax_mult = -0.3
 		}
 
 		should_start_with = {
@@ -1305,6 +1349,8 @@ mos_economic_reforms_2_header = {
 
 	mos_economic_reforms_2_header_5 = {
 		modifier = {
+			vassal_opinion = 80
+			vassal_tax_mult = -0.6
 		}
 
 		can_keep = { 
@@ -1371,6 +1417,7 @@ mos_economic_reforms_3_header = {
 
 	mos_economic_reforms_3_header_1 = {
 		modifier = {
+			republic_government_vassal_opinion = 10
 		}
 
 		should_start_with = {
@@ -1428,6 +1475,8 @@ mos_economic_reforms_3_header = {
 
 	mos_economic_reforms_3_header_2 = {
 		modifier = {
+			republic_government_vassal_opinion = -5
+			domain_tax_mult = 0.05
 		}
 
 		should_start_with = {
@@ -1488,6 +1537,8 @@ mos_economic_reforms_3_header = {
 
 	mos_economic_reforms_3_header_3 = {
 		modifier = {
+			republic_government_tax_contribution_mult = 0.05
+			domain_tax_mult = 0.1
 		}
 
 		should_start_with = {
@@ -1551,6 +1602,9 @@ mos_economic_reforms_3_header = {
 
 	mos_economic_reforms_3_header_4 = {
 		modifier = {
+			republic_government_vassal_opinion = -20
+			republic_government_tax_contribution_mult = 0.1
+			domain_tax_mult = 0.15
 		}
 
 		should_start_with = {
@@ -1612,6 +1666,10 @@ mos_economic_reforms_3_header = {
 
 	mos_economic_reforms_3_header_5 = {
 		modifier = {
+			republic_government_vassal_opinion = -30
+			republic_government_tax_contribution_mult = 0.3
+			domain_tax_mult = 0.15
+			independent_ruler_opinion = -20
 		}
 
 		can_keep = { 
@@ -1784,6 +1842,10 @@ mos_economic_reforms_4_header = {
 
 	mos_economic_reforms_4_header_3 = {
 		modifier = {
+			monthly_income_mult = -0.1
+			monthly_lifestyle_xp_gain_mult = 0.2
+			cultural_head_fascination_mult = 0.1
+			clergy_opinion = 10
 		}
 
 		should_start_with = {
@@ -1847,6 +1909,10 @@ mos_economic_reforms_4_header = {
 
 	mos_economic_reforms_4_header_4 = {
 		modifier = {
+			monthly_income_mult = -0.2
+			monthly_lifestyle_xp_gain_mult = 0.3
+			cultural_head_fascination_mult = 0.15
+			clergy_opinion = 20
 		}
 
 		should_start_with = {
