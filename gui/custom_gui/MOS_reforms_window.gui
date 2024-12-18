@@ -97,6 +97,16 @@ types mos_reformwindows {
 							mos_military_reforms_container = {}
 						}
 					}
+
+					scrollbox = {#MILITARY REFORMS
+						visible = "[GetVariableSystem.HasValue( 'mos_reform_tab', 'economy' )]"
+						layoutpolicy_horizontal = expanding	
+						layoutpolicy_vertical = expanding
+						blockoverride "scrollbox_content"{
+							mos_economic_reforms_container = {}
+						}
+					}
+					
 		
 					
 					expand = {}

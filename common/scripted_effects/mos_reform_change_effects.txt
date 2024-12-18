@@ -137,3 +137,23 @@ mos_major_mil_reform_change_cleanup_effect_5 = {
 mos_major_mil_reform_invalidate_doctrine_effect = {
 	add_realm_law = mos_military_reforms_4_header_1
 }
+
+mos_major_econ_reform_change_cleanup_effect_1 = {
+
+}
+
+mos_major_econ_reform_change_cleanup_effect_2 = {
+
+}
+
+mos_major_econ_reform_change_cleanup_effect_3 = {
+	
+}
+
+mos_major_econ_reform_change_cleanup_effect_4 = {
+	
+}
+
+mos_major_econ_reform_change_cleanup_effect_5 = {
+	#NOTHING FOR NOW, BUT MAY BE USEFUL
+}

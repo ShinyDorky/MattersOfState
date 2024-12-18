@@ -15,3 +15,5 @@ If you want to write your own policies here are some pointers/pieces of info:
         Minor and Major groups which are in one inter-group should have all their laws specify in on_pass action, that they reset all other groups to their hidden, default states
 
 3. CK3 engine at the moment seems to totally ignore 'default' law setting when assigning laws at world generation. As such you need to manually set should_start_with and can_keep triggers.
+
+4. Adding flag 'mos_no_order_reform' to law group removes threaded background. Law groups without threader background are supposed to allow passing laws in no particular order.
