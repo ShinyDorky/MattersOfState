@@ -448,6 +448,7 @@ mos_administrative_reforms_1_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -841,6 +842,7 @@ mos_administrative_reforms_1_minor_1 = {
 			has_government = tribal_government
 		}
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -1151,6 +1153,7 @@ mos_administrative_reforms_2_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -1469,6 +1472,7 @@ mos_administrative_reforms_3_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -1793,6 +1797,7 @@ mos_administrative_reforms_4_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -1854,6 +1859,10 @@ mos_administrative_reforms_4_header = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_3_header_4
+					has_realm_law = mos_administrative_reforms_3_header_5
+				}
 			}
 			trigger_if = {
 				limit = {
@@ -1871,10 +1880,6 @@ mos_administrative_reforms_4_header = {
 				custom_tooltip = {
 					text = mos_reforms_cooldown_desc
 					NOT = { has_variable = mos_reforms_cooldown }
-				}
-				OR = {
-					has_realm_law = mos_administrative_reforms_3_header_4
-					has_realm_law = mos_administrative_reforms_3_header_5
 				}
 			}
 			trigger_if = {
@@ -1918,7 +1923,10 @@ mos_administrative_reforms_4_header = {
 				limit = {
 					is_independent_ruler = yes
 				}
-				always = yes
+				OR = {
+					has_realm_law = mos_administrative_reforms_3_header_4
+					has_realm_law = mos_administrative_reforms_3_header_5
+				}
 			}
 			trigger_if = {
 				limit = {
@@ -1936,10 +1944,6 @@ mos_administrative_reforms_4_header = {
 				custom_tooltip = {
 					text = mos_reforms_cooldown_desc
 					NOT = { has_variable = mos_reforms_cooldown }
-				}
-				OR = {
-					has_realm_law = mos_administrative_reforms_3_header_4
-					has_realm_law = mos_administrative_reforms_3_header_5
 				}
 			}
 			trigger_if = {
@@ -1980,6 +1984,10 @@ mos_administrative_reforms_4_header = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_3_header_4
+					has_realm_law = mos_administrative_reforms_3_header_5
+				}
 			}
 			trigger_if = {
 				limit = {
@@ -1997,10 +2005,6 @@ mos_administrative_reforms_4_header = {
 				custom_tooltip = {
 					text = mos_reforms_cooldown_desc
 					NOT = { has_variable = mos_reforms_cooldown }
-				}
-				OR = {
-					has_realm_law = mos_administrative_reforms_3_header_4
-					has_realm_law = mos_administrative_reforms_3_header_5
 				}
 			}
 			trigger_if = {
@@ -2034,6 +2038,10 @@ mos_administrative_reforms_4_header = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_3_header_4
+					has_realm_law = mos_administrative_reforms_3_header_5
+				}
 			}
 			trigger_if = {
 				limit = {
@@ -2051,10 +2059,6 @@ mos_administrative_reforms_4_header = {
 				custom_tooltip = {
 					text = mos_reforms_cooldown_desc
 					NOT = { has_variable = mos_reforms_cooldown }
-				}
-				OR = {
-					has_realm_law = mos_administrative_reforms_3_header_4
-					has_realm_law = mos_administrative_reforms_3_header_5
 				}
 			}
 			trigger_if = {

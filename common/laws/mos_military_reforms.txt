@@ -21,6 +21,7 @@ mos_military_reforms_major = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -83,6 +84,8 @@ mos_military_reforms_major = {
 			mos_major_mil_reform_change_cleanup_effect_1 = yes
 			mos_pass_major_reform_effect = yes
 		}
+
+		ai_will_do = { }
 	}
 
 	mos_military_reforms_major_2 = {
@@ -461,6 +464,7 @@ mos_military_reforms_1_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -819,6 +823,7 @@ mos_military_reforms_1_minor_1 = {
 			}
 		}
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -886,6 +891,7 @@ mos_military_reforms_1_minor_1 = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -1123,6 +1129,7 @@ mos_military_reforms_2_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -1446,6 +1453,7 @@ mos_military_reforms_2_minor_1 = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -1671,6 +1679,7 @@ mos_military_reforms_3_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
