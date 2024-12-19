@@ -95,7 +95,7 @@ mos_military_reforms_major = {
 			}
 			if = { # IN DEBT
 				limit = {
-					gold < -20 * monthly_character_income
+					gold < -1.5 * mos_reform_return_tier_2
 				}
 				add = 30
 			}
@@ -211,7 +211,7 @@ mos_military_reforms_major = {
 			if = { # IN DEBT
 				limit = {
 					has_realm_law = mos_military_reforms_major_3
-					gold < -20 * monthly_character_income
+					gold < -1.5 * mos_reform_return_tier_3
 				}
 				add = 30
 			}
@@ -234,6 +234,12 @@ mos_military_reforms_major = {
 
 			
 			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_military_reforms_major_1
+				}
+				add = 1
+			}
 			if = { # MONEYYY
 				limit = {
 					has_realm_law = mos_military_reforms_major_1
@@ -349,6 +355,72 @@ mos_military_reforms_major = {
 			mos_major_mil_reform_change_cleanup_effect_3 = yes
 			mos_pass_major_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE
+			if = { # LOSING MONEY
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					monthly_character_balance < -10
+				}
+				add = 10
+			}
+			if = { # IN DEBT
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					gold < -1.5 * mos_reform_return_tier_4
+				}
+				add = 30
+			}
+			if = { # JUST PLAIN OL GREED
+				limit = { 
+					has_realm_law = mos_military_reforms_major_4
+					has_trait = greedy 
+				}
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 0
+			}
+
+			
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_military_reforms_major_2
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_military_reforms_major_2
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_military_reforms_major_2
+					gold > 2 * mos_reform_cost_tier_3
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_2
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
 	}
 
 	mos_military_reforms_major_4 = {
@@ -437,6 +509,72 @@ mos_military_reforms_major = {
 			mos_major_mil_reform_change_cleanup_effect_4 = yes
 			mos_pass_major_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE
+			if = { # LOSING MONEY
+				limit = {
+					has_realm_law = mos_military_reforms_major_5
+					monthly_character_balance < -10
+				}
+				add = 10
+			}
+			if = { # IN DEBT
+				limit = {
+					has_realm_law = mos_military_reforms_major_5
+					gold < -1.5 * mos_reform_return_tier_5
+				}
+				add = 30
+			}
+			if = { # JUST PLAIN OL GREED
+				limit = { 
+					has_realm_law = mos_military_reforms_major_5
+					has_trait = greedy 
+				}
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_5
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 0
+			}
+
+			
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					gold > 2 * mos_reform_cost_tier_4
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
 	}
 
 	mos_military_reforms_major_5 = {
@@ -518,6 +656,39 @@ mos_military_reforms_major = {
 		on_pass = { 
 			mos_major_mil_reform_change_cleanup_effect_5 = yes
 			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					gold > 2 * mos_reform_cost_tier_5
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
 		}
 	}
 }
