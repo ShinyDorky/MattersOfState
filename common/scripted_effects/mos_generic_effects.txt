@@ -9,8 +9,8 @@ mos_pass_reform_effect = {
 }
 
 mos_pass_major_reform_effect = {
-	set_variable = {
-		name = mos_major_reforms_cooldown
-		years = @mos_major_reforms_cooldown_value
-	}
+	# set_variable = {
+	# 	name = mos_major_reforms_cooldown
+	# 	years = @mos_major_reforms_cooldown_value
+	# }
 }

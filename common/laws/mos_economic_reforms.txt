@@ -70,6 +70,13 @@ mos_economic_reforms_major = {
 		}
 		
 		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_economic_reforms_major_2
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_2
+			}
 			mos_major_econ_reform_change_cleanup_effect_1 = yes
 			mos_pass_major_reform_effect = yes
 		}
@@ -132,10 +139,28 @@ mos_economic_reforms_major = {
 		}
 		
 		pass_cost = {
-			gold = 0
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_economic_reforms_major_1
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_2
+					}
+				}
+			}
 		}
 		
 		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_economic_reforms_major_3
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_3
+			}
 			mos_major_econ_reform_change_cleanup_effect_2 = yes
 			mos_pass_major_reform_effect = yes
 		}
@@ -206,10 +231,28 @@ mos_economic_reforms_major = {
 		}
 
 		pass_cost = {
-			gold = 0
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_economic_reforms_major_2
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_3
+					}
+				}
+			}
 		}
 		
 		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_economic_reforms_major_4
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_4
+			}
 			mos_major_econ_reform_change_cleanup_effect_3 = yes
 			mos_pass_major_reform_effect = yes
 		}
@@ -272,13 +315,29 @@ mos_economic_reforms_major = {
 			}
 		}
 
-		can_pass = { 
-		}
-		
 		pass_cost = {
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_economic_reforms_major_3
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_4
+					}
+				}
+			}
 		}
 		
 		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_economic_reforms_major_5
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_5
+			}
 			mos_major_econ_reform_change_cleanup_effect_4 = yes
 			mos_pass_major_reform_effect = yes
 		}
@@ -345,7 +404,18 @@ mos_economic_reforms_major = {
 		}
 		
 		pass_cost = {
-			gold = 0
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_economic_reforms_major_4
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_5
+					}
+				}
+			}
 		}
 		
 		on_pass = { 
