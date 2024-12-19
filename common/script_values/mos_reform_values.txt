@@ -6,3 +6,16 @@ mos_military_doctrines_unlocked = {
 		add = 1
 	}
 }
+
+mos_admin_reform_road_upkeep_basic = {
+	value = sub_realm_size
+	multiply = root.primary_title.tier
+	multiply = 0.1
+}
+
+
+mos_admin_reform_road_upkeep_advanced = {
+	value = sub_realm_size
+	multiply = root.primary_title.tier
+	multiply = 0.2
+}
