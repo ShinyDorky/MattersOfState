@@ -16,3 +16,4 @@
  mos_gov_post_feudal:0 "Realms government needs to advance past feudalism or clan structures"
 
  mos_reforms_cooldown_desc: "A reform was enacted recently - reforms can be changed again after [GetCurrentDateWithDiff( GetVarTimeRemaining( GetPlayer.MakeScope, 'mos_reforms_cooldown') )]"
+ mos_major_reforms_cooldown_desc: "A major reform was enacted recently - major reforms can be changed again after [GetCurrentDateWithDiff( GetVarTimeRemaining( GetPlayer.MakeScope, 'mos_major_reforms_cooldown') )]"

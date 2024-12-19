@@ -46,9 +46,10 @@ mos_economic_reforms_major = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				has_realm_law = mos_economic_reforms_major_2
 			}
@@ -70,7 +71,7 @@ mos_economic_reforms_major = {
 		
 		on_pass = { 
 			mos_major_econ_reform_change_cleanup_effect_1 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
 		}
 	}
 
@@ -108,9 +109,10 @@ mos_economic_reforms_major = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				OR = {
 					has_realm_law = mos_economic_reforms_major_1
@@ -135,7 +137,7 @@ mos_economic_reforms_major = {
 		
 		on_pass = { 
 			mos_major_econ_reform_change_cleanup_effect_2 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
 		}
 	}
 
@@ -181,9 +183,10 @@ mos_economic_reforms_major = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				OR = {
 					has_realm_law = mos_economic_reforms_major_2
@@ -208,7 +211,7 @@ mos_economic_reforms_major = {
 		
 		on_pass = { 
 			mos_major_econ_reform_change_cleanup_effect_3 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
 		}
 	}
 
@@ -247,9 +250,10 @@ mos_economic_reforms_major = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				OR = {
 					has_realm_law = mos_economic_reforms_major_3
@@ -276,7 +280,7 @@ mos_economic_reforms_major = {
 		
 		on_pass = { 
 			mos_major_econ_reform_change_cleanup_effect_4 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
 		}
 	}
 
@@ -319,9 +323,10 @@ mos_economic_reforms_major = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				OR = {
 					has_realm_law = mos_economic_reforms_major_4
@@ -345,7 +350,7 @@ mos_economic_reforms_major = {
 		
 		on_pass = { 
 			mos_major_econ_reform_change_cleanup_effect_5 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
 		}
 	}
 }

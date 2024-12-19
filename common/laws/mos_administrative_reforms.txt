@@ -46,8 +46,8 @@ mos_administrative_reforms_major = {
 					is_independent_ruler = yes
 				}
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				has_realm_law = mos_administrative_reforms_major_2
 			}
@@ -69,7 +69,7 @@ mos_administrative_reforms_major = {
 		
 		on_pass = { 
 			mos_major_admin_reform_change_cleanup_effect_1 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
 		}
 	}
 
@@ -110,8 +110,8 @@ mos_administrative_reforms_major = {
 					is_independent_ruler = yes
 				}
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				OR = {
 					has_realm_law = mos_administrative_reforms_major_1
@@ -136,7 +136,7 @@ mos_administrative_reforms_major = {
 		
 		on_pass = { 
 			mos_major_admin_reform_change_cleanup_effect_2 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
 		}
 	}
 
@@ -184,8 +184,8 @@ mos_administrative_reforms_major = {
 					is_independent_ruler = yes
 				}
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				OR = {
 					has_realm_law = mos_administrative_reforms_major_2
@@ -210,7 +210,7 @@ mos_administrative_reforms_major = {
 		
 		on_pass = { 
 			mos_major_admin_reform_change_cleanup_effect_3 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
 		}
 	}
 
@@ -250,8 +250,8 @@ mos_administrative_reforms_major = {
 					is_independent_ruler = yes
 				}
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				OR = {
 					has_realm_law = mos_administrative_reforms_major_3
@@ -278,7 +278,7 @@ mos_administrative_reforms_major = {
 		
 		on_pass = { 
 			mos_major_admin_reform_change_cleanup_effect_4 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
 		}
 	}
 
@@ -322,8 +322,8 @@ mos_administrative_reforms_major = {
 					is_independent_ruler = yes
 				}
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				OR = {
 					has_realm_law = mos_administrative_reforms_major_4
@@ -347,7 +347,7 @@ mos_administrative_reforms_major = {
 		
 		on_pass = { 
 			mos_major_admin_reform_change_cleanup_effect_5 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
 		}
 	}
 }
@@ -450,7 +450,7 @@ mos_administrative_reforms_1_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_1_header_2 }
+				always = no
 			}
 		}
 
@@ -522,7 +522,7 @@ mos_administrative_reforms_1_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_1_header_3 }
+				always = no
 			}
 		}
 
@@ -591,7 +591,7 @@ mos_administrative_reforms_1_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_1_header_4 }
+				always = no
 			}
 		}
 
@@ -653,7 +653,7 @@ mos_administrative_reforms_1_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_1_header_5 }
+				always = no
 			}
 		}
 
@@ -778,7 +778,7 @@ mos_administrative_reforms_1_minor_1 = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_1_minor_1_0 }
+				always = no
 			}
 		}
 
@@ -861,7 +861,7 @@ mos_administrative_reforms_1_minor_1 = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_1_minor_1_2 }
+				always = no
 			}
 		}
 
@@ -924,7 +924,7 @@ mos_administrative_reforms_1_minor_1 = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_1_minor_1_3 }
+				always = no
 			}
 		}
 
@@ -1014,7 +1014,7 @@ mos_administrative_reforms_1_minor_1 = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_1_minor_1_5 }
+				always = no
 			}
 		}
 
@@ -1145,7 +1145,7 @@ mos_administrative_reforms_2_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_2_header_2 }
+				always = no
 			}
 		}
 
@@ -1213,7 +1213,7 @@ mos_administrative_reforms_2_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_2_header_3 }
+				always = no
 			}
 		}
 
@@ -1277,7 +1277,7 @@ mos_administrative_reforms_2_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_2_header_4 }
+				always = no
 			}
 		}
 
@@ -1334,7 +1334,7 @@ mos_administrative_reforms_2_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_2_header_5 }
+				always = no
 			}
 		}
 
@@ -1464,7 +1464,7 @@ mos_administrative_reforms_3_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_3_header_2 }
+				always = no
 			}
 		}
 
@@ -1533,7 +1533,7 @@ mos_administrative_reforms_3_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_3_header_3 }
+				always = no
 			}
 		}
 
@@ -1600,7 +1600,7 @@ mos_administrative_reforms_3_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_3_header_4 }
+				always = no
 			}
 		}
 
@@ -1661,7 +1661,7 @@ mos_administrative_reforms_3_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_3_header_5 }
+				always = no
 			}
 		}
 
@@ -1730,7 +1730,7 @@ mos_administrative_reforms_4_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_4_header_1 }
+				always = no
 			}
 		}
 
@@ -1786,7 +1786,7 @@ mos_administrative_reforms_4_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_4_header_4 }
+				always = no
 			}
 		}
 
@@ -1851,7 +1851,7 @@ mos_administrative_reforms_4_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_4_header_3 }
+				always = no
 			}
 		}
 
@@ -1966,7 +1966,7 @@ mos_administrative_reforms_4_header = {
 				limit = {
 					is_independent_ruler = no
 				}
-				liege = { has_realm_law = mos_administrative_reforms_4_header_4 }
+				always = no
 			}
 		}
 
