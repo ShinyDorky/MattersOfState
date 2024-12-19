@@ -1,6 +1,7 @@
 ﻿# Purely theoretically, it should not be possible to drop so many law levels at once
 # Purely practically I trust neither you nor my code
 
+#MILITARY
 mos_major_mil_reform_change_cleanup_effect_1 = {
 	IF = { #RECRUITMENT
 		limit = {
@@ -138,22 +139,352 @@ mos_major_mil_reform_invalidate_doctrine_effect = {
 	add_realm_law = mos_military_reforms_4_header_1
 }
 
+#ECONOMY
 mos_major_econ_reform_change_cleanup_effect_1 = {
+	IF = { #SPENDING FOCUS
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_1_header_2
+				has_realm_law = mos_economic_reforms_1_header_3
+				has_realm_law = mos_economic_reforms_1_header_4
+				has_realm_law = mos_economic_reforms_1_header_5
+				has_realm_law = mos_economic_reforms_1_minor_1_2
+				has_realm_law = mos_economic_reforms_1_minor_1_3
+				has_realm_law = mos_economic_reforms_1_minor_1_4
+				has_realm_law = mos_economic_reforms_1_minor_1_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_1_header_1
+	}
+	IF = { # VASSAL TAXATION
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_2_header_1
+				has_realm_law = mos_economic_reforms_2_header_2
+				has_realm_law = mos_economic_reforms_2_header_4
+				has_realm_law = mos_economic_reforms_2_header_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_2_header_3
+	}
+	IF = { # TRADE REGULATIONS
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_3_header_2
+				has_realm_law = mos_economic_reforms_3_header_3
+				has_realm_law = mos_economic_reforms_3_header_4
+				has_realm_law = mos_economic_reforms_3_header_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_3_header_1
+	}
+	IF = { # EDUCATION
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_4_header_2
+				has_realm_law = mos_economic_reforms_4_header_3
+				has_realm_law = mos_economic_reforms_4_header_4
+				has_realm_law = mos_economic_reforms_4_header_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_4_header_1
+	}
 
 }
 
 mos_major_econ_reform_change_cleanup_effect_2 = {
+	IF = { #SPENDING FOCUS
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_1_header_3
+				has_realm_law = mos_economic_reforms_1_header_4
+				has_realm_law = mos_economic_reforms_1_header_5
+				has_realm_law = mos_economic_reforms_1_minor_1_3
+				has_realm_law = mos_economic_reforms_1_minor_1_4
+				has_realm_law = mos_economic_reforms_1_minor_1_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_1_header_2
+	}
+	IF = { # VASSAL TAXATION
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_2_header_1
+				has_realm_law = mos_economic_reforms_2_header_2
+				has_realm_law = mos_economic_reforms_2_header_4
+				has_realm_law = mos_economic_reforms_2_header_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_2_header_3
+	}
+	IF = { # TRADE REGULATIONS
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_3_header_3
+				has_realm_law = mos_economic_reforms_3_header_4
+				has_realm_law = mos_economic_reforms_3_header_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_3_header_2
+	}
+	IF = { # EDUCATION
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_4_header_3
+				has_realm_law = mos_economic_reforms_4_header_4
+				has_realm_law = mos_economic_reforms_4_header_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_4_header_1
+	}
 
 }
 
 mos_major_econ_reform_change_cleanup_effect_3 = {
+	IF = { #SPENDING FOCUS
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_1_header_4
+				has_realm_law = mos_economic_reforms_1_header_5
+				has_realm_law = mos_economic_reforms_1_minor_1_4
+				has_realm_law = mos_economic_reforms_1_minor_1_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_1_header_3
+	}
+	IF = { # VASSAL TAXATION
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_2_header_1
+				has_realm_law = mos_economic_reforms_2_header_2
+				has_realm_law = mos_economic_reforms_2_header_4
+				has_realm_law = mos_economic_reforms_2_header_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_2_header_3
+	}
+	IF = { # TRADE REGULATIONS
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_3_header_4
+				has_realm_law = mos_economic_reforms_3_header_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_3_header_3
+	}
+	IF = { # EDUCATION
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_4_header_4
+				has_realm_law = mos_economic_reforms_4_header_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_4_header_3
+	}
 	
 }
 
 mos_major_econ_reform_change_cleanup_effect_4 = {
+	IF = { #SPENDING FOCUS
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_1_header_5
+				has_realm_law = mos_economic_reforms_1_minor_1_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_1_header_4
+	}
+	IF = { # VASSAL TAXATION
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_2_header_1
+				has_realm_law = mos_economic_reforms_2_header_2
+				has_realm_law = mos_economic_reforms_2_header_4
+				has_realm_law = mos_economic_reforms_2_header_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_2_header_3
+	}
+	IF = { # TRADE REGULATIONS
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_3_header_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_3_header_4
+	}
+	IF = { # EDUCATION
+		limit = {
+			OR = {
+				has_realm_law = mos_economic_reforms_4_header_5
+			}
+		}
+		add_realm_law = mos_economic_reforms_4_header_4
+	}
 	
 }
 
 mos_major_econ_reform_change_cleanup_effect_5 = {
 	#NOTHING FOR NOW, BUT MAY BE USEFUL
+}
+
+
+
+mos_major_admin_reform_change_cleanup_effect_1 = {
+	IF = { #POLITICAL AUTHORITY
+		limit = {
+			OR = {
+				has_realm_law = mos_administrative_reforms_1_header_2
+				has_realm_law = mos_administrative_reforms_1_header_3
+				has_realm_law = mos_administrative_reforms_1_header_4
+				has_realm_law = mos_administrative_reforms_1_header_5
+				has_realm_law = mos_administrative_reforms_1_minor_1_2
+				has_realm_law = mos_administrative_reforms_1_minor_1_3
+				has_realm_law = mos_administrative_reforms_1_minor_1_4
+				has_realm_law = mos_administrative_reforms_1_minor_1_5
+			}
+		}
+		add_realm_law = mos_administrative_reforms_1_header_1
+	}
+	IF = { # INFRASTRUCTURE
+		limit = {
+			OR = {
+				has_realm_law = mos_administrative_reforms_2_header_2
+				has_realm_law = mos_administrative_reforms_2_header_3
+				has_realm_law = mos_administrative_reforms_2_header_4
+				has_realm_law = mos_administrative_reforms_2_header_5
+			}
+		}
+		add_realm_law = mos_administrative_reforms_2_header_1
+	}
+	IF = { # ESPIONAGE
+		limit = {
+			OR = {
+				has_realm_law = mos_administrative_reforms_3_header_2
+				has_realm_law = mos_administrative_reforms_3_header_3
+				has_realm_law = mos_administrative_reforms_3_header_4
+				has_realm_law = mos_administrative_reforms_3_header_5
+			}
+		}
+		add_realm_law = mos_administrative_reforms_3_header_1
+	}
+
+}
+
+mos_major_admin_reform_change_cleanup_effect_2 = {
+	IF = { #POLITICAL AUTHORITY
+		limit = {
+			OR = {
+				has_realm_law = mos_administrative_reforms_1_header_3
+				has_realm_law = mos_administrative_reforms_1_header_4
+				has_realm_law = mos_administrative_reforms_1_header_5
+				has_realm_law = mos_administrative_reforms_1_minor_1_3
+				has_realm_law = mos_administrative_reforms_1_minor_1_4
+				has_realm_law = mos_administrative_reforms_1_minor_1_5
+			}
+		}
+		add_realm_law = mos_administrative_reforms_1_header_2
+	}
+	IF = { # INFRASTRUCTURE
+		limit = {
+			OR = {
+				has_realm_law = mos_administrative_reforms_2_header_3
+				has_realm_law = mos_administrative_reforms_2_header_4
+				has_realm_law = mos_administrative_reforms_2_header_5
+			}
+		}
+		add_realm_law = mos_administrative_reforms_2_header_2
+	}
+	IF = { # ESPIONAGE
+		limit = {
+			OR = {
+				has_realm_law = mos_administrative_reforms_3_header_3
+				has_realm_law = mos_administrative_reforms_3_header_4
+				has_realm_law = mos_administrative_reforms_3_header_5
+			}
+		}
+		add_realm_law = mos_administrative_reforms_3_header_2
+	}
+
+}
+
+mos_major_admin_reform_change_cleanup_effect_3 = {
+	IF = { #POLITICAL AUTHORITY
+		limit = {
+			OR = {
+				has_realm_law = mos_administrative_reforms_1_header_4
+				has_realm_law = mos_administrative_reforms_1_header_5
+				has_realm_law = mos_administrative_reforms_1_minor_1_4
+				has_realm_law = mos_administrative_reforms_1_minor_1_5
+			}
+		}
+		add_realm_law = mos_administrative_reforms_1_header_3
+	}
+	IF = { # INFRASTRUCTURE
+		limit = {
+			OR = {
+				has_realm_law = mos_administrative_reforms_2_header_4
+				has_realm_law = mos_administrative_reforms_2_header_5
+			}
+		}
+		add_realm_law = mos_administrative_reforms_2_header_3
+	}
+	IF = { # ESPIONAGE
+		limit = {
+			OR = {
+				has_realm_law = mos_administrative_reforms_3_header_4
+				has_realm_law = mos_administrative_reforms_3_header_5
+			}
+		}
+		add_realm_law = mos_administrative_reforms_3_header_3
+	}
+	
+}
+
+mos_major_admin_reform_change_cleanup_effect_4 = {
+	IF = { #POLITICAL AUTHORITY
+		limit = {
+			OR = {
+				has_realm_law = mos_administrative_reforms_1_header_5
+				has_realm_law = mos_administrative_reforms_1_minor_1_5
+			}
+		}
+		add_realm_law = mos_administrative_reforms_1_header_4
+	}
+	IF = { # INFRASTRUCTURE
+		limit = {
+			OR = {
+				has_realm_law = mos_administrative_reforms_2_header_5
+			}
+		}
+		add_realm_law = mos_administrative_reforms_2_header_4
+	}
+	IF = { # ESPIONAGE
+		limit = {
+			OR = {
+				has_realm_law = mos_administrative_reforms_3_header_5
+			}
+		}
+		add_realm_law = mos_administrative_reforms_3_header_4
+	}
+	
+}
+
+mos_major_admin_reform_change_cleanup_effect_5 = {
+	#NOTHING FOR NOW, BUT MAY BE USEFUL
+}
+
+mos_major_admin_reform_invalidate_spycraft_directive_effect = {
+	IF = { # SPYCRAFT DIRECTIVES
+		limit = {
+			OR = {
+				has_realm_law = mos_administrative_reforms_4_header_2
+				has_realm_law = mos_administrative_reforms_4_header_3
+				has_realm_law = mos_administrative_reforms_4_header_4
+				has_realm_law = mos_administrative_reforms_4_header_5
+			}
+		}
+		add_realm_law = mos_administrative_reforms_4_header_1
+	}
+
 }
