@@ -507,7 +507,7 @@ mos_economic_reforms_1_header = {
 
 	mos_economic_reforms_1_header_2 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			monthly_prestige_gain_mult = 0.2
 			monthly_dynasty_prestige_mult = 0.2
 		}
@@ -569,7 +569,7 @@ mos_economic_reforms_1_header = {
 
 	mos_economic_reforms_1_header_3 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			advantage = 3
 			glory_hound_opinion = 20
 			maa_toughness_mult = 0.05
@@ -635,7 +635,7 @@ mos_economic_reforms_1_header = {
 
 	mos_economic_reforms_1_header_4 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			opinion_of_same_culture = 20
 			#TODO - council task
 		}
@@ -698,7 +698,7 @@ mos_economic_reforms_1_header = {
 
 	mos_economic_reforms_1_header_5 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			monthly_county_control_growth_factor = 0.25
 			cultural_head_acceptance_gain_mult = 0.2
 			#TODO - council task
@@ -948,7 +948,7 @@ mos_economic_reforms_1_minor_1 = {
 
 	mos_economic_reforms_1_minor_1_2 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			development_growth_factor = 0.1
 			build_speed = -0.25
 		}
@@ -1005,7 +1005,7 @@ mos_economic_reforms_1_minor_1 = {
 
 	mos_economic_reforms_1_minor_1_3 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			courtly_opinion = 15
 			courtier_and_guest_opinion = 30
 			independent_ruler_opinion = 20
@@ -1064,7 +1064,7 @@ mos_economic_reforms_1_minor_1 = {
 
 	mos_economic_reforms_1_minor_1_4 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			same_faith_opinion = 20
 			#TODO - council task
 		}
@@ -1121,7 +1121,7 @@ mos_economic_reforms_1_minor_1 = {
 
 	mos_economic_reforms_1_minor_1_5 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			county_opinion_add = 40
 			general_opinion = 10
 			#TODO - council task
