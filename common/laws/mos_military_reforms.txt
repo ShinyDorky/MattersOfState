@@ -85,7 +85,33 @@ mos_military_reforms_major = {
 			mos_pass_major_reform_effect = yes
 		}
 
-		ai_will_do = { }
+		ai_will_do = {
+			#REASONS TO DEGRADE
+			if = { # LOSING MONEY
+				limit = {
+					monthly_character_balance < -10
+				}
+				add = 10
+			}
+			if = { # IN DEBT
+				limit = {
+					gold < -20 * monthly_character_income
+				}
+				add = 30
+			}
+			if = { # JUST PLAIN OL GREED
+				limit = { has_trait = greedy }
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 0
+			}
+		}
 	}
 
 	mos_military_reforms_major_2 = {
@@ -171,6 +197,66 @@ mos_military_reforms_major = {
 			}
 			mos_major_mil_reform_change_cleanup_effect_2 = yes
 			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE
+			if = { # LOSING MONEY
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					monthly_character_balance < -10
+				}
+				add = 10
+			}
+			if = { # IN DEBT
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					gold < -20 * monthly_character_income
+				}
+				add = 30
+			}
+			if = { # JUST PLAIN OL GREED
+				limit = { 
+					has_realm_law = mos_military_reforms_major_3
+					has_trait = greedy 
+				}
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 0
+			}
+
+			
+			#REASONS TO UPGRADE
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_military_reforms_major_1
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_military_reforms_major_1
+					gold > 2 * mos_reform_cost_tier_2
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_1
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
 		}
 	}
 
