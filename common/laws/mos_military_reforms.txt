@@ -106,7 +106,7 @@ mos_military_reforms_major = {
 			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
 				limit = {
 					OR = {
-						days_of_continuous_peace < 60
+						days_of_continuous_peace < 180
 					}
 				}
 				multiply = 0
@@ -226,7 +226,7 @@ mos_military_reforms_major = {
 				limit = {
 					has_realm_law = mos_military_reforms_major_3
 					OR = {
-						days_of_continuous_peace < 60
+						days_of_continuous_peace < 180
 					}
 				}
 				multiply = 0
@@ -383,7 +383,7 @@ mos_military_reforms_major = {
 				limit = {
 					has_realm_law = mos_military_reforms_major_4
 					OR = {
-						days_of_continuous_peace < 60
+						days_of_continuous_peace < 180
 					}
 				}
 				multiply = 0
@@ -537,7 +537,7 @@ mos_military_reforms_major = {
 				limit = {
 					has_realm_law = mos_military_reforms_major_5
 					OR = {
-						days_of_continuous_peace < 60
+						days_of_continuous_peace < 180
 					}
 				}
 				multiply = 0
@@ -684,7 +684,7 @@ mos_military_reforms_major = {
 				limit = {
 					has_realm_law = mos_military_reforms_major_4
 					OR = {
-						days_of_continuous_peace < 60
+						days_of_continuous_peace < 180
 					}
 				}
 				multiply = 1.1
