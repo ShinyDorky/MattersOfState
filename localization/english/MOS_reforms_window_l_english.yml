@@ -12,7 +12,8 @@
 
 
  mos_gov_any:0 "Every government is viable"
- mos_gov_post_tribal:0 "Realms government needs to advance past tribal"
- mos_gov_post_feudal:0 "Realms government needs to advance past feudalism or clan structures"
+ mos_gov_post_tribal:0 "Realm's government needs to advance past tribal"
+ mos_gov_post_feudal:0 "Realm's government needs to advance past feudalism or clan structures"
 
  mos_reforms_cooldown_desc: "A reform was enacted recently - reforms can be changed again after [GetCurrentDateWithDiff( GetVarTimeRemaining( GetPlayer.MakeScope, 'mos_reforms_cooldown') )]"
+ mos_major_reforms_cooldown_desc: "A major reform was enacted recently - major reforms can be changed again after [GetCurrentDateWithDiff( GetVarTimeRemaining( GetPlayer.MakeScope, 'mos_major_reforms_cooldown') )]"

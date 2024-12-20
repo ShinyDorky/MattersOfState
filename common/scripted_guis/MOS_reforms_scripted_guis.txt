@@ -1,4 +1,10 @@
-﻿mos_military_doctrine_locked = {
+﻿mos_show_reforms_open_button = {
+    is_shown = {
+		is_landless_adventurer = no
+    }
+}
+
+mos_military_doctrine_locked = {
 	scope = character
 
 	is_valid = {

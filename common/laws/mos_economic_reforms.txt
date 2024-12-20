@@ -17,6 +17,7 @@ mos_economic_reforms_major = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -46,9 +47,10 @@ mos_economic_reforms_major = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				has_realm_law = mos_economic_reforms_major_2
 			}
@@ -69,8 +71,35 @@ mos_economic_reforms_major = {
 		}
 		
 		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_economic_reforms_major_2
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_2
+			}
 			mos_major_econ_reform_change_cleanup_effect_1 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE - ECONOMIC REASONS NOT REALLY APPLYING HERE
+			if = { # JUST PLAIN OL GREED
+				limit = { 
+					has_realm_law = mos_military_reforms_major_2
+					has_trait = greedy 
+				}
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_2
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 0
+			}
 		}
 	}
 
@@ -108,9 +137,10 @@ mos_economic_reforms_major = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				OR = {
 					has_realm_law = mos_economic_reforms_major_1
@@ -130,12 +160,82 @@ mos_economic_reforms_major = {
 		}
 		
 		pass_cost = {
-			gold = 0
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_economic_reforms_major_1
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_2
+					}
+				}
+			}
 		}
 		
 		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_economic_reforms_major_3
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_3
+			}
 			mos_major_econ_reform_change_cleanup_effect_2 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE - ECONOMIC REASONS NOT REALLY APPLYING HERE
+			if = { # JUST PLAIN OL GREED
+				limit = { 
+					has_realm_law = mos_military_reforms_major_3
+					has_trait = greedy 
+				}
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 0
+			}
+
+			
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_military_reforms_major_1
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_military_reforms_major_1
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_military_reforms_major_1
+					gold > 2 * mos_reform_cost_tier_2
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_1
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
 		}
 	}
 
@@ -181,9 +281,10 @@ mos_economic_reforms_major = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				OR = {
 					has_realm_law = mos_economic_reforms_major_2
@@ -203,12 +304,82 @@ mos_economic_reforms_major = {
 		}
 
 		pass_cost = {
-			gold = 0
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_economic_reforms_major_2
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_3
+					}
+				}
+			}
 		}
 		
 		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_economic_reforms_major_4
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_4
+			}
 			mos_major_econ_reform_change_cleanup_effect_3 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE - ECONOMIC REASONS NOT REALLY APPLYING HERE
+			if = { # JUST PLAIN OL GREED
+				limit = { 
+					has_realm_law = mos_military_reforms_major_4
+					has_trait = greedy 
+				}
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 0
+			}
+
+			
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_military_reforms_major_2
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_military_reforms_major_2
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_military_reforms_major_2
+					gold > 2 * mos_reform_cost_tier_3
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_2
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
 		}
 	}
 
@@ -247,9 +418,10 @@ mos_economic_reforms_major = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				OR = {
 					has_realm_law = mos_economic_reforms_major_3
@@ -268,15 +440,83 @@ mos_economic_reforms_major = {
 			}
 		}
 
-		can_pass = { 
-		}
-		
 		pass_cost = {
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_economic_reforms_major_3
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_4
+					}
+				}
+			}
 		}
 		
 		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_economic_reforms_major_5
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_5
+			}
 			mos_major_econ_reform_change_cleanup_effect_4 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE - ECONOMIC REASONS NOT REALLY APPLYING HERE
+			if = { # JUST PLAIN OL GREED
+				limit = { 
+					has_realm_law = mos_military_reforms_major_5
+					has_trait = greedy 
+				}
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_5
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 0
+			}
+
+			
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					gold > 2 * mos_reform_cost_tier_4
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
 		}
 	}
 
@@ -319,9 +559,10 @@ mos_economic_reforms_major = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				
 				custom_tooltip = {
-					text = mos_reforms_cooldown_desc
-					NOT = { has_variable = mos_reforms_cooldown }
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
 				}
 				OR = {
 					has_realm_law = mos_economic_reforms_major_4
@@ -340,12 +581,56 @@ mos_economic_reforms_major = {
 		}
 		
 		pass_cost = {
-			gold = 0
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_economic_reforms_major_4
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_5
+					}
+				}
+			}
 		}
 		
 		on_pass = { 
 			mos_major_econ_reform_change_cleanup_effect_5 = yes
-			mos_pass_reform_effect = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					gold > 2 * mos_reform_cost_tier_5
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
 		}
 	}
 }
@@ -378,6 +663,7 @@ mos_economic_reforms_1_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -426,11 +712,16 @@ mos_economic_reforms_1_header = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = 100
+		}
 	}
 
 	mos_economic_reforms_1_header_2 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			monthly_prestige_gain_mult = 0.2
 			monthly_dynasty_prestige_mult = 0.2
 		}
@@ -475,8 +766,6 @@ mos_economic_reforms_1_header = {
 				}
 			}
 		}
-
-
 		
 		pass_cost = {
 			gold = 0
@@ -488,11 +777,15 @@ mos_economic_reforms_1_header = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = -100
+		}
 	}
 
 	mos_economic_reforms_1_header_3 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			advantage = 3
 			glory_hound_opinion = 20
 			maa_toughness_mult = 0.05
@@ -554,11 +847,15 @@ mos_economic_reforms_1_header = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = -100
+		}
 	}
 
 	mos_economic_reforms_1_header_4 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			opinion_of_same_culture = 20
 			#TODO - council task
 		}
@@ -617,11 +914,15 @@ mos_economic_reforms_1_header = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = -100
+		}
 	}
 
 	mos_economic_reforms_1_header_5 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			monthly_county_control_growth_factor = 0.25
 			cultural_head_acceptance_gain_mult = 0.2
 			#TODO - council task
@@ -674,6 +975,10 @@ mos_economic_reforms_1_header = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = -100
+		}
 	}
 	
 	mos_economic_reforms_1_header_0 = {
@@ -688,6 +993,7 @@ mos_economic_reforms_1_header = {
 			}
 		}
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -754,6 +1060,7 @@ mos_economic_reforms_1_minor_1 = {
 			}
 		}
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -817,6 +1124,7 @@ mos_economic_reforms_1_minor_1 = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -864,11 +1172,15 @@ mos_economic_reforms_1_minor_1 = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = -100
+		}
 	}
 
 	mos_economic_reforms_1_minor_1_2 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			development_growth_factor = 0.1
 			build_speed = -0.25
 		}
@@ -921,11 +1233,15 @@ mos_economic_reforms_1_minor_1 = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = -100
+		}
 	}
 
 	mos_economic_reforms_1_minor_1_3 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			courtly_opinion = 15
 			courtier_and_guest_opinion = 30
 			independent_ruler_opinion = 20
@@ -980,11 +1296,15 @@ mos_economic_reforms_1_minor_1 = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = -100
+		}
 	}
 
 	mos_economic_reforms_1_minor_1_4 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			same_faith_opinion = 20
 			#TODO - council task
 		}
@@ -1025,7 +1345,6 @@ mos_economic_reforms_1_minor_1 = {
 				}
 			}
 		}
-
 		
 		pass_cost = {
 			gold = 0
@@ -1037,11 +1356,15 @@ mos_economic_reforms_1_minor_1 = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = -100
+		}
 	}
 
 	mos_economic_reforms_1_minor_1_5 = {
 		modifier = {
-			monthly_income_mult = -0.2
+			monthly_income_mult = -0.15
 			county_opinion_add = 40
 			general_opinion = 10
 			#TODO - council task
@@ -1083,7 +1406,6 @@ mos_economic_reforms_1_minor_1 = {
 				}
 			}
 		}
-
 		
 		pass_cost = {
 			gold = 0
@@ -1094,6 +1416,10 @@ mos_economic_reforms_1_minor_1 = {
 				add_realm_law = mos_economic_reforms_1_header_0
 			}
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = -100
 		}
 	}
 }
@@ -1120,6 +1446,7 @@ mos_economic_reforms_2_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -1154,8 +1481,6 @@ mos_economic_reforms_2_header = {
 				}
 			}
 		}
-
-
 		
 		pass_cost = {
 			gold = 0
@@ -1163,6 +1488,10 @@ mos_economic_reforms_2_header = {
 		
 		on_pass = {
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = -100
 		}
 	}
 
@@ -1216,8 +1545,6 @@ mos_economic_reforms_2_header = {
 				}
 			}
 		}
-
-
 		
 		pass_cost = {
 			gold = 0
@@ -1225,6 +1552,10 @@ mos_economic_reforms_2_header = {
 		
 		on_pass = {
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = -100
 		}
 	}
 
@@ -1238,6 +1569,7 @@ mos_economic_reforms_2_header = {
 		
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -1284,6 +1616,10 @@ mos_economic_reforms_2_header = {
 		
 		on_pass = { 
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = 100
 		}
 	}
 
@@ -1345,6 +1681,10 @@ mos_economic_reforms_2_header = {
 		on_pass = {
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = -100
+		}
 	}
 
 	mos_economic_reforms_2_header_5 = {
@@ -1400,6 +1740,10 @@ mos_economic_reforms_2_header = {
 		on_pass = {
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = { # I AM SO NOT LETTING AI MESS AROUND WITH THAT
+			value = -100
+		}
 	}
 }
 
@@ -1427,6 +1771,7 @@ mos_economic_reforms_3_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -1484,11 +1829,12 @@ mos_economic_reforms_3_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
 				}
-				always = yes
+				mos_economic_2_and_above = yes
 			}
 			trigger_if = {
 				limit = {
@@ -1523,8 +1869,6 @@ mos_economic_reforms_3_header = {
 				}
 			}
 		}
-
-
 		
 		pass_cost = {
 			gold = 0
@@ -1532,6 +1876,30 @@ mos_economic_reforms_3_header = {
 		
 		on_pass = {
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_3_header_1
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_3_header_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
 		}
 	}
 
@@ -1551,11 +1919,12 @@ mos_economic_reforms_3_header = {
 		
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
 				}
-				always = yes
+				mos_economic_3_and_above = yes
 			}
 			trigger_if = {
 				limit = {
@@ -1598,6 +1967,30 @@ mos_economic_reforms_3_header = {
 		on_pass = { 
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_3_header_2
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_3_header_2
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
 	}
 
 	mos_economic_reforms_3_header_4 = {
@@ -1615,11 +2008,12 @@ mos_economic_reforms_3_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
 				}
-				always = yes
+				mos_economic_4_and_above = yes
 			}
 			trigger_if = {
 				limit = {
@@ -1662,6 +2056,30 @@ mos_economic_reforms_3_header = {
 		on_pass = {
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_3_header_3
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_3_header_3
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
 	}
 
 	mos_economic_reforms_3_header_5 = {
@@ -1673,11 +2091,12 @@ mos_economic_reforms_3_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
 				}
-				always = yes
+				mos_economic_5_and_above = yes
 			}
 			trigger_if = {
 				limit = {
@@ -1719,6 +2138,30 @@ mos_economic_reforms_3_header = {
 		on_pass = {
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_3_header_4
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_3_header_4
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
 	}
 }
 
@@ -1744,6 +2187,7 @@ mos_economic_reforms_4_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
@@ -1779,14 +2223,28 @@ mos_economic_reforms_4_header = {
 			}
 		}
 
-
-		
 		pass_cost = {
 			gold = 0
 		}
 		
 		on_pass = {
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_4_header_3
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income * 1.1
+					}
+				}
+				add = 10
+			}
 		}
 	}
 
@@ -1858,11 +2316,12 @@ mos_economic_reforms_4_header = {
 		
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
 				}
-				always = yes
+				mos_economic_3_and_above = yes
 			}
 			trigger_if = {
 				limit = {
@@ -1905,6 +2364,55 @@ mos_economic_reforms_4_header = {
 		on_pass = { 
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_4_header_1
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_4_header_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_4_header_1
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income * 1.2
+					}
+				}
+				multiply = 0
+			}
+
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_4_header_4
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income * 1.1
+					}
+				}
+				add = 10
+			}
+		}
 	}
 
 	mos_economic_reforms_4_header_4 = {
@@ -1923,11 +2431,12 @@ mos_economic_reforms_4_header = {
 		}
 
 		can_keep = { 
+			is_landless_adventurer = no
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
 				}
-				always = yes
+				mos_economic_4_and_above = yes
 			}
 			trigger_if = {
 				limit = {
@@ -1968,6 +2477,41 @@ mos_economic_reforms_4_header = {
 		
 		on_pass = {
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_4_header_3
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_4_header_3
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_economic_reforms_4_header_3
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income * 0.9
+					}
+				}
+				multiply = 0
+			}
 		}
 	}
 
