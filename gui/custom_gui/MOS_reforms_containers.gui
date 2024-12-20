@@ -58,6 +58,13 @@ types mos_reform_containers{
 									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
+
+									MOS_reform_icon = {
+										texture = "gfx/interface/BLACK_SQUARE.dds"
+										parentanchor = center
+										alpha = 0.2
+										alwaystransparent = yes
+									}
 								}
 								
 								MOS_reform_icon = {
@@ -79,7 +86,7 @@ types mos_reform_containers{
 								}
 								text_label_center = {
 									parentanchor = center
-									visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+									visible = "[And(Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) ), Not(GuiLaw.IsEnacted))]"
 									text = "[GuiLaw.GetLaw.GetName]"
 								}
 							}
@@ -119,6 +126,13 @@ types mos_reform_containers{
 									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
+
+									MOS_reform_icon = {
+										texture = "gfx/interface/BLACK_SQUARE.dds"
+										parentanchor = center
+										alpha = 0.2
+										alwaystransparent = yes
+									}
 								}
 								
 								MOS_reform_icon = {
@@ -140,7 +154,7 @@ types mos_reform_containers{
 								}
 								text_label_center = {
 									parentanchor = center
-									visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+									visible = "[And(Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) ), Not(GuiLaw.IsEnacted))]"
 									text = "[GuiLaw.GetLaw.GetName]"
 								}
 							}
@@ -214,6 +228,13 @@ types mos_reform_containers{
 									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
+
+									MOS_reform_icon = {
+										texture = "gfx/interface/BLACK_SQUARE.dds"
+										parentanchor = center
+										alpha = 0.2
+										alwaystransparent = yes
+									}
 								}
 								
 								MOS_reform_icon = {
@@ -235,7 +256,7 @@ types mos_reform_containers{
 								}
 								text_label_center = {
 									parentanchor = center
-									visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+									visible = "[And(Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) ), Not(GuiLaw.IsEnacted))]"
 									text = "[GuiLaw.GetLaw.GetName]"
 								}
 							}
@@ -275,6 +296,13 @@ types mos_reform_containers{
 									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
+
+									MOS_reform_icon = {
+										texture = "gfx/interface/BLACK_SQUARE.dds"
+										parentanchor = center
+										alpha = 0.2
+										alwaystransparent = yes
+									}
 								}
 								
 								MOS_reform_icon = {
@@ -296,7 +324,7 @@ types mos_reform_containers{
 								}
 								text_label_center = {
 									parentanchor = center
-									visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+									visible = "[And(Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) ), Not(GuiLaw.IsEnacted))]"
 									text = "[GuiLaw.GetLaw.GetName]"
 								}
 							}
@@ -370,6 +398,13 @@ types mos_reform_containers{
 									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
+
+									MOS_reform_icon = {
+										texture = "gfx/interface/BLACK_SQUARE.dds"
+										parentanchor = center
+										alpha = 0.2
+										alwaystransparent = yes
+									}
 								}
 								
 								MOS_reform_icon = {
@@ -391,7 +426,7 @@ types mos_reform_containers{
 								}
 								text_label_center = {
 									parentanchor = center
-									visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+									visible = "[And(Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) ), Not(GuiLaw.IsEnacted))]"
 									text = "[GuiLaw.GetLaw.GetName]"
 								}
 							}
@@ -431,6 +466,13 @@ types mos_reform_containers{
 									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
+
+									MOS_reform_icon = {
+										texture = "gfx/interface/BLACK_SQUARE.dds"
+										parentanchor = center
+										alpha = 0.2
+										alwaystransparent = yes
+									}
 								}
 								
 								MOS_reform_icon = {
@@ -452,7 +494,7 @@ types mos_reform_containers{
 								}
 								text_label_center = {
 									parentanchor = center
-									visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+									visible = "[And(Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) ), Not(GuiLaw.IsEnacted))]"
 									text = "[GuiLaw.GetLaw.GetName]"
 								}
 							}
