@@ -1552,6 +1552,9 @@ mos_military_reforms_2_header = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				OR = {
+					has_realm_law = mos_military_reforms_2_header_2
+				}
 				custom_tooltip = {
 					text = mos_reforms_cooldown_desc
 					NOT = { has_variable = mos_reforms_cooldown }
@@ -1605,6 +1608,10 @@ mos_military_reforms_2_header = {
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_2_header_1
+					has_realm_law = mos_military_reforms_2_header_3
 				}
 				custom_tooltip = {
 					text = mos_reforms_cooldown_desc
@@ -1692,6 +1699,11 @@ mos_military_reforms_2_header = {
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_2_header_2
+					has_realm_law = mos_military_reforms_2_header_5
+					has_realm_law = mos_military_reforms_2_minor_1_5
 				}
 				custom_tooltip = {
 					text = mos_reforms_cooldown_desc
@@ -1803,6 +1815,10 @@ mos_military_reforms_2_header = {
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_2_header_3
+					has_realm_law = mos_military_reforms_2_minor_1_5
 				}
 				custom_tooltip = {
 					text = mos_reforms_cooldown_desc
@@ -2080,6 +2096,10 @@ mos_military_reforms_2_minor_1 = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				OR = {
+					has_realm_law = mos_military_reforms_2_header_3
+					has_realm_law = mos_military_reforms_2_header_5
+				}
 				custom_tooltip = {
 					text = mos_reforms_cooldown_desc
 					NOT = { has_variable = mos_reforms_cooldown }
@@ -2180,6 +2200,9 @@ mos_military_reforms_3_header = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				OR = {
+					has_realm_law = mos_military_reforms_3_header_3
+				}
 				custom_tooltip = {
 					text = mos_reforms_cooldown_desc
 					NOT = { has_variable = mos_reforms_cooldown }
@@ -2265,6 +2288,10 @@ mos_military_reforms_3_header = {
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_3_header_1
+					has_realm_law = mos_military_reforms_3_header_4
 				}
 				custom_tooltip = {
 					text = mos_reforms_cooldown_desc
@@ -2355,6 +2382,10 @@ mos_military_reforms_3_header = {
 				limit = {
 					is_independent_ruler = yes
 				}
+				OR = {
+					has_realm_law = mos_military_reforms_3_header_3
+					has_realm_law = mos_military_reforms_3_header_5
+				}
 				custom_tooltip = {
 					text = mos_reforms_cooldown_desc
 					NOT = { has_variable = mos_reforms_cooldown }
@@ -2436,6 +2467,9 @@ mos_military_reforms_3_header = {
 			trigger_if = {
 				limit = {
 					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_3_header_4
 				}
 				custom_tooltip = {
 					text = mos_reforms_cooldown_desc
