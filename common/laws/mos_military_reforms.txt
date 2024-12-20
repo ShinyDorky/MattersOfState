@@ -825,6 +825,7 @@ mos_military_reforms_1_header = {
 
 	mos_military_reforms_1_header_3 = {
 		modifier = {
+			advantage = 2
 			levy_size = 0.1
 		}
 
