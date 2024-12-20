@@ -764,8 +764,6 @@ mos_military_reforms_1_header = {
 				}
 			}
 		}
-
-
 		
 		pass_cost = {
 			gold = 0
@@ -776,6 +774,32 @@ mos_military_reforms_1_header = {
 				add_realm_law = mos_military_reforms_1_minor_1_0
 			}
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# SWITCHING FROM DEFENSE
+			if = { # I LIKE FIGHTING
+				limit = {
+					has_realm_law = mos_military_reforms_1_minor_1_1
+					OR = {
+						has_trait = wrathful
+						has_trait = vengeful
+						has_trait = sadistic
+						culture = { has_cultural_pillar = heritage_north_germanic }
+					}
+				}
+				add = 10
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_1_minor_1_1
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				add = 5
+			}
 		}
 	}
 
@@ -865,6 +889,32 @@ mos_military_reforms_1_header = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_1
+						has_realm_law = mos_military_reforms_1_minor_1_1
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_1
+						has_realm_law = mos_military_reforms_1_minor_1_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
 	}
 
 	mos_military_reforms_1_header_4 = {
@@ -935,6 +985,30 @@ mos_military_reforms_1_header = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_3
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_3
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
 	}
 
 	mos_military_reforms_1_header_5 = {
@@ -996,6 +1070,41 @@ mos_military_reforms_1_header = {
 				add_realm_law = mos_military_reforms_1_minor_1_0
 			}
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_4
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_4
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # NO ARMY WITHOUT LEVIES
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_4
+					}
+					OR = {
+						number_of_maa_regiments < 25
+					}
+				}
+				multiply = 0
+			}
 		}
 	}
 	
@@ -1203,6 +1312,35 @@ mos_military_reforms_1_minor_1 = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# SWITCH FROM RAIDING
+			if = { # I DONT LIKE FIGHTING
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_1
+					}
+					OR = {
+						has_trait = compassionate
+						has_trait = forgiving
+						has_trait = content
+					}
+				}
+				add = 3
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 0
+			}
+		}
 	}
 
 	mos_military_reforms_1_minor_1_2 = {
@@ -1364,6 +1502,10 @@ mos_military_reforms_1_minor_1 = {
 				add_realm_law = mos_military_reforms_1_header_0
 			}
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = { #THIS WOULD BE A SUICIDE FOR AI
+			value = -100
 		}
 	}
 }
