@@ -1834,7 +1834,7 @@ mos_economic_reforms_3_header = {
 				limit = {
 					is_independent_ruler = yes
 				}
-				always = yes
+				mos_economic_2_and_above = yes
 			}
 			trigger_if = {
 				limit = {
@@ -1924,7 +1924,7 @@ mos_economic_reforms_3_header = {
 				limit = {
 					is_independent_ruler = yes
 				}
-				always = yes
+				mos_economic_3_and_above = yes
 			}
 			trigger_if = {
 				limit = {
@@ -2013,7 +2013,7 @@ mos_economic_reforms_3_header = {
 				limit = {
 					is_independent_ruler = yes
 				}
-				always = yes
+				mos_economic_4_and_above = yes
 			}
 			trigger_if = {
 				limit = {
@@ -2096,7 +2096,7 @@ mos_economic_reforms_3_header = {
 				limit = {
 					is_independent_ruler = yes
 				}
-				always = yes
+				mos_economic_5_and_above = yes
 			}
 			trigger_if = {
 				limit = {
