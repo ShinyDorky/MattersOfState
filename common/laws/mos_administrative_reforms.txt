@@ -1,0 +1,2852 @@
+mos_administrative_reforms_major = {
+	default = mos_administrative_reforms_major_1
+
+	flag = mos_administrative_reform
+	flag = mos_major_reform
+	flag = mos_law
+
+	cumulative = no
+
+	mos_administrative_reforms_major_1 = {
+		modifier = {
+		}
+
+		should_start_with = {
+			has_government = tribal_government
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_gov_any
+					OR = {
+						has_government = administrative_government
+						has_government = feudal_government
+						has_government = clan_government
+						has_government = theocracy_government
+						has_government = republican_government
+						has_government = tribal_government
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_administrative_reforms_major_1 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
+				}
+				has_realm_law = mos_administrative_reforms_major_2
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_major_1 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_administrative_reforms_major_2
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_2
+			}
+			mos_major_admin_reform_change_cleanup_effect_1 = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE
+			if = { # LOSING MONEY - FAVORED FOR REGAINING MONEY
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_2
+					monthly_character_balance < -10
+				}
+				add = 50
+			}
+			if = { # IN DEBT
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_2
+					gold < -1.5 * mos_reform_return_tier_4
+				}
+				add = 30
+			}
+			if = { # JUST PLAIN OL GREED
+				limit = { 
+					has_realm_law = mos_administrative_reforms_major_2
+					has_trait = greedy 
+				}
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_2
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 0
+			}
+		}
+	}
+
+	mos_administrative_reforms_major_2 = {
+		modifier = {
+			tyranny_gain_mult = -0.03
+			monthly_county_control_growth_factor = 0.05
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_gov_any
+					OR = {
+						has_government = administrative_government
+						has_government = feudal_government
+						has_government = clan_government
+						has_government = theocracy_government
+						has_government = republican_government
+						has_government = tribal_government
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_administrative_reforms_major_2 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_major_1
+					has_realm_law = mos_administrative_reforms_major_3
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_major_2 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_administrative_reforms_major_1
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_2
+					}
+				}
+			}
+		}
+		
+		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_administrative_reforms_major_3
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_3
+			}
+			mos_major_admin_reform_change_cleanup_effect_2 = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE
+			if = { # LOSING MONEY - FAVORED FOR REGAINING MONEY
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_3
+					monthly_character_balance < -10
+				}
+				add = 50
+			}
+			if = { # IN DEBT
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_3
+					gold < -1.5 * mos_reform_return_tier_4
+				}
+				add = 30
+			}
+			if = { # JUST PLAIN OL GREED
+				limit = { 
+					has_realm_law = mos_administrative_reforms_major_3
+					has_trait = greedy 
+				}
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_3
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 0
+			}
+
+			
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_1
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_1
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_1
+					gold > 2 * mos_reform_cost_tier_2
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_1
+					OR = {
+						days_of_continuous_peace < 180
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_administrative_reforms_major_3 = {
+		modifier = {
+			tyranny_gain_mult = -0.06
+			monthly_county_control_growth_factor = 0.1
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = feudal_government
+				has_government = clan_government
+				has_government = theocracy_government
+			}
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_gov_post_tribal
+					OR = {
+						has_government = administrative_government
+						has_government = feudal_government
+						has_government = clan_government
+						has_government = theocracy_government
+						has_government = republican_government
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_administrative_reforms_major_3 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_major_2
+					has_realm_law = mos_administrative_reforms_major_4
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_major_3 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		pass_cost = {
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_administrative_reforms_major_2
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_3
+					}
+				}
+			}
+		}
+		
+		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_administrative_reforms_major_4
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_4
+			}
+			mos_major_admin_reform_change_cleanup_effect_3 = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE
+			if = { # LOSING MONEY - FAVORED FOR REGAINING MONEY
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_4
+					monthly_character_balance < -10
+				}
+				add = 50
+			}
+			if = { # IN DEBT
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_4
+					gold < -1.5 * mos_reform_return_tier_4
+				}
+				add = 30
+			}
+			if = { # JUST PLAIN OL GREED
+				limit = { 
+					has_realm_law = mos_administrative_reforms_major_4
+					has_trait = greedy 
+				}
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_4
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 0
+			}
+
+			
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_2
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_2
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_2
+					gold > 2 * mos_reform_cost_tier_3
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_2
+					OR = {
+						days_of_continuous_peace < 180
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_administrative_reforms_major_4 = {
+		modifier = {
+			tyranny_gain_mult = -0.09
+			monthly_county_control_growth_factor = 0.15
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_gov_post_tribal
+					OR = {
+						has_government = administrative_government
+						has_government = feudal_government
+						has_government = clan_government
+						has_government = theocracy_government
+						has_government = republican_government
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_administrative_reforms_major_4 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_major_3
+					has_realm_law = mos_administrative_reforms_major_5
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_major_4 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_administrative_reforms_major_3
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_4
+					}
+				}
+			}
+		}
+		
+		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_administrative_reforms_major_5
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_5
+			}
+			mos_major_admin_reform_change_cleanup_effect_4 = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE
+			if = { # LOSING MONEY - FAVORED FOR REGAINING MONEY
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_5
+					monthly_character_balance < -10
+				}
+				add = 50
+			}
+			if = { # IN DEBT
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_5
+					gold < -1.5 * mos_reform_return_tier_5
+				}
+				add = 30
+			}
+			if = { # JUST PLAIN OL GREED
+				limit = { 
+					has_realm_law = mos_administrative_reforms_major_5
+					has_trait = greedy 
+				}
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_5
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 0
+			}
+
+			
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_3
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_3
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_3
+					gold > 2 * mos_reform_cost_tier_4
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_3
+					OR = {
+						days_of_continuous_peace < 180
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_administrative_reforms_major_5 = {
+		modifier = {
+			tyranny_gain_mult = -0.12
+			monthly_county_control_growth_factor = 0.2
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = administrative_government
+				has_government = republican_government
+			}
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_gov_post_feudal
+					OR = {
+						has_government = administrative_government
+						has_government = republican_government
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_administrative_reforms_major_5 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_major_4
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_major_5 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_administrative_reforms_major_4
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_5
+					}
+				}
+			}
+		}
+		
+		on_pass = { 
+			mos_major_admin_reform_change_cleanup_effect_5 = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_4
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_4
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_4
+					gold > 2 * mos_reform_cost_tier_5
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_administrative_reforms_major_4
+					OR = {
+						days_of_continuous_peace < 180
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+}
+
+
+#POLITICAL AUTHORITY
+mos_administrative_reforms_1_header = {
+	default = mos_administrative_reforms_1_header_1
+
+	flag = mos_administrative_reform
+	flag = mos_header_reform
+	flag = mos_law
+
+	flag = mos_no_order_reform
+	
+	cumulative = no
+
+
+	mos_administrative_reforms_1_header_1 = {
+		modifier = {
+		}
+
+		should_start_with = {
+			has_government = tribal_government
+		}
+
+		can_keep = { 
+			is_landless_adventurer = no
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				always = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_administrative_reforms_1_header_1 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_1_header_2
+					has_realm_law = mos_administrative_reforms_1_minor_1_2
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_1_header_1 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_administrative_reforms_1_minor_1_0
+			}
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_administrative_reforms_1_header_2 = {
+		modifier = {
+			monthly_legitimacy_add = 0.2
+			legitimacy_gain_mult = 0.05
+		}
+
+		should_start_with = {
+			always = no
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_2_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_1_header_1
+					has_realm_law = mos_administrative_reforms_1_header_3
+					has_realm_law = mos_administrative_reforms_1_minor_1_2
+					has_realm_law = mos_administrative_reforms_1_minor_1_3
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_1_header_2 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_administrative_reforms_1_minor_1_0
+			}
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_administrative_reforms_1_header_3 = {
+		modifier = {
+			monthly_legitimacy_add = 0.4
+			legitimacy_gain_mult = 0.1
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = feudal_government
+				has_government = clan_government
+				has_government = theocracy_government
+			}
+		}
+		
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_3_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_1_header_2
+					has_realm_law = mos_administrative_reforms_1_header_4
+					has_realm_law = mos_administrative_reforms_1_minor_1_2
+					has_realm_law = mos_administrative_reforms_1_minor_1_3
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_1_header_3 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { 
+			hidden_effect = {
+				add_realm_law = mos_administrative_reforms_1_minor_1_0
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_2
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_2
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_administrative_reforms_1_header_4 = {
+		modifier = {
+			monthly_legitimacy_add = 0.6
+			legitimacy_gain_mult = 0.15
+			#TODO - council task
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = administrative_government
+				has_government = republican_government
+			}
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_4_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_1_header_3
+					has_realm_law = mos_administrative_reforms_1_header_5
+					has_realm_law = mos_administrative_reforms_1_minor_1_3
+					has_realm_law = mos_administrative_reforms_1_minor_1_5
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_1_header_4 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_administrative_reforms_1_minor_1_0
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_3
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_3
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_administrative_reforms_1_header_5 = {
+		modifier = {
+			monthly_legitimacy_add = 0.8
+			legitimacy_gain_mult = 0.2
+			monthly_influence_mult = 0.2
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_5_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_1_header_4
+					has_realm_law = mos_administrative_reforms_1_minor_1_5
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_1_header_5 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_administrative_reforms_1_minor_1_0
+			}
+			mos_pass_reform_effect = yes
+		}
+	}
+	
+	mos_administrative_reforms_1_header_0 = {
+		modifier = {
+		}
+		should_start_with = {
+			AND = {
+				has_government = tribal_government
+				OR = {
+					has_trait = greedy
+				}
+			}
+		}
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				NOT = { has_realm_law = mos_administrative_reforms_1_minor_1_0 }
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_administrative_reforms_1_header_0 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_1_header_0 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+}
+
+mos_administrative_reforms_1_minor_1 = {
+	default = mos_administrative_reforms_1_minor_1_1
+
+	flag = mos_administrative_reform
+	flag = mos_minor_reform
+	flag = mos_law
+	
+	flag = mos_no_order_reform
+
+	cumulative = no
+	mos_administrative_reforms_1_minor_1_0 = {
+		modifier = {
+		}
+		should_start_with = {
+			has_government = tribal_government
+		}
+		can_keep = { 
+			is_landless_adventurer = no
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				NOT = { has_realm_law = mos_administrative_reforms_1_header_0 }
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_1_minor_1_0 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes 
+		}
+	}
+
+	mos_administrative_reforms_1_minor_1_1 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+		should_start_with = {
+			always = no
+		}
+
+		can_keep = { 
+			always = no
+		}
+
+		can_pass = {
+			always = no
+		}
+
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_administrative_reforms_1_header_0
+			}
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_administrative_reforms_1_minor_1_2 = {
+		modifier = {
+			vassal_opinion = 30
+			legitimacy_gain_mult = 0.05
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_2_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_1_header_1
+					has_realm_law = mos_administrative_reforms_1_header_2
+					has_realm_law = mos_administrative_reforms_1_header_3
+					has_realm_law = mos_administrative_reforms_1_minor_1_3
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_1_minor_1_2 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_administrative_reforms_1_header_0
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_1
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_administrative_reforms_1_minor_1_3 = {
+		modifier = {
+			vassal_opinion = 30
+			legitimacy_gain_mult = 0.05
+			character_travel_speed_mult = 0.1 
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_3_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_1_header_2
+					has_realm_law = mos_administrative_reforms_1_header_3
+					has_realm_law = mos_administrative_reforms_1_header_4
+					has_realm_law = mos_administrative_reforms_1_minor_1_2
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_1_minor_1_3 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_administrative_reforms_1_header_0
+			}
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_administrative_reforms_1_minor_1_4 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+
+		can_keep = { 
+			always = no
+		}
+
+		can_pass = {
+			always = no
+		}
+
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_administrative_reforms_1_header_0
+			}
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_administrative_reforms_1_minor_1_5 = {
+		modifier = {
+			monthly_legitimacy_add = 0.6
+			legitimacy_gain_mult = 0.15
+			monthly_influence_mult = 0.1
+			vassal_opinion = 30
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_5_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_1_header_4
+					has_realm_law = mos_administrative_reforms_1_header_5
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_1_minor_1_5 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_administrative_reforms_1_header_0
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_4
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_4
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+}
+
+#INFRASTRUCTURE
+mos_administrative_reforms_2_header = {
+	default = mos_administrative_reforms_2_header_1
+
+	flag = mos_administrative_reform
+	flag = mos_header_reform
+	flag = mos_law
+	
+	cumulative = no
+
+
+	mos_administrative_reforms_2_header_1 = {
+		modifier = {
+		}
+
+		should_start_with = {
+			has_government = tribal_government
+		}
+
+		can_keep = { 
+			is_landless_adventurer = no
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				always = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_administrative_reforms_2_header_1 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_2_header_2
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_2_header_1 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_2
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income * 1.06
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	mos_administrative_reforms_2_header_2 = {
+		modifier = {
+			character_travel_safety_mult = 0.04
+			domain_tax_mult = -0.02
+		}
+
+		should_start_with = {
+			always = no
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_2_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_2_header_1
+					has_realm_law = mos_administrative_reforms_2_header_3
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_2_header_2 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_1
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_1
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income * 0.98
+					}
+				}
+				multiply = 0
+			}
+
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_3
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income * 1.06
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	mos_administrative_reforms_2_header_3 = {
+		modifier = {
+			character_travel_safety_mult = 0.04
+			character_travel_speed_mult = 0.04
+			domain_tax_mult = -0.04
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = feudal_government
+				has_government = clan_government
+				has_government = theocracy_government
+			}
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_3_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_2_header_2
+					has_realm_law = mos_administrative_reforms_2_header_4
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_2_header_3 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { 
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_2
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_2
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_2
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income * 0.98
+					}
+				}
+				multiply = 0
+			}
+
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_4
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income * 1.06
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	mos_administrative_reforms_2_header_4 = {
+		modifier = {
+			character_travel_safety_mult = 0.06
+			character_travel_speed_mult = 0.04
+			domain_tax_mult = -0.05
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = administrative_government
+				has_government = republican_government
+			}
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_4_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_2_header_3
+					has_realm_law = mos_administrative_reforms_2_header_5
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_2_header_4 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_3
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_3
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_3
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income * 0.98
+					}
+				}
+				multiply = 0
+			}
+
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_5
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income * 1.06
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	mos_administrative_reforms_2_header_5 = {
+		modifier = {
+			character_travel_safety_mult = 0.1
+			character_travel_speed_mult = 0.1
+			domain_tax_mult = -0.06
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_5_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_2_header_4
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_2_header_5 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_4
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_4
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_4
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income * 0.98
+					}
+				}
+				multiply = 0
+			}
+		}
+	}
+}
+
+
+#ESPIONAGE
+mos_administrative_reforms_3_header = {
+	default = mos_administrative_reforms_3_header_1
+
+	flag = mos_administrative_reform
+	flag = mos_header_reform
+	flag = mos_law
+	
+	cumulative = no
+
+
+	mos_administrative_reforms_3_header_1 = {
+		modifier = {
+		}
+
+		should_start_with = {
+			AND = {
+				has_government = tribal_government
+			}
+		}
+
+		can_keep = { 
+			is_landless_adventurer = no
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				always = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_administrative_reforms_3_header_1 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_3_header_2
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_3_header_1 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_major_admin_reform_invalidate_spycraft_directive_effect = yes
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_2
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income + 4
+					}
+				}
+				add = 15
+			}
+		}
+	}
+
+	mos_administrative_reforms_3_header_2 = {
+		modifier = {
+			monthly_income = -3
+			owned_hostile_scheme_success_chance_add = 5
+		}
+
+		should_start_with = {
+			always = no
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_2_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_3_header_1
+					has_realm_law = mos_administrative_reforms_3_header_3
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_3_header_2 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_major_admin_reform_invalidate_spycraft_directive_effect = yes
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_1
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_1
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income - 4
+					}
+				}
+				multiply = 0
+			}
+
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_3
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income + 3
+					}
+				}
+				add = 15
+			}
+		}
+	}
+
+	mos_administrative_reforms_3_header_3 = {
+		modifier = {
+			monthly_income = -5
+			owned_hostile_scheme_success_chance_add = 10
+			owned_personal_scheme_success_chance_add = 5
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = feudal_government
+				has_government = clan_government
+				has_government = theocracy_government
+			}
+		}
+		
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_3_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_3_header_2
+					has_realm_law = mos_administrative_reforms_3_header_4
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_3_header_3 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { 
+			mos_major_admin_reform_invalidate_spycraft_directive_effect = yes
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_2
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_2
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_2
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income - 3
+					}
+				}
+				multiply = 0
+			}
+
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_4
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income + 5
+					}
+				}
+				add = 15
+			}
+		}
+	}
+
+	mos_administrative_reforms_3_header_4 = {
+		modifier = {
+			monthly_income = -10
+			owned_hostile_scheme_success_chance_add = 10
+			owned_personal_scheme_success_chance_add = 5
+			max_personal_schemes_add = 1
+			max_hostile_schemes_add = 1
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = administrative_government
+				has_government = republican_government
+			}
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_4_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_3_header_3
+					has_realm_law = mos_administrative_reforms_3_header_5
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_3_header_4 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_3
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_3
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_3
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income - 6
+					}
+				}
+				multiply = 0
+			}
+
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_5
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income + 11
+					}
+				}
+				add = 15
+			}
+		}
+	}
+
+	mos_administrative_reforms_3_header_5 = {
+		modifier = {
+			monthly_income = -20
+			owned_hostile_scheme_success_chance_add = 20
+			owned_personal_scheme_success_chance_add = 10
+			hostile_scheme_phase_duration_add = -20
+			personal_scheme_phase_duration_add = -20
+			max_personal_schemes_add = 1
+			max_hostile_schemes_add = 1
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_administrative_5_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_3_header_4
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_3_header_5 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_4
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_4
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_4
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income - 11
+					}
+				}
+				multiply = 0
+			}
+		}
+	}
+}
+
+#SPYCRAFT DIRECTIVES
+mos_administrative_reforms_4_header = {
+	default = mos_administrative_reforms_4_header_1
+
+	flag = mos_administrative_reform
+	flag = mos_header_reform
+	flag = mos_law
+	
+	cumulative = no
+
+
+	mos_administrative_reforms_4_header_1 = {
+		modifier = {
+		}
+
+		should_start_with = {
+			always = yes
+		}
+
+		can_keep = { 
+			is_landless_adventurer = no
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				always = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				always = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_4_header_1 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#NOPE, AI CANNOT HANDLE THIS UNLESS I HAVE INHUMAN AMOUNT OF LINES OF CODE HERE - THAT IS NOT HAPPENING
+			value = 1000
+		}
+	}
+
+	mos_administrative_reforms_4_header_2 = {
+		modifier = {
+			owned_personal_scheme_success_chance_add = -10
+			owned_hostile_scheme_success_chance_add = -10
+			scheme_discovery_chance_mult = 0.1
+			enemy_hostile_scheme_success_chance_add = -10
+		}
+
+		should_start_with = {
+			always = no
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_3_header_4
+					has_realm_law = mos_administrative_reforms_3_header_5
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_4_header_2 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#NOPE, AI CANNOT HANDLE THIS UNLESS I HAVE INHUMAN AMOUNT OF LINES OF CODE HERE - THAT IS NOT HAPPENING
+			value = -1000
+		}
+	}
+
+	mos_administrative_reforms_4_header_3 = {
+		modifier = {
+			owned_hostile_scheme_success_chance_add = 10
+			hostile_scheme_phase_duration_add = -20
+			scheme_discovery_chance_mult = -0.1
+			enemy_hostile_scheme_success_chance_add = 10
+		}
+
+		should_start_with = {
+			always = no
+		}
+		
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_3_header_4
+					has_realm_law = mos_administrative_reforms_3_header_5
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_4_header_3 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { 
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#NOPE, AI CANNOT HANDLE THIS UNLESS I HAVE INHUMAN AMOUNT OF LINES OF CODE HERE - THAT IS NOT HAPPENING
+			value = -1000
+		}
+	}
+
+	mos_administrative_reforms_4_header_4 = {
+		modifier = {
+			max_personal_schemes_add = 1
+			hostile_scheme_phase_duration_add = -20
+			scheme_discovery_chance_mult = -0.1
+			owned_personal_scheme_success_chance_add = 10
+		}
+
+		should_start_with = {
+			always = no
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_3_header_4
+					has_realm_law = mos_administrative_reforms_3_header_5
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_administrative_reforms_4_header_4 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_4_header_4 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#NOPE, AI CANNOT HANDLE THIS UNLESS I HAVE INHUMAN AMOUNT OF LINES OF CODE HERE - THAT IS NOT HAPPENING
+			value = -1000
+		}
+	}
+
+	mos_administrative_reforms_4_header_5 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+
+		can_keep = {  
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_administrative_reforms_3_header_4
+					has_realm_law = mos_administrative_reforms_3_header_5
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				always = no
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_administrative_reforms_4_header_4 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#NOPE, AI CANNOT HANDLE THIS UNLESS I HAVE INHUMAN AMOUNT OF LINES OF CODE HERE - THAT IS NOT HAPPENING
+			value = -1000
+		}
+	}
+}

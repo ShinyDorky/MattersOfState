@@ -1,0 +1,17 @@
+Files listed here are overwritten from base game. If you wish to make a compatch/mforce some mod to work with this one, you have to make sure that modifications in these files are preserved in load order.
+
+In order to make compatching easier, all of my additions in these files are surrounded with
+### MOS ###
+### /MOS ###
+comments. As long as you paste those in appropriate parent structures, you should be fine. 
+
+
+OBLIGATORY:
+gui/window_my_realm.gui
+    Without this, you cannot access the MOS reforms button
+
+RECOMMENDED:
+common/council_tasks/00_chancellor_tasks.txt
+common/council_tasks/00_steward_tasks.txt
+common/council_tasks/00_chancellor_tasks.txt
+    Those three enable MOS reforms to influence council task progress. Removeing them won't break the game, but raforms that speed up cultural conversion won't work anymore

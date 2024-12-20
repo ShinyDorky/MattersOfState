@@ -1,0 +1,2808 @@
+﻿#TODO: MAKE MODIFIERS DIFFER DEPENDING ON OWNED DLC
+
+mos_military_reforms_major = {
+	default = mos_military_reforms_major_1
+
+	flag = mos_military_reform
+	flag = mos_major_reform
+	flag = mos_law
+
+	cumulative = no
+
+	mos_military_reforms_major_1 = {
+		modifier = {
+			levy_maintenance = -0.3
+			levy_reinforcement_rate = 0.2
+			men_at_arms_maintenance = 0.2
+		}
+
+		should_start_with = {
+			has_government = tribal_government
+		}
+
+		can_keep = { 
+			is_landless_adventurer = no
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_gov_any
+					OR = {
+						has_government = administrative_government
+						has_government = feudal_government
+						has_government = clan_government
+						has_government = theocracy_government
+						has_government = republican_government
+						has_government = tribal_government
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_major_1 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
+				}
+				has_realm_law = mos_military_reforms_major_2
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_major_1 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_military_reforms_major_2
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_2
+			}
+			mos_major_mil_reform_change_cleanup_effect_1 = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE
+			if = { # LOSING MONEY
+				limit = {
+					monthly_character_balance < -10
+				}
+				add = 10
+			}
+			if = { # IN DEBT
+				limit = {
+					gold < -1.5 * mos_reform_return_tier_2
+				}
+				add = 30
+			}
+			if = { # JUST PLAIN OL GREED
+				limit = { has_trait = greedy }
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						days_of_continuous_peace < 180
+					}
+				}
+				multiply = 0
+			}
+		}
+	}
+
+	mos_military_reforms_major_2 = {
+		modifier = {
+			levy_maintenance = -0.2
+			levy_reinforcement_rate = 0.1
+			men_at_arms_maintenance = 0.1
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_gov_any
+					OR = {
+						has_government = administrative_government
+						has_government = feudal_government
+						has_government = clan_government
+						has_government = theocracy_government
+						has_government = republican_government
+						has_government = tribal_government
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_major_2 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_major_1
+					has_realm_law = mos_military_reforms_major_3
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_major_2 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_military_reforms_major_1
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_2
+					}
+				}
+			}
+		}
+		
+		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_military_reforms_major_3 
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_3
+			}
+			mos_major_mil_reform_change_cleanup_effect_2 = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE
+			if = { # LOSING MONEY
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					monthly_character_balance < -10
+				}
+				add = 10
+			}
+			if = { # IN DEBT
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					gold < -1.5 * mos_reform_return_tier_3
+				}
+				add = 30
+			}
+			if = { # JUST PLAIN OL GREED
+				limit = { 
+					has_realm_law = mos_military_reforms_major_3
+					has_trait = greedy 
+				}
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					OR = {
+						days_of_continuous_peace < 180
+					}
+				}
+				multiply = 0
+			}
+
+			
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_military_reforms_major_1
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_military_reforms_major_1
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_military_reforms_major_1
+					gold > 2 * mos_reform_cost_tier_2
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_1
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_military_reforms_major_3 = {
+		modifier = {
+			levy_maintenance = -0.1
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = feudal_government
+				has_government = clan_government
+				has_government = theocracy_government
+			}
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_gov_post_tribal
+					OR = {
+						has_government = administrative_government
+						has_government = feudal_government
+						has_government = clan_government
+						has_government = theocracy_government
+						has_government = republican_government
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_major_3 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_major_2
+					has_realm_law = mos_military_reforms_major_4
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_major_3 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		pass_cost = {
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_military_reforms_major_2
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_3
+					}
+				}
+			}
+		}
+		
+		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_military_reforms_major_4 
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_4
+			}
+			mos_major_mil_reform_change_cleanup_effect_3 = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE
+			if = { # LOSING MONEY
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					monthly_character_balance < -10
+				}
+				add = 10
+			}
+			if = { # IN DEBT
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					gold < -1.5 * mos_reform_return_tier_4
+				}
+				add = 30
+			}
+			if = { # JUST PLAIN OL GREED
+				limit = { 
+					has_realm_law = mos_military_reforms_major_4
+					has_trait = greedy 
+				}
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					OR = {
+						days_of_continuous_peace < 180
+					}
+				}
+				multiply = 0
+			}
+
+			
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_military_reforms_major_2
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_military_reforms_major_2
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_military_reforms_major_2
+					gold > 2 * mos_reform_cost_tier_3
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_2
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_military_reforms_major_4 = {
+		modifier = {
+			men_at_arms_maintenance = -0.05
+			men_at_arms_recruitment_cost = -0.1
+			men_at_arms_cap = 2
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_gov_post_tribal
+					OR = {
+						has_government = administrative_government
+						has_government = feudal_government
+						has_government = clan_government
+						has_government = theocracy_government
+						has_government = republican_government
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_major_4 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_major_3
+					has_realm_law = mos_military_reforms_major_5
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_major_4 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_military_reforms_major_3
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_4
+					}
+				}
+			}
+		}
+		
+		on_pass = { 
+			IF = {
+				limit = { 
+					has_realm_law = mos_military_reforms_major_5 
+					is_independent_ruler = yes
+				}
+				add_gold = mos_reform_return_tier_5
+			}
+			mos_major_mil_reform_change_cleanup_effect_4 = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO DEGRADE
+			if = { # LOSING MONEY
+				limit = {
+					has_realm_law = mos_military_reforms_major_5
+					monthly_character_balance < -10
+				}
+				add = 10
+			}
+			if = { # IN DEBT
+				limit = {
+					has_realm_law = mos_military_reforms_major_5
+					gold < -1.5 * mos_reform_return_tier_5
+				}
+				add = 30
+			}
+			if = { # JUST PLAIN OL GREED
+				limit = { 
+					has_realm_law = mos_military_reforms_major_5
+					has_trait = greedy 
+				}
+				add = 5
+			}
+			if = { # NULLIFY IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_5
+					OR = {
+						days_of_continuous_peace < 180
+					}
+				}
+				multiply = 0
+			}
+
+			
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					gold > 2 * mos_reform_cost_tier_4
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_3
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_military_reforms_major_5 = {
+		modifier = {
+			men_at_arms_maintenance = -0.2
+			men_at_arms_recruitment_cost = -0.1
+			men_at_arms_cap = 2
+			men_at_arms_title_cap = 2
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = administrative_government
+				has_government = republican_government
+			}
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_gov_post_feudal
+					OR = {
+						has_government = administrative_government
+						has_government = republican_government
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_major_5 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_major_reforms_cooldown_desc
+					NOT = { has_variable = mos_major_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_major_4
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_major_5 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = {
+				value = 0
+				IF = {
+					limit = { 
+						has_realm_law = mos_military_reforms_major_4
+						is_independent_ruler = yes
+					}
+					add = {
+						value = mos_reform_cost_tier_5
+					}
+				}
+			}
+		}
+		
+		on_pass = { 
+			mos_major_mil_reform_change_cleanup_effect_5 = yes
+			mos_pass_major_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE
+			if = { # JUST CAUSE I CAN
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+				}
+				add = 1
+			}
+			if = { # MONEYYY
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					monthly_character_balance > 10
+				}
+				add = 10
+			}
+			if = { # CAN AFFORD
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					gold > 2 * mos_reform_cost_tier_5
+				}
+				add = 30
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_major_4
+					OR = {
+						days_of_continuous_peace < 180
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+}
+
+#RECRUITMENT
+mos_military_reforms_1_header = {
+	default = mos_military_reforms_1_header_1
+
+	flag = mos_military_reform
+	flag = mos_header_reform
+	flag = mos_law
+	
+	cumulative = no
+
+
+	mos_military_reforms_1_header_1 = {
+		modifier = {
+			raid_speed = 0.2
+			max_loot_mult = 0.5
+			attacker_advantage = 3
+		}
+
+		should_start_with = {
+			AND = {
+				has_government = tribal_government
+				OR = {
+					has_trait = wrathful
+					has_trait = vengeful
+					has_trait = sadistic
+					culture = { has_cultural_pillar = heritage_north_germanic }
+				}
+			}
+		}
+
+		can_keep = { 
+			is_landless_adventurer = no
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				always = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_1_header_1 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_1_header_3
+					has_realm_law = mos_military_reforms_1_minor_1_1
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_1_header_1 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_1_minor_1_0
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# SWITCHING FROM DEFENSE
+			if = { # I LIKE FIGHTING
+				limit = {
+					has_realm_law = mos_military_reforms_1_minor_1_1
+					OR = {
+						has_trait = wrathful
+						has_trait = vengeful
+						has_trait = sadistic
+						culture = { has_cultural_pillar = heritage_north_germanic }
+					}
+				}
+				add = 10
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					has_realm_law = mos_military_reforms_1_minor_1_1
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				add = 5
+			}
+		}
+	}
+
+	mos_military_reforms_1_header_2 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+
+		can_keep = { 
+			always = no
+		}
+
+		can_pass = {
+			always = no
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+
+	mos_military_reforms_1_header_3 = {
+		modifier = {
+			advantage = 2
+			levy_size = 0.1
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = feudal_government
+				has_government = clan_government
+				has_government = theocracy_government
+			}
+		}
+		
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_military_3_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_1_header_3 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_1_header_1
+					has_realm_law = mos_military_reforms_1_minor_1_1
+					has_realm_law = mos_military_reforms_1_header_4
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_1_header_3 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { 
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_1_minor_1_0
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_1
+						has_realm_law = mos_military_reforms_1_minor_1_1
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_1
+						has_realm_law = mos_military_reforms_1_minor_1_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_military_reforms_1_header_4 = {
+		modifier = {
+			levy_size = -0.2
+			maa_damage_mult = 0.05
+			maa_toughness_mult = 0.05
+			maa_pursuit_mult = 0.05
+			maa_screen_mult = 0.05
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = administrative_government
+				has_government = republican_government
+			}
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_military_4_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_1_header_4 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_1_header_3
+					has_realm_law = mos_military_reforms_1_minor_1_5
+					has_realm_law = mos_military_reforms_1_header_5
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_1_header_4 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_1_minor_1_0
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_3
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_3
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_military_reforms_1_header_5 = {
+		modifier = {
+			levy_size = -0.5
+			maa_damage_mult = 0.1
+			maa_toughness_mult = 0.05
+			maa_pursuit_mult = 0.1
+			maa_screen_mult = 0.05
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_military_5_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_1_header_5 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_1_header_4
+					has_realm_law = mos_military_reforms_1_minor_1_5
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_1_header_5 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_1_minor_1_0
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_4
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_4
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # NO ARMY WITHOUT LEVIES
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_4
+					}
+					OR = {
+						number_of_maa_regiments < 25
+					}
+				}
+				multiply = 0
+			}
+		}
+	}
+	
+	mos_military_reforms_1_header_0 = {
+		modifier = {
+		}
+		should_start_with = {
+			AND = {
+				has_government = tribal_government
+				NOT = {
+					OR = {
+						has_trait = wrathful
+						has_trait = vengeful
+						has_trait = sadistic
+						culture = { has_cultural_pillar = heritage_north_germanic }
+					}
+				}
+			}
+		}
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				NOT = {has_realm_law = mos_military_reforms_1_minor_1_0}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_1_header_0 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_1_header_0 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+}
+
+mos_military_reforms_1_minor_1 = {
+	default = mos_military_reforms_1_minor_1_1
+
+	flag = mos_military_reform
+	flag = mos_minor_reform
+	flag = mos_law
+	
+	cumulative = no
+	mos_military_reforms_1_minor_1_0 = {
+		modifier = {
+		}
+		should_start_with = {
+			AND = {
+				has_government = tribal_government
+				OR = {
+					has_trait = wrathful
+					has_trait = vengeful
+					has_trait = sadistic
+					culture = { has_cultural_pillar = heritage_north_germanic }
+				}
+			}
+		}
+		can_keep = { 
+			is_landless_adventurer = no
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				NOT = {has_realm_law = mos_military_reforms_1_header_0}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_1_minor_1_0 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_1_minor_1_0 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes 
+		}
+	}
+
+	mos_military_reforms_1_minor_1_1 = {
+		modifier = {
+			hostile_raid_time = 0.2
+			defender_advantage = 3
+		}
+		should_start_with = {
+			AND = {
+				has_government = tribal_government
+				NOT = {
+					OR = {
+						has_trait = wrathful
+						has_trait = vengeful
+						has_trait = sadistic
+						culture = { has_cultural_pillar = heritage_north_germanic }
+					}
+				}
+			}
+		}
+
+		can_keep = { 
+			is_landless_adventurer = no
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				always = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_1_minor_1_1 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_1_header_1
+					has_realm_law = mos_military_reforms_1_header_3
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_1_minor_1_1 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_1_header_0
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# SWITCH FROM RAIDING
+			if = { # I DONT LIKE FIGHTING
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_1
+					}
+					OR = {
+						has_trait = compassionate
+						has_trait = forgiving
+						has_trait = content
+					}
+				}
+				add = 3
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_1_header_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 0
+			}
+		}
+	}
+
+	mos_military_reforms_1_minor_1_2 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				always = no
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_1_minor_1_2 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				always = no
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_1_minor_1_2 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_1_header_0
+			}
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_military_reforms_1_minor_1_3 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+
+		can_keep = { 
+			always = no
+		}
+
+		can_pass = {
+			always = no
+		}
+			
+
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_1_header_0
+			}
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_military_reforms_1_minor_1_4 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+
+		can_keep = { 
+			always = no
+		}
+
+		can_pass = {
+			always = no
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+
+	mos_military_reforms_1_minor_1_5 = {
+		modifier = {
+			levy_size = -1
+			maa_damage_mult = 0.05
+			maa_toughness_mult = 0.1
+			maa_pursuit_mult = 0.05
+			maa_screen_mult = 0.1
+			garrison_size = 1
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_military_5_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_1_minor_1_5 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_1_header_4
+					has_realm_law = mos_military_reforms_1_header_5
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_1_minor_1_5 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_1_header_0
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = { #THIS WOULD BE A SUICIDE FOR AI
+			value = -100
+		}
+	}
+}
+
+#LEADERSHIP
+mos_military_reforms_2_header = {
+	default = mos_military_reforms_2_header_1
+
+	flag = mos_military_reform
+	flag = mos_header_reform
+	flag = mos_law
+	
+	cumulative = no
+
+
+	mos_military_reforms_2_header_1 = {
+		modifier = {
+			advantage = -5
+		}
+
+		should_start_with = {
+			has_government = tribal_government
+		}
+
+		can_keep = { 
+			is_landless_adventurer = no
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				always = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_2_header_1 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_2_header_2
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_2_header_1 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_2_minor_1_0
+			}
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_military_reforms_2_header_2 = {
+		modifier = {
+			advantage = -2
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_military_2_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_2_header_2 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_2_header_1
+					has_realm_law = mos_military_reforms_2_header_3
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_2_header_2 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_2_minor_1_0
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_2_header_1
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_2_header_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_military_reforms_2_header_3 = {
+		modifier = {
+			feudal_government_vassal_opinion = 10
+			glory_hound_opinion = 5
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = feudal_government
+				has_government = clan_government
+				has_government = theocracy_government
+			}
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_military_3_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_2_header_3 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_2_header_2
+					has_realm_law = mos_military_reforms_2_header_5
+					has_realm_law = mos_military_reforms_2_minor_1_5
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_2_header_3 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_2_minor_1_0
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_2_header_2
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_2_header_2
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_military_reforms_2_header_4 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+
+		can_keep = { 
+			always = no
+		}
+
+		can_pass = {
+			always = no
+		}
+		can_keep = { 
+			NOT = {has_realm_law = mos_military_reforms_2_header_4}
+		}
+
+		can_pass = { 
+			has_realm_law = mos_military_reforms_2_header_4
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_military_reforms_2_header_5 = {
+		modifier = {
+			administrative_government_vassal_opinion = -10
+			feudal_government_vassal_opinion = -10
+			glory_hound_opinion = 15
+			advantage = 5
+			#TODO: Recruit an officer interaction
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_military_5_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_2_header_5 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_2_header_3
+					has_realm_law = mos_military_reforms_2_minor_1_5
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_2_header_5 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_2_minor_1_0
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# WITH INCOMPETENT AI, THIS MAY JUST LEAD TO CIVIL WAR CAROUSEL
+			value = -5
+		}
+	}
+	
+	mos_military_reforms_2_header_0 = {
+		modifier = {
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = administrative_government
+				has_government = republican_government
+			}
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				NOT = {has_realm_law = mos_military_reforms_2_minor_1_0}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_2_header_0 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_2_header_0 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+	}
+}
+
+mos_military_reforms_2_minor_1 = {
+	default = mos_military_reforms_2_minor_1_0
+
+	flag = mos_military_reform
+	flag = mos_minor_reform
+	flag = mos_law
+	
+	cumulative = no
+	mos_military_reforms_2_minor_1_0 = {
+		modifier = {
+		}
+
+		can_keep = { 
+			is_landless_adventurer = no
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				NOT = {has_realm_law = mos_military_reforms_2_header_0}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_2_minor_1_0 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_2_minor_1_0 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		can_keep = { 
+		}
+
+		can_pass = { 
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_military_reforms_2_minor_1_1 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+
+		can_keep = { 
+			always = no
+		}
+
+		can_pass = {
+			always = no
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+		}
+	}
+
+	mos_military_reforms_2_minor_1_2 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+
+		can_keep = { 
+			always = no
+		}
+
+		can_pass = {
+			always = no
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+		}
+	}
+
+	mos_military_reforms_2_minor_1_3 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+
+		can_keep = { 
+			always = no
+		}
+
+		can_pass = {
+			always = no
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+		}
+	}
+
+	mos_military_reforms_2_minor_1_4 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+
+		can_keep = { 
+			always = no
+		}
+
+		can_pass = {
+			always = no
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = { }
+	}
+
+	mos_military_reforms_2_minor_1_5 = {
+		modifier = {
+			men_at_arms_title_limit = 2
+			administrative_government_vassal_opinion = 10
+			feudal_government_vassal_opinion = 10
+			glory_hound_opinion = 5
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = administrative_government
+				has_government = republican_government
+			}
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_military_5_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_2_minor_1_5 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_2_header_3
+					has_realm_law = mos_military_reforms_2_header_5
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_2_minor_1_5 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				add_realm_law = mos_military_reforms_2_header_0
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_2_header_3
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_2_header_3
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+}
+
+#EQUIPMENT
+mos_military_reforms_3_header = {
+	default = mos_military_reforms_3_header_1
+
+	flag = mos_military_reform
+	flag = mos_header_reform
+	flag = mos_law
+	
+	cumulative = no
+
+
+	mos_military_reforms_3_header_1 = {
+		modifier = {
+			maa_damage_mult = -0.05
+			maa_toughness_mult = -0.05
+			maa_pursuit_mult = -0.05
+			maa_screen_mult = -0.05
+			men_at_arms_maintenance = -0.3
+		}
+
+		should_start_with = {
+			has_government = tribal_government
+		}
+
+		can_keep = { 
+			is_landless_adventurer = no
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				always = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_3_header_1 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_3_header_3
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_3_header_1 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				mos_major_mil_reform_invalidate_doctrine_effect = yes
+			}
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_military_reforms_3_header_2 = {
+		flag = mos_law_empty
+		modifier = {
+		}
+
+		can_keep = { 
+			always = no
+		}
+
+		can_pass = { 
+			always = no
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				mos_major_mil_reform_invalidate_doctrine_effect = yes
+			}
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_military_reforms_3_header_3 = {
+		modifier = {
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = feudal_government
+				has_government = clan_government
+				has_government = theocracy_government
+			}
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_military_3_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_3_header_3 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_3_header_1
+					has_realm_law = mos_military_reforms_3_header_4
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_3_header_3 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				mos_major_mil_reform_invalidate_doctrine_effect = yes
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_3_header_1
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_3_header_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_military_reforms_3_header_4 = {
+		modifier = {
+			maa_damage_mult = 0.05
+			maa_toughness_mult = 0.05
+			maa_pursuit_mult = 0.05
+			maa_screen_mult = 0.05
+			men_at_arms_maintenance = 0.1
+		}
+
+		should_start_with = {
+			OR = {
+				has_government = administrative_government
+				has_government = republican_government
+			}
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_military_4_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_3_header_4 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_3_header_3
+					has_realm_law = mos_military_reforms_3_header_5
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_3_header_4 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			hidden_effect = {
+				mos_major_mil_reform_invalidate_doctrine_effect = yes
+			}
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_3_header_3
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_3_header_3
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+
+	mos_military_reforms_3_header_5 = {
+		modifier = {
+			maa_damage_mult = 0.1
+			maa_toughness_mult = 0.1
+			maa_pursuit_mult = 0.1
+			maa_screen_mult = 0.1
+			men_at_arms_maintenance = 0.3
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_military_5_and_above = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_3_header_5 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				OR = {
+					has_realm_law = mos_military_reforms_3_header_4
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_3_header_5 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_3_header_4
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_3_header_4
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
+	}
+}
+
+#ARMY DOCTRINE
+mos_military_reforms_4_header = {
+	default = mos_military_reforms_4_header_1
+
+	flag = mos_military_reform
+	flag = mos_header_reform
+	flag = mos_law
+
+	flag = mos_no_order_reform
+	
+	cumulative = no
+
+
+	mos_military_reforms_4_header_1 = {
+		modifier = {
+		}
+
+		should_start_with = {
+			always = yes
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				always = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_4_header_1 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_4_header_1 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_military_reforms_4_header_2 = {
+		modifier = {
+			siege_phase_time = -0.1
+			maa_siege_value_mult = 0.1
+			movement_speed = -0.1
+			men_at_arms_maintenance = 0.1
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_enabled_mil_doctrines = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_4_header_2 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_4_header_2 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_military_reforms_4_header_3 = {
+		modifier = {
+			attacker_advantage = 5
+			maa_damage_mult = 0.1
+			maa_pursuit_mult = 0.1
+			defender_advantage = -8
+			men_at_arms_maintenance = 0.1
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_enabled_mil_doctrines = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_4_header_3 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_4_header_3 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_military_reforms_4_header_4 = {
+		modifier = {
+			movement_speed = 0.1
+			supply_capacity_mult = 1
+			men_at_arms_maintenance = 0.1
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_enabled_mil_doctrines = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_4_header_4 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_4_header_4 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+		
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+	}
+
+	mos_military_reforms_4_header_5 = {
+		modifier = {
+			defender_advantage = 5
+			maa_toughness_mult = 0.1
+			maa_screen_mult = 0.1
+			attacker_advantage = -8
+			men_at_arms_maintenance = 0.1
+		}
+
+		can_keep = { 
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				mos_enabled_mil_doctrines = yes
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+				}
+				liege = { has_realm_law = mos_military_reforms_4_header_5 }
+			}
+		}
+
+		can_pass = {
+			trigger_if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				custom_tooltip = {
+					text = mos_reforms_cooldown_desc
+					NOT = { has_variable = mos_reforms_cooldown }
+				}
+			}
+			trigger_if = {
+				limit = {
+					is_independent_ruler = no
+					liege = { has_realm_law = mos_military_reforms_4_header_5 }
+				}
+				custom_tooltip = {
+					text = imperial_bureaucracy_pending_law_change
+					always = no
+				}
+			}
+		}
+
+		pass_cost = {
+			gold = 0
+		}
+		
+		on_pass = {
+			mos_pass_reform_effect = yes
+		}
+	}
+}

@@ -1,0 +1,88 @@
+types MOS_gui_templates {
+	type MOS_reform_button = button
+	{
+		size = { 160 120 }
+		using = tooltip_nw
+	}
+	
+	type MOS_reform_icon = icon
+	{
+		size = { 160 120 }
+		using = tooltip_nw
+	}
+	
+	type MOS_reform_spacer = spacer
+	{
+		size = { 160 120 }
+	}
+
+	type MOS_mil_reforms_background_hbox = hbox
+	{
+		background = {
+			texture = "gfx/interface/mos_background_reforms_warfare.dds"
+			#spriteborder = { 6 6 }
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			alpha = 0.4
+		}
+	}
+	
+	type MOS_mil_reforms_background_threaded_hbox = hbox
+	{
+		background = {
+			texture = "gfx/interface/mos_background_reforms_warfare_threaded.dds"
+			#spriteborder = { 6 6 }
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			alpha = 0.4
+		}
+	}
+	
+	type MOS_mil_reforms_colored_spacer = hbox
+	{
+		layoutpolicy_horizontal = expanding
+		
+		background = {
+			texture = "gfx/interface/mos_background_reforms_warfare_small.dds"
+			#spriteborder = { 6 6 }
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			alpha = 0.4
+		}
+		spacer = {								
+			size = { 0 10 }
+		}
+	}
+	
+	type MOS_econ_reforms_background_hbox = hbox
+	{
+		background = {
+			texture = "gfx/interface/mos_background_reforms_economy.dds"
+			#spriteborder = { 6 6 }
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			alpha = 0.4
+		}
+	}
+	
+	type MOS_econ_reforms_background_threaded_hbox = hbox
+	{
+		background = {
+			texture = "gfx/interface/mos_background_reforms_economy_threaded.dds"
+			#spriteborder = { 6 6 }
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			alpha = 0.4
+		}
+	}
+	
+	type MOS_econ_reforms_colored_spacer = hbox
+	{
+		layoutpolicy_horizontal = expanding
+		
+		background = {
+			texture = "gfx/interface/mos_background_reforms_economy_small.dds"
+			#spriteborder = { 6 6 }
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			alpha = 0.4
+		}
+		spacer = {								
+			size = { 0 10 }
+		}
+	}
+}
