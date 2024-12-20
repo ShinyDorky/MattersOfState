@@ -903,6 +903,30 @@ mos_administrative_reforms_1_header = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_2
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_2
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
 	}
 
 	mos_administrative_reforms_1_header_4 = {
@@ -971,6 +995,30 @@ mos_administrative_reforms_1_header = {
 				add_realm_law = mos_administrative_reforms_1_minor_1_0
 			}
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_3
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_3
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
 		}
 	}
 
@@ -1143,8 +1191,6 @@ mos_administrative_reforms_1_minor_1 = {
 				}
 			}
 		}
-
-
 		
 		pass_cost = {
 			gold = 0
@@ -1243,6 +1289,30 @@ mos_administrative_reforms_1_minor_1 = {
 				add_realm_law = mos_administrative_reforms_1_header_0
 			}
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_1
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
 		}
 	}
 
@@ -1383,7 +1453,6 @@ mos_administrative_reforms_1_minor_1 = {
 				}
 			}
 		}
-
 		
 		pass_cost = {
 			gold = 0
@@ -1394,6 +1463,30 @@ mos_administrative_reforms_1_minor_1 = {
 				add_realm_law = mos_administrative_reforms_1_header_0
 			}
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_4
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_1_header_4
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
 		}
 	}
 }
@@ -1453,8 +1546,6 @@ mos_administrative_reforms_2_header = {
 				}
 			}
 		}
-
-
 		
 		pass_cost = {
 			gold = 0
@@ -1462,6 +1553,22 @@ mos_administrative_reforms_2_header = {
 		
 		on_pass = {
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_2
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income * 1.06
+					}
+				}
+				add = 20
+			}
 		}
 	}
 
@@ -1516,14 +1623,61 @@ mos_administrative_reforms_2_header = {
 			}
 		}
 
-
-		
 		pass_cost = {
 			gold = 0
 		}
 		
 		on_pass = {
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_1
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_1
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income * 0.98
+					}
+				}
+				multiply = 0
+			}
+
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_3
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income * 1.06
+					}
+				}
+				add = 20
+			}
 		}
 	}
 
@@ -1541,7 +1695,6 @@ mos_administrative_reforms_2_header = {
 				has_government = theocracy_government
 			}
 		}
-		
 
 		can_keep = { 
 			trigger_if = {
@@ -1590,6 +1743,55 @@ mos_administrative_reforms_2_header = {
 		
 		on_pass = { 
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_2
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_2
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_2
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income * 0.98
+					}
+				}
+				multiply = 0
+			}
+
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_4
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income * 1.06
+					}
+				}
+				add = 20
+			}
 		}
 	}
 
@@ -1655,6 +1857,55 @@ mos_administrative_reforms_2_header = {
 		on_pass = {
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_3
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_3
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_3
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income * 0.98
+					}
+				}
+				multiply = 0
+			}
+
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_5
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income * 1.06
+					}
+				}
+				add = 20
+			}
+		}
 	}
 
 	mos_administrative_reforms_2_header_5 = {
@@ -1710,6 +1961,41 @@ mos_administrative_reforms_2_header = {
 		
 		on_pass = {
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_4
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_4
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_2_header_4
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income * 0.98
+					}
+				}
+				multiply = 0
+			}
 		}
 	}
 }
@@ -1772,8 +2058,6 @@ mos_administrative_reforms_3_header = {
 				}
 			}
 		}
-
-
 		
 		pass_cost = {
 			gold = 0
@@ -1782,6 +2066,22 @@ mos_administrative_reforms_3_header = {
 		on_pass = {
 			mos_major_admin_reform_invalidate_spycraft_directive_effect = yes
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_2
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income + 4
+					}
+				}
+				add = 15
+			}
 		}
 	}
 
@@ -1845,6 +2145,55 @@ mos_administrative_reforms_3_header = {
 		on_pass = {
 			mos_major_admin_reform_invalidate_spycraft_directive_effect = yes
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_1
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_1
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income - 4
+					}
+				}
+				multiply = 0
+			}
+
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_3
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income + 3
+					}
+				}
+				add = 15
+			}
 		}
 	}
 
@@ -1913,6 +2262,55 @@ mos_administrative_reforms_3_header = {
 			mos_major_admin_reform_invalidate_spycraft_directive_effect = yes
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_2
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_2
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_2
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income - 3
+					}
+				}
+				multiply = 0
+			}
+
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_4
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income + 5
+					}
+				}
+				add = 15
+			}
+		}
 	}
 
 	mos_administrative_reforms_3_header_4 = {
@@ -1979,6 +2377,55 @@ mos_administrative_reforms_3_header = {
 		on_pass = {
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_3
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_3
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_3
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income - 6
+					}
+				}
+				multiply = 0
+			}
+
+			# RESONS TO DOWNGRADE
+			if = { # SAVING THE ECONOMY
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_5
+					}
+					AND = {
+						monthly_character_expenses > monthly_character_income
+						monthly_character_expenses < monthly_character_income + 11
+					}
+				}
+				add = 15
+			}
+		}
 	}
 
 	mos_administrative_reforms_3_header_5 = {
@@ -2039,6 +2486,41 @@ mos_administrative_reforms_3_header = {
 		on_pass = {
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_4
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_4
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+			if = { # MONEY? I DONT THINK SO
+				limit = {
+					OR = {
+						has_realm_law = mos_administrative_reforms_3_header_4
+					}
+					OR = {
+						monthly_character_expenses > monthly_character_income - 11
+					}
+				}
+				multiply = 0
+			}
+		}
 	}
 }
 
@@ -2096,14 +2578,17 @@ mos_administrative_reforms_4_header = {
 			}
 		}
 
-
-		
 		pass_cost = {
 			gold = 0
 		}
 		
 		on_pass = {
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#NOPE, AI CANNOT HANDLE THIS UNLESS I HAVE INHUMAN AMOUNT OF LINES OF CODE HERE - THAT IS NOT HAPPENING
+			value = 1000
 		}
 	}
 
@@ -2158,8 +2643,6 @@ mos_administrative_reforms_4_header = {
 				}
 			}
 		}
-
-
 		
 		pass_cost = {
 			gold = 0
@@ -2167,6 +2650,11 @@ mos_administrative_reforms_4_header = {
 		
 		on_pass = {
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#NOPE, AI CANNOT HANDLE THIS UNLESS I HAVE INHUMAN AMOUNT OF LINES OF CODE HERE - THAT IS NOT HAPPENING
+			value = -1000
 		}
 	}
 
@@ -2230,6 +2718,11 @@ mos_administrative_reforms_4_header = {
 		on_pass = { 
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#NOPE, AI CANNOT HANDLE THIS UNLESS I HAVE INHUMAN AMOUNT OF LINES OF CODE HERE - THAT IS NOT HAPPENING
+			value = -1000
+		}
 	}
 
 	mos_administrative_reforms_4_header_4 = {
@@ -2291,6 +2784,11 @@ mos_administrative_reforms_4_header = {
 		on_pass = {
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#NOPE, AI CANNOT HANDLE THIS UNLESS I HAVE INHUMAN AMOUNT OF LINES OF CODE HERE - THAT IS NOT HAPPENING
+			value = -1000
+		}
 	}
 
 	mos_administrative_reforms_4_header_5 = {
@@ -2344,6 +2842,11 @@ mos_administrative_reforms_4_header = {
 		
 		on_pass = {
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#NOPE, AI CANNOT HANDLE THIS UNLESS I HAVE INHUMAN AMOUNT OF LINES OF CODE HERE - THAT IS NOT HAPPENING
+			value = -1000
 		}
 	}
 }
