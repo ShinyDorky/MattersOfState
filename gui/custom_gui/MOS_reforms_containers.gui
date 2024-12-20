@@ -55,7 +55,7 @@ types mos_reform_containers{
 								
 								MOS_reform_button = {
 									visible = "[Not(GuiLaw.IsEnacted)]"
-									texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 								}
@@ -63,12 +63,18 @@ types mos_reform_containers{
 								MOS_reform_icon = {
 									# TODO: Swap for textures when you have them
 									visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
-									texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 									
 									blockoverride "master_color_frame" {
 										frame = 2
+									}
+
+									glow = {
+										glow_radius = 6
+										using = Glow_Standard
+										using = Color_Bright_Yellow
 									}
 								}
 								text_label_center = {
@@ -110,7 +116,7 @@ types mos_reform_containers{
 								
 								MOS_reform_button = {
 									visible = "[Not(GuiLaw.IsEnacted)]"
-									texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 								}
@@ -118,12 +124,18 @@ types mos_reform_containers{
 								MOS_reform_icon = {
 									# TODO: Swap for textures when you have them
 									visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
-									texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 									
 									blockoverride "master_color_frame" {
 										frame = 2
+									}
+
+									glow = {
+										glow_radius = 6
+										using = Glow_Standard
+										using = Color_Bright_Yellow
 									}
 								}
 								text_label_center = {
@@ -199,7 +211,7 @@ types mos_reform_containers{
 								
 								MOS_reform_button = {
 									visible = "[Not(GuiLaw.IsEnacted)]"
-									texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 								}
@@ -207,12 +219,18 @@ types mos_reform_containers{
 								MOS_reform_icon = {
 									# TODO: Swap for textures when you have them
 									visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
-									texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 									
 									blockoverride "master_color_frame" {
 										frame = 2
+									}
+
+									glow = {
+										glow_radius = 6
+										using = Glow_Standard
+										using = Color_Bright_Yellow
 									}
 								}
 								text_label_center = {
@@ -254,7 +272,7 @@ types mos_reform_containers{
 								
 								MOS_reform_button = {
 									visible = "[Not(GuiLaw.IsEnacted)]"
-									texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 								}
@@ -262,12 +280,18 @@ types mos_reform_containers{
 								MOS_reform_icon = {
 									# TODO: Swap for textures when you have them
 									visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
-									texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 									
 									blockoverride "master_color_frame" {
 										frame = 2
+									}
+
+									glow = {
+										glow_radius = 6
+										using = Glow_Standard
+										using = Color_Bright_Yellow
 									}
 								}
 								text_label_center = {
@@ -343,7 +367,7 @@ types mos_reform_containers{
 								
 								MOS_reform_button = {
 									visible = "[Not(GuiLaw.IsEnacted)]"
-									texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 								}
@@ -351,12 +375,18 @@ types mos_reform_containers{
 								MOS_reform_icon = {
 									# TODO: Swap for textures when you have them
 									visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
-									texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 									
 									blockoverride "master_color_frame" {
 										frame = 2
+									}
+
+									glow = {
+										glow_radius = 6
+										using = Glow_Standard
+										using = Color_Bright_Yellow
 									}
 								}
 								text_label_center = {
@@ -398,7 +428,7 @@ types mos_reform_containers{
 								
 								MOS_reform_button = {
 									visible = "[Not(GuiLaw.IsEnacted)]"
-									texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 								}
@@ -406,12 +436,18 @@ types mos_reform_containers{
 								MOS_reform_icon = {
 									# TODO: Swap for textures when you have them
 									visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
-									texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 									
 									blockoverride "master_color_frame" {
 										frame = 2
+									}
+
+									glow = {
+										glow_radius = 6
+										using = Glow_Standard
+										using = Color_Bright_Yellow
 									}
 								}
 								text_label_center = {
