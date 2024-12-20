@@ -2293,6 +2293,30 @@ mos_military_reforms_3_header = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_3_header_1
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_3_header_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
 	}
 
 	mos_military_reforms_3_header_4 = {
@@ -2358,6 +2382,30 @@ mos_military_reforms_3_header = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_3_header_3
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_3_header_3
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
 	}
 
 	mos_military_reforms_3_header_5 = {
@@ -2412,6 +2460,30 @@ mos_military_reforms_3_header = {
 		
 		on_pass = {
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_3_header_4
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_3_header_4
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
 		}
 	}
 }
@@ -2542,7 +2614,7 @@ mos_military_reforms_4_header = {
 			attacker_advantage = 5
 			maa_damage_mult = 0.1
 			maa_pursuit_mult = 0.1
-			defender_advantage = -3
+			defender_advantage = -8
 			men_at_arms_maintenance = 0.1
 		}
 
@@ -2650,7 +2722,7 @@ mos_military_reforms_4_header = {
 			defender_advantage = 5
 			maa_toughness_mult = 0.1
 			maa_screen_mult = 0.1
-			attacker_advantage = -3
+			attacker_advantage = -8
 			men_at_arms_maintenance = 0.1
 		}
 
