@@ -1,6 +1,7 @@
 ﻿l_english:
 
  mos_reforms_too_low_admin:0 "Your administration has not achieved sufficient level of complexity"
+ mos_enabled_spy_directives_t: "You have unlocked spy directives by passing either Organized Spy Rings or Dedicated Institutions"
 
  mos_administrative_reforms_major:0 "Major Administrative Reforms"
  mos_administrative_reforms_major_1:0 "Tribal Customs"
@@ -40,7 +41,7 @@
  mos_administrative_reforms_1_minor_1_5:0 "Bureaucracy"
  mos_administrative_reforms_1_minor_1_5_effects:0 "Expanded bureaucracy of our state makes it impractical for every small matter to be brought before the eyes of our ruler. Dedicated institutions handle them instead."
 
- mos_administrative_reforms_2_header:0 "INFRASTRUCTURE"
+ mos_administrative_reforms_2_header:0 "INFRASTRUCTURE\n{LIEGE ONLY}"
  mos_administrative_reforms_2_header_0:0 "$MOS_NULL_LAW_NO_SPACER$"
  mos_administrative_reforms_2_header_1:0 "No Infrastructure"
  mos_administrative_reforms_2_header_1_effects:0 "How our people travel is none of our concern."
@@ -53,7 +54,7 @@
  mos_administrative_reforms_2_header_5:0 "Road Networks"
  mos_administrative_reforms_2_header_5_effects:0 "Our realm is vast and in order for our merchants and armies to arrive at their destination in reasonable time, only the best roads will do."
 
- mos_administrative_reforms_3_header:0 "ESPIONAGE"
+ mos_administrative_reforms_3_header:0 "ESPIONAGE\n{LIEGE ONLY}"
  mos_administrative_reforms_3_header_0:0 "$MOS_NULL_LAW_NO_SPACER$"
  mos_administrative_reforms_3_header_1:0 "Word Of Mouth"
  mos_administrative_reforms_3_header_1_effects:0 "Any information that we learn about others is usually gained by hearing about it."
@@ -66,7 +67,7 @@
  mos_administrative_reforms_3_header_5:0 "Dedicated Institutions"
  mos_administrative_reforms_3_header_5_effects:0 "#bold UNLOCKS SPYCRAFT DIRECTIVES #! \n\nSpy masters are all well and good, but at the scale of operations required by our state, we need more robust method of conducting espionage than relying on a handful of old spies."
 
- mos_administrative_reforms_4_header:0 "SPYCRAFT DIRECTIVES"
+ mos_administrative_reforms_4_header:0 "SPYCRAFT DIRECTIVES\n{LIEGE ONLY}"
  mos_administrative_reforms_4_header_0:0 "$MOS_NULL_LAW_NO_SPACER$"
  mos_administrative_reforms_4_header_1:0 "No Directive"
  mos_administrative_reforms_4_header_1_effects:0 "Scheming as usual"
