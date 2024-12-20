@@ -1633,6 +1633,30 @@ mos_military_reforms_2_header = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_2_header_1
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_2_header_1
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
 	}
 
 	mos_military_reforms_2_header_3 = {
@@ -1696,6 +1720,30 @@ mos_military_reforms_2_header = {
 			}
 			mos_pass_reform_effect = yes
 		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_2_header_2
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_2_header_2
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
+		}
 	}
 
 	mos_military_reforms_2_header_4 = {
@@ -1732,7 +1780,7 @@ mos_military_reforms_2_header = {
 			administrative_government_vassal_opinion = -10
 			feudal_government_vassal_opinion = -10
 			glory_hound_opinion = 15
-			advantage = 3
+			advantage = 5
 			#TODO: Recruit an officer interaction
 		}
 
@@ -1782,6 +1830,12 @@ mos_military_reforms_2_header = {
 				add_realm_law = mos_military_reforms_2_minor_1_0
 			}
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# WITH INCOMPETENT AI, THIS MAY JUST LEAD TO CIVIL WAR CAROUSEL
+			value = -5
 		}
 	}
 	
@@ -2053,6 +2107,30 @@ mos_military_reforms_2_minor_1 = {
 				add_realm_law = mos_military_reforms_2_header_0
 			}
 			mos_pass_reform_effect = yes
+		}
+
+		ai_will_do = {
+			#REASONS TO UPGRADE OR SWITCH
+			# UPGRADING
+			if = { # JUST CAUSE I CAN
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_2_header_3
+					}
+				}
+				add = 5
+			}
+			if = { # INCREASE IF AT WAR OR RECENTLY FINISHED WAR
+				limit = {
+					OR = {
+						has_realm_law = mos_military_reforms_2_header_3
+					}
+					OR = {
+						days_of_continuous_peace < 60
+					}
+				}
+				multiply = 1.1
+			}
 		}
 	}
 }
