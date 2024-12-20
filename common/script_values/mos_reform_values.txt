@@ -22,62 +22,62 @@ mos_admin_reform_road_upkeep_advanced = {
 
 
 mos_reform_cost_tier_1 = {	#THEORETICALLY, TIER 1 WOULD NEVER BE USED, BUT CANNOT BE TOO SAFE
-	value = sub_realm_size
+	value = realm_size
 	multiply = root.primary_title.tier
 	multiply = 0.5
 }
 
 mos_reform_cost_tier_2 = {
-	value = sub_realm_size
+	value = realm_size
 	multiply = root.primary_title.tier
 	multiply = 0.75
 }
 
 mos_reform_cost_tier_3 = {
-	value = sub_realm_size
+	value = realm_size
 	multiply = root.primary_title.tier
 	multiply = 1.25
 }
 
 mos_reform_cost_tier_4 = {
-	value = sub_realm_size
+	value = realm_size
 	multiply = root.primary_title.tier
 	multiply = 2
 }
 
 mos_reform_cost_tier_5 = {
-	value = sub_realm_size
+	value = realm_size
 	multiply = root.primary_title.tier
-	multiply = 3
+	multiply = 2.5
 }
 
 
 mos_reform_return_tier_1 = {
-	value = sub_realm_size
+	value = realm_size
 	multiply = root.primary_title.tier
 	multiply = 0.16
 }
 
 mos_reform_return_tier_2 = {
-	value = sub_realm_size
+	value = realm_size
 	multiply = root.primary_title.tier
 	multiply = 0.25
 }
 
 mos_reform_return_tier_3 = {
-	value = sub_realm_size
+	value = realm_size
 	multiply = root.primary_title.tier
 	multiply = 0.42
 }
 
 mos_reform_return_tier_4 = {
-	value = sub_realm_size
+	value = realm_size
 	multiply = root.primary_title.tier
 	multiply = 0.66
 }
 
 mos_reform_return_tier_5 = {
-	value = sub_realm_size
+	value = realm_size
 	multiply = root.primary_title.tier
-	multiply = 1
+	multiply = 0.8
 }
