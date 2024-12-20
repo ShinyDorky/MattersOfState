@@ -1,6 +1,7 @@
 ﻿l_english:
 
  mos_reforms_too_low_admin:0 "Your administration has not achieved sufficient level of complexity"
+ mos_enabled_spy_directives_t: "You have unlocked spy directives by passing either Organized Spy Rings or Dedicated Institutions"
 
  mos_administrative_reforms_major:0 "Major Administrative Reforms"
  mos_administrative_reforms_major_1:0 "Tribal Customs"
@@ -40,24 +41,24 @@
  mos_administrative_reforms_1_minor_1_5:0 "Bureaucracy"
  mos_administrative_reforms_1_minor_1_5_effects:0 "Expanded bureaucracy of our state makes it impractical for every small matter to be brought before the eyes of our ruler. Dedicated institutions handle them instead."
 
- mos_administrative_reforms_2_header:0 "INFRASTRUCTURE"
+ mos_administrative_reforms_2_header:0 "INFRASTRUCTURE\n{LIEGE ONLY}"
  mos_administrative_reforms_2_header_0:0 "$MOS_NULL_LAW_NO_SPACER$"
  mos_administrative_reforms_2_header_1:0 "No Infrastructure"
  mos_administrative_reforms_2_header_1_effects:0 "How our people travel is none of our concern."
  mos_administrative_reforms_2_header_2:0 "Trail Protection"
  mos_administrative_reforms_2_header_2_effects:0 "While we do not build roads, there are trails our people use more often than others. Protecting them would certainly discourage bandits."
- mos_administrative_reforms_2_header_3:0 "Wooden Roads"
+ mos_administrative_reforms_2_header_3:0 "Military Roads"
  mos_administrative_reforms_2_header_3_effects:0 "They are not equal to roads built by many great empires and they will start decaying once maintenance is halted, but they are sufficient for facilitating movement of armies and goods."
  mos_administrative_reforms_2_header_4:0 "Relay Stations"
  mos_administrative_reforms_2_header_4_effects:0 "Placing stations where one can rest, eat or change horses alongside our roads will make travel faster for everyone."
  mos_administrative_reforms_2_header_5:0 "Road Networks"
  mos_administrative_reforms_2_header_5_effects:0 "Our realm is vast and in order for our merchants and armies to arrive at their destination in reasonable time, only the best roads will do."
 
- mos_administrative_reforms_3_header:0 "ESPIONAGE"
+ mos_administrative_reforms_3_header:0 "ESPIONAGE\n{LIEGE ONLY}"
  mos_administrative_reforms_3_header_0:0 "$MOS_NULL_LAW_NO_SPACER$"
  mos_administrative_reforms_3_header_1:0 "Word Of Mouth"
  mos_administrative_reforms_3_header_1_effects:0 "Any information that we learn about others is usually gained by hearing about it."
- mos_administrative_reforms_3_header_2:0 "Rudimentary Epionage"
+ mos_administrative_reforms_3_header_2:0 "Rudimentary Espionage"
  mos_administrative_reforms_3_header_2_effects:0 "Some people seem to have a knack for finding out secrets. It is considered wise to make use of them."
  mos_administrative_reforms_3_header_3:0 "Spy Masters"
  mos_administrative_reforms_3_header_3_effects:0 "By emplying experienced spies as supervisors and trainers of their younger colleagues we not only make spy management easier, but we also enable them to pass on their experiences."
@@ -66,7 +67,7 @@
  mos_administrative_reforms_3_header_5:0 "Dedicated Institutions"
  mos_administrative_reforms_3_header_5_effects:0 "#bold UNLOCKS SPYCRAFT DIRECTIVES #! \n\nSpy masters are all well and good, but at the scale of operations required by our state, we need more robust method of conducting espionage than relying on a handful of old spies."
 
- mos_administrative_reforms_4_header:0 "SPYCRAFT DIRECTIVES"
+ mos_administrative_reforms_4_header:0 "SPYCRAFT DIRECTIVES\n{LIEGE ONLY}"
  mos_administrative_reforms_4_header_0:0 "$MOS_NULL_LAW_NO_SPACER$"
  mos_administrative_reforms_4_header_1:0 "No Directive"
  mos_administrative_reforms_4_header_1_effects:0 "Scheming as usual"
