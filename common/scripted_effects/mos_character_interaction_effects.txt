@@ -1,0 +1,35 @@
+﻿
+#######################################################################
+# EFFECT LIST
+#######################################################################
+# !!! Remember to add all new effects with a short description here !!!
+#######################################################################
+
+mos_fabricate_blackmail_effect = {
+	scope:actor = {
+		if = {
+			limit = { exists = scope:target }
+			
+			add_hook = {
+				target = scope:recipient
+				type = strong_blackmail_hook
+			}
+
+			reverse_add_opinion = {
+				modifier = blackmailing_me_opinion
+				target = scope:recipient
+			}
+		}
+	}
+	scope:recipient = { #Nudge towards rivalry
+		if = {
+			limit = {
+				NOR = {
+					has_relation_rival = scope:actor
+					has_relation_potential_rival = scope:actor
+				}
+			}
+			set_relation_potential_rival = scope:actor
+		}
+	}
+}

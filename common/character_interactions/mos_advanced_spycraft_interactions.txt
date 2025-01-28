@@ -1,0 +1,85 @@
+﻿@mos_espionage_cd_duration = 3
+
+mos_fabricate_blackmail = {
+	category = interaction_category_hostile
+	ignores_pending_interaction_block = yes	
+	common_interaction = no
+	#popup_on_receive = yes
+	icon = secret
+
+	desc = mos_fabricate_blackmail_desc
+
+
+	is_shown = {
+		scope:actor = {
+		has_realm_law = mos_administrative_reforms_4_header_5
+		}
+		scope:recipient = {
+			NOT = { this = scope:actor }
+			age > 14
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		#Already have a strong hook
+		custom_description = {
+			text = "already_strong_hook"
+			subject = scope:actor
+			object = scope:recipient
+			NOT = { 
+				scope:actor = { has_strong_hook = scope:recipient } 
+			}
+		}
+		#On CD
+		custom_tooltip = {
+			text = mos_espionage_on_cd
+			NOT = { 
+				scope:actor = { has_variable = mos_espionage_cd } 
+			}
+		}
+	}
+	
+
+	on_accept = {	# TODO - Add costs
+		scope:actor = {
+			play_music_cue = mx_cue_murder
+		}
+		scope:actor = {
+			add_hook = {
+				target = scope:recipient
+				type = mos_fabricated_blackmail_hook
+			}
+			set_variable = {
+				name = mos_espionage_cd
+				years = @mos_espionage_cd_duration
+			}
+		}
+		scope:recipient = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				#Throw an event
+			}
+		}
+	}
+
+	on_decline = {
+		scope:recipient = {
+			add_prestige_experience = massive_prestige_loss
+			add_prestige = -1000
+		}
+	}
+	
+	ai_will_do = {
+		base = -100
+	}
+
+	auto_accept = {
+		subject = scope:actor
+		object = scope:recipient
+		scope:recipient = {
+			is_ai = yes
+		}
+	}
+}
