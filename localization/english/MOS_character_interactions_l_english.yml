@@ -1,0 +1,6 @@
+﻿l_english:
+ mos_espionage_on_cd:0 "A major espionage action was performed recently - espionage network will regain full functionality after [GetCurrentDateWithDiff( GetVarTimeRemaining( GetPlayer.MakeScope, 'mos_espionage_cd') )]"
+ mos_espionage_on_cd_desc:0 "A major espionage action was performed recently - espionage network will regain full functionality after [GetCurrentDateWithDiff( GetVarTimeRemaining( GetPlayer.MakeScope, 'mos_espionage_cd') )]"
+ mos_fabricate_blackmail:0 "Spycraft: Fabricate Blackmail"
+ mos_fabricate_blackmail_desc:0 "Fabricate blackmail on target. Even should they not be threatened by such massive amount of documents, their reputation will surely be destroyed. Doing so will strain network to such a degree that no further action of such scale will be available for approximately 3 years."
+ mos_fabricated_blackmail_hook:0 "Fabricated Blackmail"

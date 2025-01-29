@@ -2088,7 +2088,7 @@ mos_administrative_reforms_3_header = {
 	mos_administrative_reforms_3_header_2 = {
 		modifier = {
 			monthly_income = -3
-			owned_hostile_scheme_success_chance_add = 5
+			owned_hostile_scheme_success_chance_add = 3
 		}
 
 		should_start_with = {
@@ -2200,7 +2200,7 @@ mos_administrative_reforms_3_header = {
 	mos_administrative_reforms_3_header_3 = {
 		modifier = {
 			monthly_income = -5
-			owned_hostile_scheme_success_chance_add = 10
+			owned_hostile_scheme_success_chance_add = 5
 			owned_personal_scheme_success_chance_add = 5
 		}
 
@@ -2316,7 +2316,7 @@ mos_administrative_reforms_3_header = {
 	mos_administrative_reforms_3_header_4 = {
 		modifier = {
 			monthly_income = -10
-			owned_hostile_scheme_success_chance_add = 10
+			owned_hostile_scheme_success_chance_add = 5
 			owned_personal_scheme_success_chance_add = 5
 			max_personal_schemes_add = 1
 			max_hostile_schemes_add = 1
@@ -2431,10 +2431,10 @@ mos_administrative_reforms_3_header = {
 	mos_administrative_reforms_3_header_5 = {
 		modifier = {
 			monthly_income = -20
-			owned_hostile_scheme_success_chance_add = 20
+			owned_hostile_scheme_success_chance_add = 10
 			owned_personal_scheme_success_chance_add = 10
-			hostile_scheme_phase_duration_add = -20
-			personal_scheme_phase_duration_add = -20
+			hostile_scheme_phase_duration_add = -10
+			personal_scheme_phase_duration_add = -10
 			max_personal_schemes_add = 1
 			max_hostile_schemes_add = 1
 		}
