@@ -81,7 +81,7 @@ in game files as possible. In other cases it will be either something bought/fou
 own attempts at creating a placeholder until something better is found. I do not plan to use AI 
 generated graphics in this mod.
 
-### Through Thick and Thin - Expected: 30.01.2025
+### Through Thick and Thin - Expected: 30.03.2025
 An expansion focused on creating more opportunities for either achieving prosperity and losing balance in order
 to prevent Super Blobs from taking over the world and help smaller states survive.
 
