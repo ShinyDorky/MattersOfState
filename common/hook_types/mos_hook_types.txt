@@ -1,0 +1,3 @@
+﻿mos_fabricated_blackmail_hook = {
+	strong = yes
+}

@@ -11,3 +11,11 @@ mos_military_doctrine_locked = {
 		mos_enabled_mil_doctrines = no
 	}
 }
+
+mos_spy_directives_locked = {
+	scope = character
+
+	is_valid = {
+		mos_enabled_spy_directives = no
+	}
+}

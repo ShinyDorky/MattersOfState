@@ -55,25 +55,38 @@ types mos_reform_containers{
 								
 								MOS_reform_button = {
 									visible = "[Not(GuiLaw.IsEnacted)]"
-									texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
+
+									MOS_reform_icon = {
+										texture = "gfx/interface/BLACK_SQUARE.dds"
+										parentanchor = center
+										alpha = 0.2
+										alwaystransparent = yes
+									}
 								}
 								
 								MOS_reform_icon = {
 									# TODO: Swap for textures when you have them
 									visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
-									texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 									
 									blockoverride "master_color_frame" {
 										frame = 2
 									}
+
+									glow = {
+										glow_radius = 6
+										using = Glow_Standard
+										using = Color_Bright_Yellow
+									}
 								}
 								text_label_center = {
 									parentanchor = center
-									visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+									visible = "[And(Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) ), Not(GuiLaw.IsEnacted))]"
 									text = "[GuiLaw.GetLaw.GetName]"
 								}
 							}
@@ -110,25 +123,38 @@ types mos_reform_containers{
 								
 								MOS_reform_button = {
 									visible = "[Not(GuiLaw.IsEnacted)]"
-									texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
+
+									MOS_reform_icon = {
+										texture = "gfx/interface/BLACK_SQUARE.dds"
+										parentanchor = center
+										alpha = 0.2
+										alwaystransparent = yes
+									}
 								}
 								
 								MOS_reform_icon = {
 									# TODO: Swap for textures when you have them
 									visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
-									texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 									
 									blockoverride "master_color_frame" {
 										frame = 2
 									}
+
+									glow = {
+										glow_radius = 6
+										using = Glow_Standard
+										using = Color_Bright_Yellow
+									}
 								}
 								text_label_center = {
 									parentanchor = center
-									visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+									visible = "[And(Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) ), Not(GuiLaw.IsEnacted))]"
 									text = "[GuiLaw.GetLaw.GetName]"
 								}
 							}
@@ -199,25 +225,38 @@ types mos_reform_containers{
 								
 								MOS_reform_button = {
 									visible = "[Not(GuiLaw.IsEnacted)]"
-									texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
+
+									MOS_reform_icon = {
+										texture = "gfx/interface/BLACK_SQUARE.dds"
+										parentanchor = center
+										alpha = 0.2
+										alwaystransparent = yes
+									}
 								}
 								
 								MOS_reform_icon = {
 									# TODO: Swap for textures when you have them
 									visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
-									texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 									
 									blockoverride "master_color_frame" {
 										frame = 2
 									}
+
+									glow = {
+										glow_radius = 6
+										using = Glow_Standard
+										using = Color_Bright_Yellow
+									}
 								}
 								text_label_center = {
 									parentanchor = center
-									visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+									visible = "[And(Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) ), Not(GuiLaw.IsEnacted))]"
 									text = "[GuiLaw.GetLaw.GetName]"
 								}
 							}
@@ -254,25 +293,38 @@ types mos_reform_containers{
 								
 								MOS_reform_button = {
 									visible = "[Not(GuiLaw.IsEnacted)]"
-									texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
+
+									MOS_reform_icon = {
+										texture = "gfx/interface/BLACK_SQUARE.dds"
+										parentanchor = center
+										alpha = 0.2
+										alwaystransparent = yes
+									}
 								}
 								
 								MOS_reform_icon = {
 									# TODO: Swap for textures when you have them
 									visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
-									texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 									
 									blockoverride "master_color_frame" {
 										frame = 2
 									}
+
+									glow = {
+										glow_radius = 6
+										using = Glow_Standard
+										using = Color_Bright_Yellow
+									}
 								}
 								text_label_center = {
 									parentanchor = center
-									visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+									visible = "[And(Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) ), Not(GuiLaw.IsEnacted))]"
 									text = "[GuiLaw.GetLaw.GetName]"
 								}
 							}
@@ -295,7 +347,7 @@ types mos_reform_containers{
 		item = {
 			vbox = {								
 				datacontext = "[GuiLawGroup.GetLawGroup]"
-				visible = "[And( GuiLawGroup.GetLawGroup.HasFlag( 'mos_administrative_reform' ), GuiLawGroup.IsAvailable)]"
+				visible = "[And(And( GuiLawGroup.GetLawGroup.HasFlag( 'mos_administrative_reform' ), GuiLawGroup.IsAvailable ), Not(And(EqualTo_string(LawGroup.GetName, Localize('mos_administrative_reforms_4_header')),And( Not(IsObserver),   GetScriptedGui('mos_spy_directives_locked').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)) )))]"
 				ignoreinvisible = yes
 				layoutpolicy_horizontal = expanding	
 				spacer = {
@@ -312,9 +364,9 @@ types mos_reform_containers{
 				# 	visible = "[GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' )]"									
 				# 	size = { 0 10 }
 				# }
-				MOS_econ_reforms_colored_spacer = {}
+				MOS_admin_reforms_colored_spacer = {}
 				
-				MOS_econ_reforms_background_threaded_hbox = {
+				MOS_admin_reforms_background_threaded_hbox = {
 					visible = "[Not( GuiLawGroup.GetLawGroup.HasFlag( 'mos_no_order_reform' ))]"
 					margin = {5 0}
 					layoutpolicy_horizontal = expanding	
@@ -343,25 +395,38 @@ types mos_reform_containers{
 								
 								MOS_reform_button = {
 									visible = "[Not(GuiLaw.IsEnacted)]"
-									texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
+
+									MOS_reform_icon = {
+										texture = "gfx/interface/BLACK_SQUARE.dds"
+										parentanchor = center
+										alpha = 0.2
+										alwaystransparent = yes
+									}
 								}
 								
 								MOS_reform_icon = {
 									# TODO: Swap for textures when you have them
 									visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
-									texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 									
 									blockoverride "master_color_frame" {
 										frame = 2
 									}
+
+									glow = {
+										glow_radius = 6
+										using = Glow_Standard
+										using = Color_Bright_Yellow
+									}
 								}
 								text_label_center = {
 									parentanchor = center
-									visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+									visible = "[And(Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) ), Not(GuiLaw.IsEnacted))]"
 									text = "[GuiLaw.GetLaw.GetName]"
 								}
 							}
@@ -369,7 +434,7 @@ types mos_reform_containers{
 					}
 				}
 
-				MOS_econ_reforms_background_hbox = {
+				MOS_admin_reforms_background_hbox = {
 					visible = "[GuiLawGroup.GetLawGroup.HasFlag( 'mos_no_order_reform' )]"
 					margin = {5 0}
 					layoutpolicy_horizontal = expanding	
@@ -398,25 +463,38 @@ types mos_reform_containers{
 								
 								MOS_reform_button = {
 									visible = "[Not(GuiLaw.IsEnacted)]"
-									texture = "gfx/interface/illustrations/loading_screens/baghdad.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
+
+									MOS_reform_icon = {
+										texture = "gfx/interface/BLACK_SQUARE.dds"
+										parentanchor = center
+										alpha = 0.2
+										alwaystransparent = yes
+									}
 								}
 								
 								MOS_reform_icon = {
 									# TODO: Swap for textures when you have them
 									visible = "[And( GuiLaw.IsEnacted , Not( GuiLaw.CanEnact ) )]"
-									texture = "gfx/interface/illustrations/loading_screens/castle.dds"
+									texture = "[Law.GetIcon]"
 									parentanchor = center
 									alwaystransparent = yes
 									
 									blockoverride "master_color_frame" {
 										frame = 2
 									}
+
+									glow = {
+										glow_radius = 6
+										using = Glow_Standard
+										using = Color_Bright_Yellow
+									}
 								}
 								text_label_center = {
 									parentanchor = center
-									visible = "[Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) )]"
+									visible = "[And(Not( Or( EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW')), EqualTo_string(Law.GetNameNoTooltip, Localize('MOS_NULL_LAW_NO_SPACER'))) ), Not(GuiLaw.IsEnacted))]"
 									text = "[GuiLaw.GetLaw.GetName]"
 								}
 							}
@@ -424,7 +502,7 @@ types mos_reform_containers{
 					}
 				}
 				
-				MOS_econ_reforms_colored_spacer = {
+				MOS_admin_reforms_colored_spacer = {
 					#visible = "[GuiLawGroup.GetLawGroup.HasFlag( 'mos_minor_reform' )]"			
 				}
 			}

@@ -134,3 +134,13 @@ mos_administrative_5_and_above = {
 		}
 	}
 }
+
+mos_enabled_spy_directives = {
+	custom_tooltip = {
+		text = mos_enabled_spy_directives_t
+		OR = {
+			has_realm_law = mos_administrative_reforms_3_header_4
+			has_realm_law = mos_administrative_reforms_3_header_5
+		}
+	}
+}
